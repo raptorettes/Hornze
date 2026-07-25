@@ -260,9 +260,9 @@ func _process(_delta):
 		_setLatch(0.2, false)
 
 	if rightHold and !latched:
-		anim.scale.x = animScaleLock.x
-	if leftHold and !latched:
 		anim.scale.x = animScaleLock.x * -1
+	if leftHold and !latched:
+		anim.scale.x = animScaleLock.x * 1
 	
 	#run
 	if run and idle and !dashing and !crouching:
