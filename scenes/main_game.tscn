@@ -11,17 +11,36 @@
 [ext_resource type="PackedScene" uid="uid://cexwgwiasglgh" path="res://scenes/cloud3.tscn" id="9_nqdth"]
 [ext_resource type="PackedScene" uid="uid://hxh7onbt3xjo" path="res://scenes/cloud4.tscn" id="10_nqdth"]
 
+[sub_resource type="Gradient" id="Gradient_ygxny"]
+interpolation_color_space = 1
+offsets = PackedFloat32Array(0, 0.3369906)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_onn7j"]
+gradient = SubResource("Gradient_ygxny")
+width = 125
+height = 125
+use_hdr = true
+fill = 1
+fill_from = Vector2(0.48504272, 0.5)
+fill_to = Vector2(0.5897436, 0.35897437)
+
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_vok5w"]
 
 [node name="MainGame" type="Node2D" unique_id=1666445386]
 
 [node name="BehindCouds(Layer-1)" type="ParallaxBackground" parent="." unique_id=1493366085]
 layer = -1
-scroll_ignore_camera_zoom = true
+
+[node name="BGCanvasModulate" type="CanvasModulate" parent="BehindCouds(Layer-1)" unique_id=1452396847]
+z_index = -1
+color = Color(0.7993389, 0.8866127, 0.9224794, 0.49019608)
 
 [node name="Cloud_Parallax_2" type="Parallax2D" parent="BehindCouds(Layer-1)" unique_id=1750145326]
+z_index = -1
 repeat_size = Vector2(3508, 0)
 follow_viewport = false
+ignore_camera_scroll = true
 
 [node name="Blue_BG_Gradient_1" type="Sprite2D" parent="BehindCouds(Layer-1)/Cloud_Parallax_2" unique_id=439173513]
 texture = ExtResource("5_ygxny")
@@ -62,12 +81,29 @@ tile_set = ExtResource("1_72e8q")
 [node name="Horse" parent="." unique_id=1812889003 instance=ExtResource("1_s3esy")]
 position = Vector2(277, -75)
 
+[node name="PointLight2D" type="PointLight2D" parent="Horse" unique_id=1800271869]
+position = Vector2(-1.0000025, -31)
+scale = Vector2(16.296875, 13.390625)
+range_layer_min = -2
+texture = SubResource("GradientTexture2D_onn7j")
+offset = Vector2(3.89, 0)
+texture_scale = 2.0
+
 [node name="Camera2D" type="Camera2D" parent="Horse" unique_id=2079273632]
 position = Vector2(39, -104)
 zoom = Vector2(2, 2)
 limit_left = -700
 limit_bottom = 0
 position_smoothing_enabled = true
+
+[node name="SplitContainer" type="SplitContainer" parent="Horse" unique_id=509738759]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=100019648]
+position = Vector2(276, -106)
+scale = Vector2(16.296875, 13.390625)
+color = Color(0.14454779, 0.21092802, 0.227117, 1)
 
 [node name="Area2D" type="StaticBody2D" parent="." unique_id=2044265070]
 position = Vector2(-28, -690)
