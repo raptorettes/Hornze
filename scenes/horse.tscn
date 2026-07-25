@@ -6,6 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://d0uy4aerfhdtq" path="res://assets/HorseRun.png" id="4_gl1uc"]
 [ext_resource type="Texture2D" uid="uid://58wj5oooiutr" path="res://assets/HorseWalk.png" id="5_e0gb1"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_owkpo"]
+atlas = ExtResource("3_pkxfc")
+region = Rect2(300, 0, 75, 64)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_6rl12"]
 atlas = ExtResource("2_fjee1")
 region = Rect2(0, 0, 75, 64)
@@ -100,6 +104,14 @@ region = Rect2(320, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vyx2l"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_owkpo")
+}],
+"loop": 1,
+"name": &"falling",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6rl12")
@@ -234,12 +246,13 @@ run = true
 jump = true
 idle = true
 walk = true
+falling = true
 metadata/_custom_type_script = "uid://ccl7k6d7g7ksk"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=337392154]
 position = Vector2(1, -22)
 sprite_frames = SubResource("SpriteFrames_vyx2l")
-animation = &"walk"
+animation = &"falling"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=483050396]
 z_index = 1
