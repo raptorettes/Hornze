@@ -170,6 +170,7 @@ loop_mode = 1
 
 [sub_resource type="Animation" id="Animation_pkxfc"]
 resource_name = "walk"
+length = 9.9
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gl1uc"]
 _data = {
@@ -200,7 +201,7 @@ position = Vector2(1, -22)
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_vyx2l")
 animation = &"jump"
-frame_progress = 0.9145058
+frame_progress = 0.8264494
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=483050396]
 z_index = 1
@@ -210,3 +211,5 @@ one_way_collision = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2136230639]
 libraries/ = SubResource("AnimationLibrary_gl1uc")
+
+[node name="HorseSFX" type="AudioStreamPlayer2D" parent="." unique_id=421012837]
