@@ -95,7 +95,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("BehindCouds(Layer-1)/SpiritHorseGod:modulate")
+tracks/1/path = NodePath("SpiritHorseGod:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -138,7 +138,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("BehindCouds(Layer-1)/SpiritHorseGod:modulate")
+tracks/2/path = NodePath("SpiritHorseGod:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -266,11 +266,6 @@ position = Vector2(816.9999, -1924)
 scale = Vector2(80.78126, 61.125)
 texture = SubResource("GradientTexture2D_tnskl")
 
-[node name="SpiritHorseGod" parent="BehindCouds(Layer-1)" unique_id=304131339 instance=ExtResource("1_wjob3")]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(332, -1645.9999)
-scale = Vector2(0.61462, 0.61462)
-
 [node name="FrontClouds(Layer1)" type="ParallaxBackground" parent="." unique_id=2039391621]
 layer = 1
 
@@ -293,6 +288,13 @@ texture_repeat = 2
 texture = ExtResource("6_wi4c7")
 
 [node name="FrontCloud_Modulate" type="CanvasModulate" parent="FrontClouds(Layer1)" unique_id=112197101]
+
+[node name="SpiritHorseGod" parent="." unique_id=304131339 instance=ExtResource("1_wjob3")]
+modulate = Color(1, 1, 1, 0)
+light_mask = 2
+visibility_layer = 2
+position = Vector2(343.00003, -1717.9999)
+scale = Vector2(0.61462, 0.61462)
 
 [node name="Sky" type="TileMapLayer" parent="." unique_id=1900857882]
 visible = false
