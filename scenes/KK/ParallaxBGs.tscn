@@ -1,13 +1,8 @@
 [gd_scene format=3 uid="uid://cbj5ggtj72gg5"]
 
 [ext_resource type="Texture2D" uid="uid://bwlyiic0lko7n" path="res://scenes/KK/Sprite/BG.png" id="1_kmqrp"]
-[ext_resource type="Texture2D" uid="uid://bj7e88s5bnwv5" path="res://scenes/KK/Sprite/TEMPHorse.png" id="2_gof75"]
+[ext_resource type="PackedScene" uid="uid://dxm1vn1flkk7s" path="res://scenes/horse.tscn" id="3_kmjrw"]
 [ext_resource type="Texture2D" uid="uid://co65wwph3la8u" path="res://scenes/KK/Cloud_Layer_2_Texture.tres" id="4_gof75"]
-[ext_resource type="Script" uid="uid://dayvud35kmnln" path="res://scenes/KK/Character2D_Movement_TestScript.gd" id="4_kgeht"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tnskl"]
-radius = 33.0
-height = 66.0
 
 [sub_resource type="Gradient" id="Gradient_kmjrw"]
 colors = PackedColorArray(0.9103272, 0.9609124, 0.97167164, 1, 0.78103393, 0.90434766, 0.93045217, 1)
@@ -30,20 +25,6 @@ follow_viewport = false
 [node name="Sprite2D" type="Sprite2D" parent="BehindCouds(Layer-1)/Cloud_Parallax_2" unique_id=1111207119]
 texture = ExtResource("1_kmqrp")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=5811503]
-motion_mode = 1
-slide_on_ceiling = false
-script = ExtResource("4_kgeht")
-
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1415516944]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1969542508]
-shape = SubResource("CapsuleShape2D_tnskl")
-
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1805796205]
-texture = ExtResource("2_gof75")
-flip_h = true
-
 [node name="FrontClouds(Layer1)" type="ParallaxBackground" parent="." unique_id=279564301]
 layer = 1
 
@@ -59,6 +40,9 @@ follow_viewport = false
 [node name="Cloud_Layer_1" type="Sprite2D" parent="FrontClouds(Layer1)/Cloud_Parallax_1" unique_id=1925770412]
 texture_repeat = 2
 texture = ExtResource("4_gof75")
+
+[node name="Horse" parent="FrontClouds(Layer1)" unique_id=357995421 instance=ExtResource("3_kmjrw")]
+position = Vector2(438, 438)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1421236119]
 
