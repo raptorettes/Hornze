@@ -209,7 +209,7 @@ tracks/3/keys = {
 "start_offset": 0.0,
 "stream": ExtResource("1_8xp80")
 }],
-"times": PackedFloat32Array(0.43333334)
+"times": PackedFloat32Array(13.633333)
 }
 tracks/3/use_blend = true
 
@@ -480,7 +480,13 @@ texture = ExtResource("14_8xp80")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1997221062]
 environment = SubResource("Environment_tnskl")
 
-[node name="Grass" type="Sprite2D" parent="." unique_id=1969665325]
-position = Vector2(565.00006, 672.00006)
-scale = Vector2(0.8540322, 0.8540323)
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=2056100805]
+texture_repeat = 3
+scale = Vector2(0.134, 0.134)
+scroll_offset = Vector2(12.999999, -23.999998)
+repeat_size = Vector2(3508, 0)
+repeat_times = 13
+ignore_camera_scroll = true
+
+[node name="Grass" type="Sprite2D" parent="Parallax2D" unique_id=1969665325]
 texture = ExtResource("15_sp04v")
