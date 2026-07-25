@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://cck7h48uou84v"]
 
+[ext_resource type="AudioStream" uid="uid://bq6xlhqakffi2" path="res://assets/Audio/HORNE_RAINBOW_REMIX.ogg" id="1_8xp80"]
 [ext_resource type="TileSet" uid="uid://dcebrnyhukik4" path="res://assets/tilesets/sprouts_maps.tres" id="1_72e8q"]
 [ext_resource type="PackedScene" uid="uid://dxm1vn1flkk7s" path="res://scenes/horse.tscn" id="1_s3esy"]
 [ext_resource type="PackedScene" uid="uid://djt1lrtv48uap" path="res://scenes/SpiritHorseScene.tscn" id="1_wjob3"]
@@ -10,8 +11,10 @@
 [ext_resource type="PackedScene" uid="uid://cexwgwiasglgh" path="res://scenes/cloud3.tscn" id="9_nqdth"]
 [ext_resource type="PackedScene" uid="uid://hxh7onbt3xjo" path="res://scenes/cloud4.tscn" id="10_nqdth"]
 [ext_resource type="AudioStream" uid="uid://bbr0l1rrw208k" path="res://assets/Audio/SFX/SC_EK_piano_notes_C.wav" id="11_5cypo"]
+[ext_resource type="AudioStream" uid="uid://7joxx7i50wy8" path="res://assets/Audio/MUSIC/hornse_WIP_canonecho.ogg" id="11_8xp80"]
 [ext_resource type="AudioStream" uid="uid://wlrvkmx2h6ew" path="res://assets/Audio/VO/SpiritHorseGod_VO.ogg" id="11_o6v7o"]
 [ext_resource type="Texture2D" uid="uid://gxu7afyjrfq0" path="res://assets/GlitterShroom.png" id="14_8xp80"]
+[ext_resource type="Texture2D" uid="uid://dbqiuv0p8pyfw" path="res://assets/Grass.png" id="15_sp04v"]
 
 [sub_resource type="GDScript" id="GDScript_idtt3"]
 script/source = "extends Node2D
@@ -20,12 +23,18 @@ var has_entered : bool = false
 
 func _ready() -> void:
 	$Mushroom.body_entered.connect(_on_body_entered)
+	
+	$\"Music Soft\".play()
 
 func _on_body_entered(body: Node2D) -> void:
 	if has_entered:
+		
+		
 		return
 	has_entered = true
 	animation_player.play(\"SpiritHorseGod\")
+	$\"Music Soft\".stop()
+	#$MusicLoud.play()
 "
 
 [sub_resource type="Gradient" id="Gradient_wjob3"]
@@ -81,6 +90,44 @@ fill_to = Vector2(0.8354701, 0.21794872)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_vok5w"]
 
+[sub_resource type="Animation" id="Animation_sp04v"]
+resource_name = "Music1"
+length = 153.83333
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpiritHorseGod/ascension")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("11_8xp80")
+}],
+"times": PackedFloat32Array(-0.43333334)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="Animation_ihbck"]
+resource_name = "Music2"
+length = 58.966667
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpiritHorseGod/ascension")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("1_8xp80")
+}],
+"times": PackedFloat32Array(0.03333333)
+}
+tracks/0/use_blend = true
+
 [sub_resource type="Animation" id="Animation_8xp80"]
 length = 0.001
 tracks/0/type = "value"
@@ -110,46 +157,61 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_wjob3"]
 resource_name = "SpiritHorseGod"
-length = 16.066668
-tracks/0/type = "audio"
+length = 52.4
+tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Automator/ascension")
+tracks/0/path = NodePath("Horse/Camera2D:zoom")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("11_o6v7o")
-}],
-"times": PackedFloat32Array(2.2666667)
-}
-tracks/0/use_blend = true
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Horse/Camera2D:zoom")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(0, 2.2666667, 10.133333, 16.066668),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(2, 2), Vector2(1.3, 1.3), Vector2(1.3, 1.3), Vector2(2, 2)]
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("SpiritHorseGod:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SpiritHorseGod:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
 "times": PackedFloat32Array(0, 3.68, 11.303287, 16.033333),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SpiritHorseGod/Voice")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("11_o6v7o")
+}],
+"times": PackedFloat32Array(0.4)
+}
+tracks/2/use_blend = true
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MusicLoud")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("1_8xp80")
+}],
+"times": PackedFloat32Array(0.43333334)
+}
+tracks/3/use_blend = true
 
 [sub_resource type="Animation" id="Animation_o6v7o"]
 resource_name = "ascension"
@@ -157,7 +219,7 @@ length = 4.1
 tracks/0/type = "audio"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Automator/ascension")
+tracks/0/path = NodePath("SpiritHorseGod/ascension")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -172,14 +234,18 @@ tracks/0/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wjob3"]
 _data = {
+&"Music1": SubResource("Animation_sp04v"),
+&"Music2": SubResource("Animation_ihbck"),
 &"RESET": SubResource("Animation_8xp80"),
 &"SpiritHorseGod": SubResource("Animation_wjob3"),
 &"ascension": SubResource("Animation_o6v7o")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_vok5w"]
+
 [sub_resource type="Environment" id="Environment_tnskl"]
 background_mode = 3
-background_canvas_max_layer = 1
+reflected_light_source = 1
 tonemap_mode = 1
 tonemap_agx_white = 16.5
 tonemap_agx_contrast = 1.0
@@ -190,14 +256,23 @@ glow_hdr_scale = 2.42
 glow_hdr_luminance_cap = 0.0
 adjustment_enabled = true
 
-[sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_qdken"]
-
-[sub_resource type="Compositor" id="Compositor_uxmck"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_vok5w"]
-
 [node name="MainGame" type="Node2D" unique_id=1666445386]
 script = SubResource("GDScript_idtt3")
+
+[node name="Music Soft" type="AudioStreamPlayer2D" parent="." unique_id=1263514825]
+position = Vector2(178, -1109)
+scale = Vector2(0.61462003, 0.61462003)
+stream = ExtResource("11_8xp80")
+volume_db = 5.0
+autoplay = true
+playback_type = 1
+
+[node name="MusicLoud" type="AudioStreamPlayer2D" parent="." unique_id=714864337]
+position = Vector2(43.999756, -1891.0002)
+scale = Vector2(0.61462003, 0.61462003)
+volume_db = -12.0
+autoplay = true
+playback_type = 1
 
 [node name="plants" type="TileMapLayer" parent="." unique_id=3119479]
 light_mask = 2
@@ -258,10 +333,13 @@ color = Color(0.8819366, 0.8819366, 0.88193655, 1)
 [node name="Cloud_Parallax_2" type="Parallax2D" parent="BehindCouds(Layer-1)" unique_id=1750145326]
 z_index = -1
 repeat_size = Vector2(3508, 0)
+repeat_times = 2
 follow_viewport = false
 ignore_camera_scroll = true
 
 [node name="Blue_BG_Gradient_1" type="Sprite2D" parent="BehindCouds(Layer-1)/Cloud_Parallax_2" unique_id=439173513]
+position = Vector2(781.5, 1046)
+scale = Vector2(1.4455531, 1.8435484)
 texture = ExtResource("5_ygxny")
 
 [node name="Blue_BG_Extend" type="Sprite2D" parent="BehindCouds(Layer-1)/Cloud_Parallax_2" unique_id=1756781010]
@@ -296,8 +374,28 @@ texture = ExtResource("6_wi4c7")
 modulate = Color(1, 1, 1, 0)
 light_mask = 2
 visibility_layer = 2
-position = Vector2(348, -1724.9999)
+position = Vector2(348.99997, -1890)
 scale = Vector2(0.61462, 0.61462)
+
+[node name="EverythingElseLight2" type="PointLight2D" parent="SpiritHorseGod" unique_id=1021732211]
+position = Vector2(532.036, -730.53296)
+scale = Vector2(26.515371, 21.786839)
+energy = 0.52
+range_z_max = 0
+range_layer_min = -1
+range_item_cull_mask = 3
+texture = SubResource("GradientTexture2D_onn7j")
+offset = Vector2(3.89, 0)
+texture_scale = 20.71
+
+[node name="ascension" type="AudioStreamPlayer2D" parent="SpiritHorseGod" unique_id=1914208502]
+position = Vector2(-567.8306, 3075.0718)
+scale = Vector2(1.627022, 1.627022)
+
+[node name="Voice" type="AudioStreamPlayer2D" parent="SpiritHorseGod" unique_id=255644091]
+position = Vector2(79.72406, -257.06934)
+scale = Vector2(1.6270218, 1.6270218)
+volume_db = 6.0
 
 [node name="Sky" type="TileMapLayer" parent="." unique_id=1900857882]
 visible = false
@@ -307,6 +405,8 @@ tile_set = ExtResource("1_72e8q")
 [node name="Horse" parent="." unique_id=1812889003 instance=ExtResource("1_s3esy")]
 z_index = 1
 position = Vector2(277, -107)
+maxSpeed = 200.0
+timeToReachMaxSpeed = 0.2
 jumpHeight = 4.0
 
 [node name="EverythingElseLight" type="PointLight2D" parent="Horse" unique_id=1800271869]
@@ -361,13 +461,6 @@ one_way_collision = true
 [node name="Automator" type="AnimationPlayer" parent="." unique_id=977688227]
 libraries/ = SubResource("AnimationLibrary_wjob3")
 
-[node name="ascension" type="AudioStreamPlayer2D" parent="Automator" unique_id=1914208502]
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1130394891]
-environment = SubResource("Environment_tnskl")
-camera_attributes = SubResource("CameraAttributesPhysical_qdken")
-compositor = SubResource("Compositor_uxmck")
-
 [node name="Mushroom" type="Area2D" parent="." unique_id=2107591105]
 position = Vector2(298, -1419)
 
@@ -383,3 +476,11 @@ offset_right = 1061.0
 offset_bottom = 1054.0
 scale = Vector2(0.0396814, 0.0396814)
 texture = ExtResource("14_8xp80")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1997221062]
+environment = SubResource("Environment_tnskl")
+
+[node name="Grass" type="Sprite2D" parent="." unique_id=1969665325]
+position = Vector2(565.00006, 672.00006)
+scale = Vector2(0.8540322, 0.8540323)
+texture = ExtResource("15_sp04v")

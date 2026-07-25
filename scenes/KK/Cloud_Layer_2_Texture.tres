@@ -5,7 +5,7 @@
 [sub_resource type="Gradient" id="Gradient_te4u1"]
 interpolation_color_space = 1
 offsets = PackedFloat32Array(0.4341693, 1)
-colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.2901961)
 
 [resource]
 noise = ExtResource("1_0pkb5")

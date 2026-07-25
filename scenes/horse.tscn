@@ -183,7 +183,6 @@ tracks/0/use_blend = true
 [sub_resource type="Animation" id="Animation_fjee1"]
 resource_name = "run"
 length = 1.9666667
-loop_mode = 1
 tracks/0/type = "audio"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -203,7 +202,6 @@ tracks/0/use_blend = true
 [sub_resource type="Animation" id="Animation_pkxfc"]
 resource_name = "walk"
 length = 1.1333333
-loop_mode = 1
 tracks/0/type = "audio"
 tracks/0/imported = false
 tracks/0/enabled = true
