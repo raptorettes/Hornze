@@ -9,7 +9,7 @@ gravity_scale = 0.0
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("1_huaes")
 
-[node name="Polygon2D" type="CollisionPolygon2D" parent="." unique_id=1748764358]
+[node name="Polygon2D" type="CollisionPolygon2D" parent="." unique_id=786579711]
 position = Vector2(2, 2.3841858e-07)
 scale = Vector2(1.4900652, 1.4900655)
 polygon = PackedVector2Array(93, 23, 93, 12, 46, -10, 25, -15, -44, -18, -68, -16, -95, -8, -97, 6, -92, 26, -77, 31, -11, 30, 44, 31)

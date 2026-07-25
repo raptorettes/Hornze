@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://hxh7onbt3xjo"]
+
+[ext_resource type="Texture2D" uid="uid://gai402lgwt6o" path="res://assets/Clouds_1/Cloud5.png" id="1_27f51"]
+
+[node name="Cloud4" type="RigidBody2D" unique_id=1374114401]
+gravity_scale = 0.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1825252203]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_27f51")
+
+[node name="Polygon2D" type="CollisionPolygon2D" parent="." unique_id=221235250]
+position = Vector2(2, 2.3841858e-07)
+scale = Vector2(1.4900652, 1.4900655)
+polygon = PackedVector2Array(20.133347, -50.33336, 55.03115, -35.56891, 87.91562, -4.0266685, 89.928955, 11.408895, 30.20002, 19.462233, 38.25336, 45.63558, -47.648922, 38.924465, -35.568916, 14.764452, -90.60007, 10.066672, -74.493385, -18.12001, -33.55558, -39.595577)

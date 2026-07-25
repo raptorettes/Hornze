@@ -28,6 +28,10 @@ window/size/viewport_height=1080
 
 enabled=PackedStringArray("res://addons/gdshader/plugin.cfg", "res://addons/godot_state_charts/plugin.cfg", "res://addons/phantom_camera/plugin.cfg")
 
+[gui]
+
+theme/custom="res://assets/vaporwave_sunset.tres"
+
 [input]
 
 left={

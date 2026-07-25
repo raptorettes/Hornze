@@ -8,13 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://co65wwph3la8u" path="res://scenes/KK/Cloud_Layer_2_Texture.tres" id="6_wi4c7"]
 [ext_resource type="PackedScene" uid="uid://djhkp2f13d71m" path="res://scenes/cloud1.tscn" id="7_wi4c7"]
 [ext_resource type="PackedScene" uid="uid://caombd450c21v" path="res://scenes/cloud2.tscn" id="8_2l77h"]
-[ext_resource type="Texture2D" uid="uid://cptfngmeipjwt" path="res://assets/Clouds_1/Cloud4.png" id="9_5cypo"]
 [ext_resource type="PackedScene" uid="uid://cexwgwiasglgh" path="res://scenes/cloud3.tscn" id="9_nqdth"]
+[ext_resource type="PackedScene" uid="uid://hxh7onbt3xjo" path="res://scenes/cloud4.tscn" id="10_nqdth"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_vok5w"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_la7bm"]
-size = Vector2(221.5, 57.5)
 
 [node name="MainGame" type="Node2D" unique_id=1666445386]
 
@@ -86,6 +83,18 @@ rotation = 1.5601245
 shape = SubResource("WorldBoundaryShape2D_vok5w")
 one_way_collision = true
 
+[node name="Cloud1" parent="." unique_id=1374114401 instance=ExtResource("7_wi4c7")]
+position = Vector2(-316, -306)
+
+[node name="Cloud2" parent="." unique_id=167543451 instance=ExtResource("8_2l77h")]
+position = Vector2(381, -534)
+
+[node name="Cloud3" parent="." unique_id=766989435 instance=ExtResource("9_nqdth")]
+position = Vector2(-378, -736)
+
+[node name="Cloud4" parent="." unique_id=929703140 instance=ExtResource("8_2l77h")]
+position = Vector2(1251, -714)
+
 [node name="StateChart" type="Node" parent="." unique_id=1315424544]
 script = ExtResource("3_0rdsr")
 metadata/_custom_type_script = "uid://couw105c3bde4"
@@ -94,25 +103,8 @@ metadata/_custom_type_script = "uid://couw105c3bde4"
 script = ExtResource("4_ipu61")
 metadata/_custom_type_script = "uid://jk2jm1g6q853"
 
-[node name="Cloud1" parent="." unique_id=1374114401 instance=ExtResource("7_wi4c7")]
-position = Vector2(-316, -306)
+[node name="Cloud5" parent="." unique_id=595922666 instance=ExtResource("10_nqdth")]
+position = Vector2(638, -955)
 
-[node name="Cloud2" parent="." unique_id=167543451 instance=ExtResource("8_2l77h")]
-position = Vector2(381, -534)
-
-[node name="Cloud4" type="RigidBody2D" parent="." unique_id=1225068859]
-position = Vector2(882, -808)
-gravity_scale = 0.0
-
-[node name="Sprite2D" type="Sprite2D" parent="Cloud4" unique_id=1825252203]
-position = Vector2(-5, -12)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("9_5cypo")
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cloud4" unique_id=137020600]
-position = Vector2(6.25, 14.75)
-shape = SubResource("RectangleShape2D_la7bm")
-
-[node name="Cloud3" parent="." unique_id=766989435 instance=ExtResource("9_nqdth")]
-position = Vector2(-378, -736)
+[node name="Cloud6" parent="." unique_id=1245011962 instance=ExtResource("10_nqdth")]
+position = Vector2(-188, -1351)
