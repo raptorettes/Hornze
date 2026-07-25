@@ -47,7 +47,7 @@ func load_game_scene() -> void:
 		get_tree().change_scene_to_file(get_game_scene_path())
 
 func new_game() -> void:
-	load_game_scene()
+	get_tree().change_scene_to_file("res://scenes/main_game.tscn")
 
 func try_exit_game() -> void:
 	if confirm_exit and (not exit_confirmation.visible):
