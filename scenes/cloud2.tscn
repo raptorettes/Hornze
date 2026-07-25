@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cptfngmeipjwt" path="res://assets/Clouds_1/Cloud4.png" id="1_1omb7"]
 
 [node name="Cloud2" type="RigidBody2D" unique_id=1374114401]
+mass = 6.0
 gravity_scale = 0.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1825252203]

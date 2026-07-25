@@ -254,7 +254,7 @@ position = Vector2(1, -22)
 scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_vyx2l")
 animation = &"run"
-frame_progress = 0.28410304
+frame_progress = 0.40117702
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=483050396]
 z_index = 1
