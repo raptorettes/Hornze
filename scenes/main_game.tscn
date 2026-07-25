@@ -2,6 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://dcebrnyhukik4" path="res://assets/tilesets/sprouts_maps.tres" id="1_72e8q"]
 [ext_resource type="PackedScene" uid="uid://dxm1vn1flkk7s" path="res://scenes/horse.tscn" id="1_s3esy"]
+[ext_resource type="PackedScene" uid="uid://djt1lrtv48uap" path="res://scenes/SpiritHorseScene.tscn" id="1_wjob3"]
 [ext_resource type="Script" uid="uid://couw105c3bde4" path="res://addons/godot_state_charts/state_chart.gd" id="3_0rdsr"]
 [ext_resource type="Script" uid="uid://jk2jm1g6q853" path="res://addons/godot_state_charts/compound_state.gd" id="4_ipu61"]
 [ext_resource type="Texture2D" uid="uid://bwlyiic0lko7n" path="res://scenes/KK/Sprite/BG.png" id="5_ygxny"]
@@ -104,6 +105,9 @@ exposure_multiplier = 2.807
 [sub_resource type="Compositor" id="Compositor_uxmck"]
 
 [node name="MainGame" type="Node2D" unique_id=1666445386]
+
+[node name="SpiritHorseGod" parent="." unique_id=304131339 instance=ExtResource("1_wjob3")]
+position = Vector2(336, -2007)
 
 [node name="plants" type="TileMapLayer" parent="." unique_id=3119479]
 z_index = 1
