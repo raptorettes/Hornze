@@ -188,6 +188,7 @@ tile_set = ExtResource("1_72e8q")
 [node name="Horse" parent="." unique_id=1812889003 instance=ExtResource("1_s3esy")]
 z_index = 1
 position = Vector2(277, -107)
+jumpHeight = 4.0
 
 [node name="EverythingElseLight" type="PointLight2D" parent="Horse" unique_id=1800271869]
 position = Vector2(-1.0000025, -31)
