@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cexwgwiasglgh" path="res://scenes/cloud3.tscn" id="9_nqdth"]
 [ext_resource type="PackedScene" uid="uid://hxh7onbt3xjo" path="res://scenes/cloud4.tscn" id="10_nqdth"]
 [ext_resource type="AudioStream" uid="uid://bbr0l1rrw208k" path="res://assets/Audio/SFX/SC_EK_piano_notes_C.wav" id="11_5cypo"]
+[ext_resource type="AudioStream" uid="uid://wlrvkmx2h6ew" path="res://assets/Audio/VO/SpiritHorseGod_VO.ogg" id="11_o6v7o"]
 
 [sub_resource type="Gradient" id="Gradient_5cypo"]
 offsets = PackedFloat32Array(0.0062695923, 0.9937304)
@@ -46,6 +47,25 @@ fill_to = Vector2(0.5897436, 0.35897437)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_vok5w"]
 
+[sub_resource type="Animation" id="Animation_wjob3"]
+resource_name = "SpiritHorseGod"
+length = 16.066668
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Automator/ascension")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("11_o6v7o")
+}],
+"times": PackedFloat32Array(0.06666667)
+}
+tracks/0/use_blend = true
+
 [sub_resource type="Animation" id="Animation_o6v7o"]
 resource_name = "ascension"
 length = 4.1
@@ -67,6 +87,7 @@ tracks/0/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wjob3"]
 _data = {
+&"SpiritHorseGod": SubResource("Animation_wjob3"),
 &"ascension": SubResource("Animation_o6v7o")
 }
 
