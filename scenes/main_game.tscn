@@ -2,6 +2,8 @@
 
 [ext_resource type="TileSet" uid="uid://dcebrnyhukik4" path="res://assets/tilesets/sprouts_maps.tres" id="1_72e8q"]
 [ext_resource type="PackedScene" uid="uid://dxm1vn1flkk7s" path="res://scenes/horse.tscn" id="1_s3esy"]
+[ext_resource type="Script" uid="uid://couw105c3bde4" path="res://addons/godot_state_charts/state_chart.gd" id="3_0rdsr"]
+[ext_resource type="Script" uid="uid://jk2jm1g6q853" path="res://addons/godot_state_charts/compound_state.gd" id="4_ipu61"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_vok5w"]
 
@@ -41,3 +43,11 @@ position = Vector2(-28, -690)
 position = Vector2(4, 666)
 shape = SubResource("WorldBoundaryShape2D_vok5w")
 one_way_collision = true
+
+[node name="StateChart" type="Node" parent="." unique_id=1315424544]
+script = ExtResource("3_0rdsr")
+metadata/_custom_type_script = "uid://couw105c3bde4"
+
+[node name="CompoundState" type="Node" parent="StateChart" unique_id=411088121]
+script = ExtResource("4_ipu61")
+metadata/_custom_type_script = "uid://jk2jm1g6q853"
