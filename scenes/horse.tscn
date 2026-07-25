@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://cjruusekvc03" path="res://assets/Honse_1/Honse_Spritesheet_idle.png" id="3_42vyf"]
 [ext_resource type="Texture2D" uid="uid://rs58t6jjuf2s" path="res://assets/Honse_1/jump spritesheet.png" id="4_5mwg8"]
 [ext_resource type="Texture2D" uid="uid://cytlgukyt3whd" path="res://assets/Honse_1/Honse_Spritesheet_1.png" id="4_owkpo"]
+[ext_resource type="AudioStream" uid="uid://cptksk5pos7gm" path="res://assets/Audio/SFX/K_SFX/Honse_BreatheOut.ogg" id="5_pkxfc"]
+[ext_resource type="AudioStream" uid="uid://bs5dbivsu0gm0" path="res://assets/Audio/SFX/K_SFX/Honse_Walk_1.ogg" id="7_e0gb1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ibmbh"]
 atlas = ExtResource("4_owkpo")
@@ -161,16 +163,62 @@ loop_mode = 1
 
 [sub_resource type="Animation" id="Animation_owkpo"]
 resource_name = "jump"
-length = 0.6
+length = 1.3
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HorseSFX")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5_pkxfc")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
 
 [sub_resource type="Animation" id="Animation_fjee1"]
 resource_name = "run"
-length = 0.7
+length = 1.9666667
 loop_mode = 1
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HorseSFX")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("7_e0gb1")
+}],
+"times": PackedFloat32Array(0.03333333)
+}
+tracks/0/use_blend = true
 
 [sub_resource type="Animation" id="Animation_pkxfc"]
 resource_name = "walk"
-length = 9.9
+length = 1.1333333
+loop_mode = 1
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HorseSFX")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.7671823,
+"stream": ExtResource("7_e0gb1")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gl1uc"]
 _data = {

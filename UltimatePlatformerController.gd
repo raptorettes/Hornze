@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 class_name PlatformerController2D
-
+@onready var SAnimPlayer: AnimationPlayer = $AnimationPlayer
 @export var README: String = "IMPORTANT: MAKE SURE TO ASSIGN 'left' 'right' 'jump' 'dash' 'up' 'down' in the project settings input map. Usage tips. 1. Hover over each toggle and variable to read what it does and to make sure nothing bugs. 2. Animations are very primitive. To make full use of your custom art, you may want to slightly change the code for the animations"
 #INFO READEME 
 #IMPORTANT: MAKE SURE TO ASSIGN 'left' 'right' 'jump' 'dash' 'up' 'down' in the project settings input map. THIS IS REQUIRED
@@ -269,6 +269,7 @@ func _process(_delta):
 		if abs(velocity.x) > 0.1 and is_on_floor() and !is_on_wall():
 			anim.speed_scale = abs(velocity.x / 150)
 			anim.play("run")
+			SAnimPlayer.play('run')
 		elif abs(velocity.x) < 0.1 and is_on_floor():
 			anim.speed_scale = 1
 			anim.play("idle")
@@ -277,8 +278,10 @@ func _process(_delta):
 			anim.speed_scale = abs(velocity.x / 150)
 			if abs(velocity.x) < (maxSpeedLock):
 				anim.play("walk")
+				SAnimPlayer.play("walk")
 			else:
 				anim.play("run")
+				SAnimPlayer.play('run')
 		elif abs(velocity.x) < 0.1 and is_on_floor():
 			anim.speed_scale = 1
 			anim.play("idle")
@@ -287,7 +290,7 @@ func _process(_delta):
 	if velocity.y < 0 and jump and !dashing:
 		anim.speed_scale = 1
 		anim.play("jump")
-		
+		SAnimPlayer.play ("jump")
 	if velocity.y > 40 and falling and !dashing and !crouching:
 		anim.speed_scale = 1
 		anim.play("falling")
