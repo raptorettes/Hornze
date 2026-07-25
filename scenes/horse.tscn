@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dxm1vn1flkk7s"]
+
+[ext_resource type="Script" uid="uid://ccl7k6d7g7ksk" path="res://UltimatePlatformerController.gd" id="1_7j5lf"]
+
+[node name="Horse" type="CharacterBody2D" unique_id=357995421]
+script = ExtResource("1_7j5lf")
+metadata/_custom_type_script = "uid://ccl7k6d7g7ksk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=483050396]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=482427813]
