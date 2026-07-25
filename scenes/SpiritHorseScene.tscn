@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://djt1lrtv48uap"]
+
+[ext_resource type="Texture2D" uid="uid://d1kw5p45wembg" path="res://assets/HorseGods/SpiritHorse_Portrait (1).png" id="1_g6r35"]
+
+[node name="Node2D" type="Node2D" unique_id=304131339]
+
+[node name="SpiritHorsePortrait(1)" type="Sprite2D" parent="." unique_id=584754669]
+texture = ExtResource("1_g6r35")
