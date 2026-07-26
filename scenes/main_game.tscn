@@ -374,7 +374,7 @@ texture = ExtResource("6_wi4c7")
 modulate = Color(1, 1, 1, 0)
 light_mask = 2
 visibility_layer = 2
-position = Vector2(348.99997, -1890)
+position = Vector2(361, -1725)
 scale = Vector2(0.61462, 0.61462)
 
 [node name="EverythingElseLight2" type="PointLight2D" parent="SpiritHorseGod" unique_id=1021732211]

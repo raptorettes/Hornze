@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Hornze"
+config/name="Hornse"
 run/main_scene="res://examples/scenes/opening/opening.tscn"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
@@ -36,7 +36,7 @@ enabled=PackedStringArray("res://addons/godot_state_charts/plugin.cfg", "res://a
 
 [gui]
 
-theme/custom="res://assets/vaporwave_sunset.tres"
+theme/custom="uid://cp74pqbexxuu2"
 
 [input]
 
