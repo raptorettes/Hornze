@@ -36,7 +36,7 @@ steps:
   - name: upload-and-index
     image: rclone/rclone:latest
     environment:
-      PROJECT: incubator
+      PROJECT: hornze
       # These define the [r2] remote automatically — no file needed
       RCLONE_CONFIG_R2_TYPE: s3
       RCLONE_CONFIG_R2_PROVIDER: Cloudflare
