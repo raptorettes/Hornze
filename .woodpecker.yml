@@ -5,17 +5,17 @@ steps:
       - mkdir -p exports/web
       - godot --headless --export-release "Web" exports/web/index.html
 
-  # - name: export-linux
-  #   image: docker.io/barichello/godot-ci:4.6.3
-  #   commands:
-  #     - mkdir -p exports/linux
-  #     - godot --headless --export-release "Linux/X11" exports/linux/
+  - name: export-linux
+    image: docker.io/barichello/godot-ci:4.6.3
+    commands:
+      - mkdir -p exports/linux
+      - godot --headless --export-release "Linux" ./exports/linux/hornse_linux_x64
 
-  # - name: export-windows
-  #   image: docker.io/barichello/godot-ci:4.6.3
-  #   commands:
-  #     - mkdir -p exports/windows
-  #     - godot --headless --export-release "Windows Desktop" exports/windows/
+  - name: export-windows
+    image: docker.io/barichello/godot-ci:4.6.3
+    commands:
+      - mkdir -p exports/windows
+      - godot --headless --export-release "Windows Desktop" ./exports/windows/hornse_windows.exe
 
   # - name: verify-release
   #   image: alpine
@@ -36,7 +36,7 @@ steps:
   - name: upload-and-index
     image: rclone/rclone:latest
     environment:
-      PROJECT: hornze
+      PROJECT: hornse
       # These define the [r2] remote automatically — no file needed
       RCLONE_CONFIG_R2_TYPE: s3
       RCLONE_CONFIG_R2_PROVIDER: Cloudflare
@@ -79,6 +79,8 @@ steps:
           --telemetry-key "${POSTHOG_KEY:-}"
 
         rclone copy exports/web "r2:noetic-games/builds/$PROJECT/$DATE/$REV/web"
+        rclone copy exports/linux "r2:noetic-games/builds/$PROJECT/$DATE/$REV/linux"
+        rclone copy exports/windows "r2:noetic-games/builds/$PROJECT/$DATE/$REV/windows"
         rclone copy "manifests/$DATE/$REV" "r2:noetic-games/builds/$PROJECT/$DATE/$REV"
 
         python3 ci/update-index.py \

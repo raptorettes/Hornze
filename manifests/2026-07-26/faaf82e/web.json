@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "project": "hornse",
+  "title": "Hornse",
+  "build": "2026-07-26",
+  "revision": "faaf82e",
+  "build_epoch": 1785095639,
+  "theme": {
+    "background": "#111111",
+    "accent": "#eda3c4"
+  },
+  "template": {
+    "version": "2026-07-24/0c57d8f"
+  },
+  "platform": "web",
+  "assets": {
+    "wasm": "https://games-media.noetic.work/builds/hornse/2026-07-26/faaf82e/web/index.wasm",
+    "sideWasm": "https://games-media.noetic.work/builds/hornse/2026-07-26/faaf82e/web/index.side.wasm",
+    "pck": "https://games-media.noetic.work/builds/hornse/2026-07-26/faaf82e/web/index.pck",
+    "js": "https://games-media.noetic.work/builds/hornse/2026-07-26/faaf82e/web/index.js",
+    "splash": "https://games-media.noetic.work/builds/hornse/2026-07-26/faaf82e/web/index.png",
+    "icon": "https://games-media.noetic.work/builds/hornse/2026-07-26/faaf82e/web/index.icon.png",
+    "appleTouchIcon": "https://games-media.noetic.work/builds/hornse/2026-07-26/faaf82e/web/index.apple-touch-icon.png",
+    "audioWorklet": "https://games-media.noetic.work/builds/hornse/2026-07-26/faaf82e/web/index.audio.worklet.js",
+    "audioPositionWorklet": "https://games-media.noetic.work/builds/hornse/2026-07-26/faaf82e/web/index.audio.position.worklet.js",
+    "fileSizes": {
+      "index.wasm": 1509558,
+      "index.side.wasm": 41130147,
+      "index.pck": 27575272,
+      "index.js": 5552570,
+      "index.png": 21443,
+      "index.icon.png": 5769,
+      "index.apple-touch-icon.png": 11929,
+      "index.audio.worklet.js": 7298,
+      "index.audio.position.worklet.js": 2973
+    }
+  },
+  "features": {
+    "threads": true,
+    "gdextensions": [],
+    "serviceWorker": false
+  },
+  "loadEstimates": {
+    "slow-2g": 4819,
+    "2g": 1446,
+    "3g": 207,
+    "4g": 49,
+    "wifi": 19
+  }
+}
