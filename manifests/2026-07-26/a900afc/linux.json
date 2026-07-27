@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "project": "hornse",
+  "title": "Hornse",
+  "build": "2026-07-26",
+  "revision": "a900afc",
+  "build_epoch": 1785098395,
+  "theme": {
+    "background": "#111111",
+    "accent": "#eda3c4"
+  },
+  "template": {
+    "version": "2026-07-24/0c57d8f"
+  },
+  "platform": "linux",
+  "assets": {
+    "executable": "https://games-media.noetic.work/builds/hornse/2026-07-26/a900afc/linux/hornse_linux_x64",
+    "pck": "https://games-media.noetic.work/builds/hornse/2026-07-26/a900afc/linux/hornse_linux_x64.pck",
+    "fileSizes": {
+      "hornse_linux_x64": 98659504,
+      "hornse_linux_x64.pck": 27577500
+    }
+  }
+}

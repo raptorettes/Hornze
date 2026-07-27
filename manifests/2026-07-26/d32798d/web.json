@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "project": "hornze",
+  "title": "Hornze",
+  "build": "2026-07-26",
+  "revision": "d32798d",
+  "build_epoch": 1785094684,
+  "theme": {
+    "background": "#111111",
+    "accent": "#eda3c4"
+  },
+  "template": {
+    "version": "2026-07-24/0c57d8f"
+  },
+  "platform": "web",
+  "assets": {
+    "wasm": "https://games-media.noetic.work/builds/hornze/2026-07-26/d32798d/web/index.wasm",
+    "sideWasm": "https://games-media.noetic.work/builds/hornze/2026-07-26/d32798d/web/index.side.wasm",
+    "pck": "https://games-media.noetic.work/builds/hornze/2026-07-26/d32798d/web/index.pck",
+    "js": "https://games-media.noetic.work/builds/hornze/2026-07-26/d32798d/web/index.js",
+    "splash": "https://games-media.noetic.work/builds/hornze/2026-07-26/d32798d/web/index.png",
+    "icon": "https://games-media.noetic.work/builds/hornze/2026-07-26/d32798d/web/index.icon.png",
+    "appleTouchIcon": "https://games-media.noetic.work/builds/hornze/2026-07-26/d32798d/web/index.apple-touch-icon.png",
+    "audioWorklet": "https://games-media.noetic.work/builds/hornze/2026-07-26/d32798d/web/index.audio.worklet.js",
+    "audioPositionWorklet": "https://games-media.noetic.work/builds/hornze/2026-07-26/d32798d/web/index.audio.position.worklet.js",
+    "fileSizes": {
+      "index.wasm": 1605674,
+      "index.side.wasm": 40346859,
+      "index.pck": 27561088,
+      "index.js": 5724461,
+      "index.png": 21443,
+      "index.icon.png": 5769,
+      "index.apple-touch-icon.png": 11929,
+      "index.audio.worklet.js": 7298,
+      "index.audio.position.worklet.js": 2973
+    }
+  },
+  "features": {
+    "threads": true,
+    "gdextensions": [],
+    "serviceWorker": false
+  },
+  "loadEstimates": {
+    "slow-2g": 4785,
+    "2g": 1436,
+    "3g": 206,
+    "4g": 49,
+    "wifi": 19
+  }
+}

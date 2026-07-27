@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://dy016tjd3uhhq"]
+
+[ext_resource type="Script" uid="uid://cchkf7panus23" path="res://examples/scenes/credits/scrollable_credits.gd" id="1_piom7"]
+[ext_resource type="PackedScene" uid="uid://dhg1uj8315e2x" path="res://examples/scenes/credits/credits_label.tscn" id="2_3mo00"]
+
+[node name="ScrollableCredits" type="Control" unique_id=1582148595]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_piom7")
+input_scroll_speed = 10.0
+auto_scroll_speed = null
+
+[node name="CreditsLabel" parent="." unique_id=346732506 instance=ExtResource("2_3mo00")]
+unique_name_in_owner = true
+layout_mode = 1
+text = "
+
+
+
+
+
+
+
+
+
+
+[font_size=58]
+Makers Massive: Girly Games Club Jam[/font_size]
+
+
+
+
+
+
+
+
+[font_size=48]o Jammers o[/font_size]
+
+[font_size=34]Rene - Programmer
+Keshet - Programmer, audio
+Robyn - Hornse Song
+Viwe - Sound design
+Michaela - Art
+Emaan - Art[/font_size]
+
+
+
+[font_size=48]Tools[/font_size]
+
+[font_size=40]Human Intelligence[/font_size]
+[font_size=35]Godot[/font_size]
+
+[font_size=30]Godot Minimal Game Template[/font_size]
+[font_size=25]Author:Marek 
+License: MIT License  
+
+
+[font_size=48]o Inspired by o[/font_size]
+
+[font_size=34]Terry Ross from Cute Games Club
+Hornse 
+"
+scroll_active = true

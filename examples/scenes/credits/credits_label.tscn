@@ -12,14 +12,14 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 5
 theme_override_fonts/normal_font = ExtResource("1_nmnh2")
+theme_override_font_sizes/normal_font_size = 35
 bbcode_enabled = true
-text = "
-[font_size=48]Jammers[/font_size]
+text = "[font_size=58]
+Makers Massive: Girly Games Club Jam[/font_size]
 
+[font_size=48]o Jammers o[/font_size]
 
-
-[font_size=40]Role[/font_size]
-[font_size=24]Rene - Programmer
+[font_size=34]Rene - Programmer
 Keshet - Programmer, audio
 Robyn - Hornse Song
 Viwe - Sound design
@@ -29,15 +29,19 @@ Emaan - Art[/font_size]
 
 
 [font_size=48]Tools[/font_size]
-[font_size=24]Human Intelligence[/font_size]
-[font_size=24]Godot[/font_size]
-[img=80]res:///examples/assets/godot_engine_logo/Source: [url=https://godotengine.org/]godotengine.org[/url]  
-License: [url=https://github.com/godotengine/godot/blob/master/LICENSE.txt]MIT License[/url] 
+
+[font_size=40]Human Intelligence[/font_size]
+[font_size=35]Godot[/font_size]
+
+[font_size=30]Godot Minimal Game Template[/font_size]
+[font_size=25]Author:Marek 
+License: MIT License  
 
 
-[font_size=24]Godot Minimal Game Template[/font_size]
-Author: [url=https://github.com/Maaack/Godot-Minimal-Game-Template/graphs/contributors]Marek 
-License: [url=LICENSE.txt]MIT License[/url]  
+[font_size=48]o Inspired by o[/font_size]
+
+[font_size=34]Terry Ross from Cute Games Club
+Hornse 
 "
 fit_content = true
 scroll_active = false

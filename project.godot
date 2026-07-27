@@ -10,9 +10,9 @@ config_version=5
 
 [application]
 
-config/name="Hornze"
+config/name="Hornse"
 run/main_scene="res://examples/scenes/opening/opening.tscn"
-config/features=PackedStringArray("4.7", "GL Compatibility")
+config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [audio]
@@ -25,6 +25,7 @@ driver/mix_rate=48000
 
 PhantomCameraManager="*uid://duq6jhf6unyis"
 LitManager="*uid://brf2hvdtyyw3q"
+JsBridge="*uid://d4lsgp2xomm3d"
 
 [display]
 
@@ -37,7 +38,7 @@ enabled=PackedStringArray("res://addons/godot_state_charts/plugin.cfg", "res://a
 
 [gui]
 
-theme/custom="res://assets/vaporwave_sunset.tres"
+theme/custom="uid://cp74pqbexxuu2"
 
 [input]
 

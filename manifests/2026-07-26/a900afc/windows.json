@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "project": "hornse",
+  "title": "Hornse",
+  "build": "2026-07-26",
+  "revision": "a900afc",
+  "build_epoch": 1785098395,
+  "theme": {
+    "background": "#111111",
+    "accent": "#eda3c4"
+  },
+  "template": {
+    "version": "2026-07-24/0c57d8f"
+  },
+  "platform": "windows",
+  "assets": {
+    "executable": "https://games-media.noetic.work/builds/hornse/2026-07-26/a900afc/windows/hornse_windows.exe",
+    "pck": "https://games-media.noetic.work/builds/hornse/2026-07-26/a900afc/windows/hornse_windows.pck",
+    "fileSizes": {
+      "hornse_windows.exe": 132143264,
+      "hornse_windows.pck": 27577500
+    }
+  }
+}
