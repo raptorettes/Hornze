@@ -85,7 +85,7 @@ width = 125
 height = 125
 use_hdr = true
 fill = 1
-fill_from = Vector2(0.47008547, 0.491453)
+fill_from = Vector2(0.47863248, 0.48290598)
 fill_to = Vector2(0.8354701, 0.21794872)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_vok5w"]
@@ -272,6 +272,8 @@ position = Vector2(43.999756, -1891.0002)
 scale = Vector2(0.61462003, 0.61462003)
 volume_db = -12.0
 autoplay = true
+max_distance = 4096.0
+attenuation = 0.0012885816
 playback_type = 1
 
 [node name="plants" type="TileMapLayer" parent="." unique_id=3119479]
@@ -489,4 +491,6 @@ repeat_times = 13
 ignore_camera_scroll = true
 
 [node name="Grass" type="Sprite2D" parent="Parallax2D" unique_id=1969665325]
+light_mask = 2
+visibility_layer = 2
 texture = ExtResource("15_sp04v")

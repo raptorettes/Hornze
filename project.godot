@@ -18,6 +18,8 @@ config/icon="res://icon.svg"
 [audio]
 
 buses/default_bus_layout="uid://dxf1ghha2g0pb"
+driver/driver="JACK"
+driver/mix_rate=48000
 
 [autoload]
 
@@ -28,7 +30,6 @@ LitManager="*uid://brf2hvdtyyw3q"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/size/mode=2
 
 [editor_plugins]
 
