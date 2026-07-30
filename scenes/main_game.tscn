@@ -242,17 +242,10 @@ _data = {
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vok5w"]
 
-[sub_resource type="Environment" id="Environment_tnskl"]
+[sub_resource type="Environment" id="Environment_8xp80"]
 background_mode = 3
-reflected_light_source = 1
-tonemap_mode = 1
-tonemap_agx_white = 16.5
-tonemap_agx_contrast = 1.0
 glow_enabled = true
-glow_bloom = 1.0
-glow_hdr_threshold = 0.02
-glow_hdr_scale = 2.42
-glow_hdr_luminance_cap = 0.0
+glow_bloom = 0.17
 adjustment_enabled = true
 
 [node name="MainGame" type="Node2D" unique_id=1666445386]
@@ -308,7 +301,7 @@ texture_scale = 50.0
 
 [node name="BGCanvasModulate" type="CanvasModulate" parent="BehindCouds(Layer-1)" unique_id=1452396847]
 z_index = -1
-color = Color(0.8819366, 0.8819366, 0.88193655, 1)
+color = Color(0.505344, 0.50534415, 0.5053435, 1)
 
 [node name="Cloud_Parallax_2" type="Parallax2D" parent="BehindCouds(Layer-1)" unique_id=1750145326]
 z_index = -1
@@ -349,6 +342,7 @@ texture_repeat = 2
 texture = ExtResource("6_wi4c7")
 
 [node name="FrontCloud_Modulate" type="CanvasModulate" parent="FrontClouds(Layer1)" unique_id=112197101]
+color = Color(2.454227, 2.454227, 2.454227, 0.14901961)
 
 [node name="SpiritHorseGod" parent="." unique_id=304131339 instance=ExtResource("1_wjob3")]
 modulate = Color(1, 1, 1, 0)
@@ -398,7 +392,7 @@ texture_scale = 20.71
 [node name="HorseLight" type="PointLight2D" parent="Horse" unique_id=1872890909]
 position = Vector2(-8.999996, -19)
 scale = Vector2(16.296875, 13.390625)
-energy = 0.8
+energy = 0.24
 texture = SubResource("GradientTexture2D_5cypo")
 offset = Vector2(2.99, -0.4)
 texture_scale = 1.13
@@ -417,7 +411,7 @@ offset_bottom = 40.0
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=100019648]
 position = Vector2(276, -106)
 scale = Vector2(16.296875, 13.390625)
-color = Color(0.5112589, 0.51125896, 0.51125866, 1)
+color = Color(0.446777, 0.44677705, 0.44677693, 1)
 
 [node name="Area2D" type="StaticBody2D" parent="." unique_id=2044265070]
 position = Vector2(-28, -690)
@@ -453,7 +447,7 @@ scale = Vector2(0.0396814, 0.0396814)
 texture = ExtResource("14_8xp80")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1997221062]
-environment = SubResource("Environment_tnskl")
+environment = SubResource("Environment_8xp80")
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=2056100805]
 texture_repeat = 3

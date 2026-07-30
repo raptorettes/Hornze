@@ -1,11 +1,19 @@
 [gd_scene format=3 uid="uid://dxm1vn1flkk7s"]
 
 [ext_resource type="Script" uid="uid://ccl7k6d7g7ksk" path="res://UltimatePlatformerController.gd" id="1_7j5lf"]
+[ext_resource type="Shader" uid="uid://de3lcs4m4rk1h" path="res://scenes/Horse_Shader.gdshader" id="2_pkxfc"]
 [ext_resource type="Texture2D" uid="uid://cjruusekvc03" path="res://assets/Honse_1/Honse_Spritesheet_idle.png" id="3_42vyf"]
 [ext_resource type="Texture2D" uid="uid://rs58t6jjuf2s" path="res://assets/Honse_1/jump spritesheet.png" id="4_5mwg8"]
 [ext_resource type="Texture2D" uid="uid://cytlgukyt3whd" path="res://assets/Honse_1/Honse_Spritesheet_1.png" id="4_owkpo"]
 [ext_resource type="AudioStream" uid="uid://cptksk5pos7gm" path="res://assets/Audio/SFX/K_SFX/Honse_BreatheOut.ogg" id="5_pkxfc"]
 [ext_resource type="AudioStream" uid="uid://bs5dbivsu0gm0" path="res://assets/Audio/SFX/K_SFX/Honse_Walk_1.ogg" id="7_e0gb1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ihbck"]
+shader = ExtResource("2_pkxfc")
+shader_parameter/glow_color = Color(1.8247963, 1.7619094, 1.7758842, 0.05882353)
+shader_parameter/glow_power = 2.9000000432134803
+shader_parameter/glow_shift = 3.6000000536443197
+shader_parameter/glow_radius = 4.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ibmbh"]
 atlas = ExtResource("4_owkpo")
@@ -248,13 +256,16 @@ falling = true
 metadata/_custom_type_script = "uid://ccl7k6d7g7ksk"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=337392154]
+texture_filter = 4
+material = SubResource("ShaderMaterial_ihbck")
 position = Vector2(1, -22)
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_vyx2l")
 animation = &"jump"
-frame_progress = 0.8264494
+frame_progress = 0.8172865
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=483050396]
+visible = false
 z_index = 1
 position = Vector2(-4.25, -13.5)
 shape = SubResource("RectangleShape2D_vok5w")
