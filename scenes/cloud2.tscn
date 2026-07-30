@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://caombd450c21v"]
 
 [ext_resource type="Texture2D" uid="uid://cptfngmeipjwt" path="res://assets/Clouds_1/Cloud4.png" id="1_1omb7"]
+[ext_resource type="Script" uid="uid://bc4ij01q504lf" path="res://scenes/cloud_gravity_logic.gd" id="1_up586"]
 
 [node name="Cloud2" type="RigidBody2D" unique_id=1374114401]
 mass = 6.0
 gravity_scale = 0.0
+script = ExtResource("1_up586")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1825252203]
 position = Vector2(-5, -12)
@@ -16,3 +18,12 @@ position = Vector2(6.25, 14.75)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=125194181]
 polygon = PackedVector2Array(51, -29, 78, -21, 130, -6, 132, 29, 92, 57, -64, 52, -76, 10, -139, 7, -117, -29, -84, -34, -48, -32)
+
+[node name="Cloud_Enter_Area2d" type="Area2D" parent="." unique_id=1890295677]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Cloud_Enter_Area2d" unique_id=1498865595]
+position = Vector2(-1.3676238, 1.4155159)
+scale = Vector2(1.0378228, 1.050824)
+polygon = PackedVector2Array(51, -29, 78, -21, 130, -6, 132, 29, 92, 57, -64, 52, -76, 10, -139, 7, -117, -29, -84, -34, -48, -32)
+
+[connection signal="area_entered" from="Cloud_Enter_Area2d" to="." method="_on_cloud_enter_area_2d_area_entered"]

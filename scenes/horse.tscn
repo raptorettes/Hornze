@@ -227,6 +227,9 @@ _data = {
 &"walk": SubResource("Animation_pkxfc")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tnskl"]
+size = Vector2(78, 43)
+
 [node name="Horse" type="CharacterBody2D" unique_id=357995421 node_paths=PackedStringArray("PlayerSprite", "PlayerCollider")]
 script = ExtResource("1_7j5lf")
 PlayerSprite = NodePath("AnimatedSprite2D")
@@ -261,3 +264,10 @@ one_way_collision = true
 libraries/ = SubResource("AnimationLibrary_gl1uc")
 
 [node name="HorseSFX" type="AudioStreamPlayer2D" parent="." unique_id=421012837]
+
+[node name="Cloud_Detect" type="Area2D" parent="." unique_id=1209593977]
+
+[node name="Cloud_detect_col" type="CollisionShape2D" parent="Cloud_Detect" unique_id=1697637693]
+position = Vector2(-9, 20.5)
+shape = SubResource("RectangleShape2D_tnskl")
+debug_color = Color(0.7486069, 0.20457378, 0.9999998, 0.41960785)
