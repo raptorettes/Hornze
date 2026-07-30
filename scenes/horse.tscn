@@ -7,11 +7,12 @@
 [ext_resource type="Texture2D" uid="uid://cytlgukyt3whd" path="res://assets/Honse_1/Honse_Spritesheet_1.png" id="4_owkpo"]
 [ext_resource type="AudioStream" uid="uid://cptksk5pos7gm" path="res://assets/Audio/SFX/K_SFX/Honse_BreatheOut.ogg" id="5_pkxfc"]
 [ext_resource type="AudioStream" uid="uid://bs5dbivsu0gm0" path="res://assets/Audio/SFX/K_SFX/Honse_Walk_1.ogg" id="7_e0gb1"]
+[ext_resource type="Script" uid="uid://co4hxl1qs74sp" path="res://scenes/Lazer_Script.gd" id="8_gl1uc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ihbck"]
 shader = ExtResource("2_pkxfc")
 shader_parameter/glow_color = Color(1.8247963, 1.7619094, 1.7758842, 0.05882353)
-shader_parameter/glow_power = 2.9000000432134803
+shader_parameter/glow_power = 2.500000037253
 shader_parameter/glow_shift = 3.6000000536443197
 shader_parameter/glow_radius = 4.0
 
@@ -158,6 +159,14 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Curve" id="Curve_tnskl"]
+_data = [Vector2(0, 0.6275115), 0.0, 0.0, 0, 0, Vector2(1, 0.30602777), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_uxmck"]
+offsets = PackedFloat32Array(0, 0.13968253, 0.3, 0.45238096, 0.57301587, 0.6873016, 0.8888889)
+colors = PackedColorArray(1.8247963, 1.1260523, 1.4893991, 1, 0, 0.90487134, 0.9173342, 1, 1.6990223, 1.440487, 0, 1, 1.8247963, 1.3426629, 0.9024541, 1, 1.8247963, 1.3147132, 1.2238764, 1, 1.8247963, 1.2029141, 1.8178089, 1, 0.95136625, 1.5452987, 1.8247963, 1)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vok5w"]
 size = Vector2(153.5, 107)
 
@@ -261,11 +270,28 @@ material = SubResource("ShaderMaterial_ihbck")
 position = Vector2(1, -22)
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_vyx2l")
-animation = &"jump"
-frame_progress = 0.8172865
+animation = &"idle"
+frame_progress = 0.3356524
+
+[node name="Lazer" type="Line2D" parent="AnimatedSprite2D" unique_id=1069958912]
+points = PackedVector2Array(56, -52, 593, -192)
+width = 44.0
+width_curve = SubResource("Curve_tnskl")
+gradient = SubResource("Gradient_uxmck")
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+script = ExtResource("8_gl1uc")
+
+[node name="LazerEnd" type="Marker2D" parent="AnimatedSprite2D" unique_id=2074027983]
+position = Vector2(-1676.6666, -450)
+scale = Vector2(3.3333333, 3.3333333)
+
+[node name="Eye" type="Marker2D" parent="AnimatedSprite2D" unique_id=970341604]
+position = Vector2(-190, -106.66667)
+scale = Vector2(3.3333333, 3.3333333)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=483050396]
-visible = false
 z_index = 1
 position = Vector2(-4.25, -13.5)
 shape = SubResource("RectangleShape2D_vok5w")

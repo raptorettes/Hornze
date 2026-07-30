@@ -244,9 +244,19 @@ _data = {
 
 [sub_resource type="Environment" id="Environment_8xp80"]
 background_mode = 3
+tonemap_mode = 1
+tonemap_exposure = 0.85
+tonemap_agx_white = 2.0
+tonemap_agx_contrast = 2.0
 glow_enabled = true
+glow_intensity = 1.66
 glow_bloom = 0.17
+glow_hdr_threshold = 0.85
+glow_hdr_scale = 0.34
+glow_hdr_luminance_cap = 8.26
 adjustment_enabled = true
+adjustment_contrast = 1.25
+adjustment_saturation = 1.23
 
 [node name="MainGame" type="Node2D" unique_id=1666445386]
 script = SubResource("GDScript_idtt3")
@@ -255,14 +265,14 @@ script = SubResource("GDScript_idtt3")
 position = Vector2(178, -1109)
 scale = Vector2(0.61462003, 0.61462003)
 stream = ExtResource("11_8xp80")
-volume_db = 5.0
+volume_db = -80.0
 autoplay = true
 playback_type = 1
 
 [node name="MusicLoud" type="AudioStreamPlayer2D" parent="." unique_id=714864337]
 position = Vector2(43.999756, -1891.0002)
 scale = Vector2(0.61462003, 0.61462003)
-volume_db = -12.0
+volume_db = -80.0
 autoplay = true
 playback_type = 1
 
@@ -392,7 +402,7 @@ texture_scale = 20.71
 [node name="HorseLight" type="PointLight2D" parent="Horse" unique_id=1872890909]
 position = Vector2(-8.999996, -19)
 scale = Vector2(16.296875, 13.390625)
-energy = 0.24
+energy = 0.32
 texture = SubResource("GradientTexture2D_5cypo")
 offset = Vector2(2.99, -0.4)
 texture_scale = 1.13
