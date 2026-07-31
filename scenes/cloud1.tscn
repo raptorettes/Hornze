@@ -1,12 +1,17 @@
 [gd_scene format=3 uid="uid://djhkp2f13d71m"]
 
+[ext_resource type="Script" uid="uid://bc4ij01q504lf" path="res://scenes/cloud_gravity_logic.gd" id="1_ka35u"]
 [ext_resource type="Texture2D" uid="uid://bi2x2hl80ky6x" path="res://assets/Clouds_1/Cloud1.png" id="1_lfp8t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2l77h"]
 size = Vector2(474, 42.548973)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qdken"]
+size = Vector2(474, 37)
+
 [node name="Cloud1" type="RigidBody2D" unique_id=1374114401]
 gravity_scale = 0.0
+script = ExtResource("1_ka35u")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1825252203]
 scale = Vector2(0.5, 0.5)
@@ -16,3 +21,12 @@ texture = ExtResource("1_lfp8t")
 position = Vector2(14, -1.5)
 scale = Vector2(1, 0.86958617)
 shape = SubResource("RectangleShape2D_2l77h")
+
+[node name="Cloud_Enter_Area2d" type="Area2D" parent="." unique_id=2103977902]
+
+[node name="Cloud_Enter_Col" type="CollisionShape2D" parent="Cloud_Enter_Area2d" unique_id=1540242027]
+position = Vector2(14, -1.5)
+shape = SubResource("RectangleShape2D_qdken")
+debug_color = Color(0.46854872, 0.44309253, 1, 0.41960785)
+
+[connection signal="area_entered" from="Cloud_Enter_Area2d" to="." method="_on_cloud_enter_area_2d_area_entered"]

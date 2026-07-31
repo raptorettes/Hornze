@@ -290,11 +290,13 @@ func _process(_delta):
 	if velocity.y < 0 and jump and !dashing:
 		anim.speed_scale = 1
 		anim.play("jump")
+		#SAnimPlayer.play ('jump_eyetrack')
+		$AnimatedSprite2D/Eye/Eye_Animations.play('Jumping_Eyetrack')
 		SAnimPlayer.play ("jump")
 	if velocity.y > 40 and falling and !dashing and !crouching:
 		anim.speed_scale = 1
 		anim.play("falling")
-		
+		SAnimPlayer.play("falling_eyetrack")
 	if latch and slide:
 		#wall slide and latch
 		if latched and !wasLatched:
