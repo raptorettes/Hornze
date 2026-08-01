@@ -371,7 +371,7 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tnskl"]
 size = Vector2(78, 43)
 
-[node name="Horse" type="CharacterBody2D" unique_id=357995421 node_paths=PackedStringArray("PlayerSprite", "PlayerCollider")]
+[node name="Horse" type="CharacterBody2D" unique_id=357995421 node_paths=PackedStringArray("PlayerSprite", "PlayerCollider") groups=["Horse"]]
 script = ExtResource("1_7j5lf")
 PlayerSprite = NodePath("AnimatedSprite2D")
 PlayerCollider = NodePath("CollisionShape2D")
@@ -428,7 +428,7 @@ scale = Vector2(3.3333333, 3.3333333)
 [node name="Eye_Animations" type="AnimationPlayer" parent="AnimatedSprite2D/Eye" unique_id=373198711]
 libraries/ = SubResource("AnimationLibrary_ph6uu")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=483050396]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=483050396 groups=["Horse"]]
 z_index = 1
 position = Vector2(-4.25, -13.5)
 shape = SubResource("RectangleShape2D_vok5w")
