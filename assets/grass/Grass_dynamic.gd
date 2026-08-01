@@ -18,7 +18,7 @@ func _ready() -> void:
 func _on_Grass_body_entered(body: Node) -> void:
 	if body.is_in_group("Horse"):
 		var direction = global_position.direction_to(body.global_position)
-		#var skew = body.maxSpeed
+	
 		var skew = clamp(remap(body.velocity.length() * sign(-direction.x), -body.maxSpeed, body.maxSpeed, min_skew, max_skew), min_skew, max_skew)
 		#print (skew)
 		var tween = create_tween()

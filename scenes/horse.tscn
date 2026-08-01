@@ -211,7 +211,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vok5w"]
-size = Vector2(153.5, 107)
+size = Vector2(96, 107)
 
 [sub_resource type="Animation" id="Animation_42vyf"]
 length = 0.001
@@ -430,7 +430,7 @@ libraries/ = SubResource("AnimationLibrary_ph6uu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=483050396 groups=["Horse"]]
 z_index = 1
-position = Vector2(-4.25, -13.5)
+position = Vector2(-5, -13.5)
 shape = SubResource("RectangleShape2D_vok5w")
 one_way_collision = true
 

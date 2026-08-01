@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bc4ij01q504lf" path="res://scenes/cloud_gravity_logic.gd" id="1_ka35u"]
 [ext_resource type="Texture2D" uid="uid://bi2x2hl80ky6x" path="res://assets/Clouds_1/Cloud1.png" id="1_lfp8t"]
+[ext_resource type="Material" uid="uid://k6jdy8upptgn" path="res://assets/Clouds_1/Clouds_SwayShader.tres" id="2_l2voo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2l77h"]
 size = Vector2(474, 42.548973)
@@ -14,6 +15,7 @@ gravity_scale = 0.0
 script = ExtResource("1_ka35u")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1825252203]
+material = ExtResource("2_l2voo")
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_lfp8t")
 

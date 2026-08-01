@@ -15,7 +15,7 @@ func _ready() -> void:
 	print(start_point)
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var lazer = Input.is_action_just_pressed("Ability")
 	set_point_position(0,point0)
 	set_point_position(1,point1)
@@ -24,12 +24,10 @@ func _process(delta: float) -> void:
 	else:
 		$"../LazerEnd/Cloud_lazer/Lazer_Collision".disabled = true
 	if   lazer:
-		
+
 		$"../../AnimationPlayer".play("lazer-sfx")
 		var lazer_tween = get_tree().create_tween()
 		lazer_tween.tween_property(self,"point0",start_point,0.1)
 		lazer_tween.tween_property(self,"point1",end_point,0.1)
 		lazer_tween.tween_property(self,"point0",start_point,0.1)
 		lazer_tween.tween_property(self,"point1",start_point,0.1)
-
-		

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://caombd450c21v"]
 
 [ext_resource type="Texture2D" uid="uid://cptfngmeipjwt" path="res://assets/Clouds_1/Cloud4.png" id="1_1omb7"]
+[ext_resource type="Material" uid="uid://k6jdy8upptgn" path="res://assets/Clouds_1/Clouds_SwayShader.tres" id="1_i1dcj"]
 [ext_resource type="Script" uid="uid://bc4ij01q504lf" path="res://scenes/cloud_gravity_logic.gd" id="1_up586"]
 
 [node name="Cloud2" type="RigidBody2D" unique_id=1374114401]
@@ -14,6 +15,7 @@ scale = Vector2(0.3, 0.3)
 texture = ExtResource("1_1omb7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=137020600]
+material = ExtResource("1_i1dcj")
 position = Vector2(6.25, 14.75)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=125194181]

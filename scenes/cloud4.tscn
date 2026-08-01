@@ -2,12 +2,15 @@
 
 [ext_resource type="Texture2D" uid="uid://gai402lgwt6o" path="res://assets/Clouds_1/Cloud5.png" id="1_27f51"]
 [ext_resource type="Script" uid="uid://bc4ij01q504lf" path="res://scenes/cloud_gravity_logic.gd" id="1_f38w8"]
+[ext_resource type="Material" uid="uid://k6jdy8upptgn" path="res://assets/Clouds_1/Clouds_SwayShader.tres" id="1_itf8n"]
 
 [node name="Cloud4" type="RigidBody2D" unique_id=1374114401]
+material = ExtResource("1_itf8n")
 gravity_scale = 0.0
 script = ExtResource("1_f38w8")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1825252203]
+material = ExtResource("1_itf8n")
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("1_27f51")
 
@@ -21,6 +24,6 @@ polygon = PackedVector2Array(20.133347, -50.33336, 55.03115, -35.56891, 87.91562
 [node name="Polygon2D" type="CollisionPolygon2D" parent="Cloud_Enter_Area2d" unique_id=833141994]
 position = Vector2(3.0169606, 1.7019272)
 scale = Vector2(1.5406111, 1.5760309)
-polygon = PackedVector2Array(20.133347, -50.33336, 55.03115, -35.56891, 87.91562, -4.0266685, 89.928955, 11.408895, 30.20002, 19.462233, 38.25336, 45.63558, -47.648922, 38.924465, -35.568916, 14.764452, -90.60007, 10.066672, -74.493385, -18.12001, -33.55558, -39.595577)
+polygon = PackedVector2Array(20.133347, -50.33336, 55.03115, -35.56891, 87.91562, -4.0266685, 89.928955, 11.408895, 30.20002, 19.462233, 38.25336, 45.63558, -47.648922, 38.924465, -35.568916, 14.764452, -90.60007, 10.066672, -76.60399, -19.480536, -34.412937, -41.05372)
 
 [connection signal="area_entered" from="Cloud_Enter_Area2d" to="." method="_on_cloud_enter_area_2d_area_entered"]
