@@ -13,28 +13,40 @@
 [ext_resource type="AudioStream" uid="uid://7joxx7i50wy8" path="res://assets/Audio/MUSIC/hornse_WIP_canonecho.ogg" id="11_8xp80"]
 [ext_resource type="AudioStream" uid="uid://wlrvkmx2h6ew" path="res://assets/Audio/VO/SpiritHorseGod_VO.ogg" id="11_o6v7o"]
 [ext_resource type="Texture2D" uid="uid://gxu7afyjrfq0" path="res://assets/GlitterShroom.png" id="14_8xp80"]
+[ext_resource type="PackedScene" uid="uid://b3ptidiwjsdgb" path="res://scenes/grass_dynamic.tscn" id="15_ihbck"]
 [ext_resource type="Texture2D" uid="uid://dbqiuv0p8pyfw" path="res://assets/Grass.png" id="15_sp04v"]
 
 [sub_resource type="GDScript" id="GDScript_idtt3"]
 script/source = "extends Node2D
 @onready var animation_player = $Automator
 var has_entered : bool = false
+@onready var mushroom: Area2D = $Cloud4/Mushroom
+@onready var mushroom_2: Area2D = $Mushroom2
+
+var mushroom2
 
 func _ready() -> void:
-	$Mushroom.body_entered.connect(_on_body_entered)
+#	mushroom.body_entered.connect(_on_body_entered)
+	#$Mushroom2.body_entered.connect(_on_body_entered)
 	
 	$\"Music Soft\".play()
-
+#### unlock 3rd double jump + gravity modifier on eating 2nd mushroom.
 func _on_body_entered(body: Node2D) -> void:
-	if has_entered:
-		
-		
-		return
-	has_entered = true
-	animation_player.play(\"SpiritHorseGod\")
-	$\"Music Soft\".stop()
-	#$MusicLoud.play()
+	if body.is_in_group(\"Horse\"):
+		animation_player.play(\"SpiritHorseGod\")
+		$\"Music Soft\".stop()
+		$Horse.gravityScale *=2
+		mushroom.queue_free()
+
+
+### Unlock first double jump, when eating mushroom on the ground
+func _on_mushroom_2_body_entered(body: Node2D) -> void:
+	if body.is_in_group(\"Horse\"):
+		$Horse.jumps += 1
+		mushroom_2.queue_free()
 "
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vok5w"]
 
 [sub_resource type="Gradient" id="Gradient_wjob3"]
 offsets = PackedFloat32Array(0, 0.59090906)
@@ -241,8 +253,6 @@ _data = {
 &"ascension": SubResource("Animation_o6v7o")
 }
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_vok5w"]
-
 [sub_resource type="Environment" id="Environment_8xp80"]
 background_mode = 3
 tonemap_mode = 1
@@ -261,6 +271,11 @@ adjustment_saturation = 1.23
 
 [node name="MainGame" type="Node2D" unique_id=1666445386]
 script = SubResource("GDScript_idtt3")
+
+[node name="Grass_dynamic" parent="." unique_id=1522117246 instance=ExtResource("15_ihbck")]
+z_index = 1
+position = Vector2(414.00003, -206)
+scale = Vector2(0.134, 0.134)
 
 [node name="Music Soft" type="AudioStreamPlayer2D" parent="." unique_id=1263514825]
 position = Vector2(178, -1109)
@@ -291,6 +306,22 @@ position = Vector2(-378, -736)
 
 [node name="Cloud4" parent="." unique_id=929703140 instance=ExtResource("8_2l77h")]
 position = Vector2(346, -1373)
+
+[node name="Mushroom" type="Area2D" parent="Cloud4" unique_id=2107591105]
+position = Vector2(-48, -46)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cloud4/Mushroom" unique_id=1268883]
+position = Vector2(0, -8.000001)
+scale = Vector2(1.5870421, 1.5870421)
+shape = SubResource("CircleShape2D_vok5w")
+
+[node name="TextureRect" type="TextureRect" parent="Cloud4/Mushroom" unique_id=1367559193]
+offset_left = -18.999998
+offset_top = -25.999998
+offset_right = 1061.0
+offset_bottom = 1054.0
+scale = Vector2(0.0396814, 0.0396814)
+texture = ExtResource("14_8xp80")
 
 [node name="Cloud5" parent="." unique_id=595922666 instance=ExtResource("10_nqdth")]
 position = Vector2(638, -955)
@@ -389,6 +420,7 @@ position = Vector2(276, -130)
 maxSpeed = 200.0
 timeToReachMaxSpeed = 0.2
 jumpHeight = 4.0
+jumps = 1
 
 [node name="EverythingElseLight" type="PointLight2D" parent="Horse" unique_id=1800271869]
 position = Vector2(-1.0000025, -31)
@@ -442,15 +474,19 @@ one_way_collision = true
 [node name="Automator" type="AnimationPlayer" parent="." unique_id=977688227]
 libraries/ = SubResource("AnimationLibrary_wjob3")
 
-[node name="Mushroom" type="Area2D" parent="." unique_id=2107591105]
-position = Vector2(298, -1419)
+[node name="Mushroom2" type="Area2D" parent="." unique_id=1041969168]
+light_mask = 3
+visibility_layer = 3
+z_index = 1
+position = Vector2(967, -26)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Mushroom" unique_id=1268883]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mushroom2" unique_id=1882206166]
 position = Vector2(0, -8.000001)
 scale = Vector2(1.5870421, 1.5870421)
 shape = SubResource("CircleShape2D_vok5w")
 
-[node name="TextureRect" type="TextureRect" parent="Mushroom" unique_id=1367559193]
+[node name="TextureRect" type="TextureRect" parent="Mushroom2" unique_id=1329086149]
+modulate = Color(1.4369954, 1.4369954, 1.4369954, 1)
 offset_left = -18.999998
 offset_top = -25.999998
 offset_right = 1061.0
@@ -472,3 +508,6 @@ ignore_camera_scroll = true
 [node name="Grass" type="Sprite2D" parent="Parallax2D" unique_id=1969665325]
 position = Vector2(7425.91, 0)
 texture = ExtResource("15_sp04v")
+
+[connection signal="body_entered" from="Cloud4/Mushroom" to="." method="_on_body_entered"]
+[connection signal="body_entered" from="Mushroom2" to="." method="_on_mushroom_2_body_entered"]

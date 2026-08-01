@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://b3ptidiwjsdgb"]
+
+[ext_resource type="Script" uid="uid://cmr0u7ks5u5e4" path="res://assets/grass/Grass_dynamic.gd" id="1_e5how"]
+[ext_resource type="Texture2D" uid="uid://bo7tdoaybae8e" path="res://assets/grass/grass_blade_1.png" id="2_e5how"]
+[ext_resource type="Material" uid="uid://cbdmw7gignire" path="res://assets/grass/grass_sway_ShaderMaterial.tres" id="2_qgtj7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kdjmg"]
+size = Vector2(620, 772.5)
+
+[node name="Grass_dynamic" type="Area2D" unique_id=1522117246]
+script = ExtResource("1_e5how")
+
+[node name="GrassBlade1" type="Sprite2D" parent="." unique_id=224369485]
+material = ExtResource("2_qgtj7")
+position = Vector2(-7, 5)
+texture = ExtResource("2_e5how")
+offset = Vector2(-264, -353)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1894751307]
+position = Vector2(-320, -330.75)
+shape = SubResource("RectangleShape2D_kdjmg")
+
+[connection signal="body_entered" from="." to="." method="_on_Grass_body_entered"]
