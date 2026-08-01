@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cck7h48uou84v"]
+[gd_scene format=4 uid="uid://cck7h48uou84v"]
 
 [ext_resource type="AudioStream" uid="uid://bq6xlhqakffi2" path="res://assets/Audio/HORNE_RAINBOW_REMIX.ogg" id="1_8xp80"]
 [ext_resource type="PackedScene" uid="uid://dxm1vn1flkk7s" path="res://scenes/horse.tscn" id="1_s3esy"]
@@ -269,6 +269,12 @@ adjustment_enabled = true
 adjustment_contrast = 1.25
 adjustment_saturation = 1.23
 
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_sp04v"]
+scenes/1/scene = ExtResource("15_ihbck")
+
+[sub_resource type="TileSet" id="TileSet_vyx2l"]
+sources/0 = SubResource("TileSetScenesCollectionSource_sp04v")
+
 [node name="MainGame" type="Node2D" unique_id=1666445386]
 script = SubResource("GDScript_idtt3")
 
@@ -497,6 +503,12 @@ texture = ExtResource("14_8xp80")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1997221062]
 environment = SubResource("Environment_8xp80")
 
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1126619653]
+position = Vector2(-504.00003, -101.99999)
+scale = Vector2(0.134, 0.134)
+tile_map_data = PackedByteArray("AAAzAQAAAAAAAAAAAQBoAf//AAAAAAAAAQA2AQsAAAAAAAAAAQA8AQsAAAAAAAAAAQBaAQoAAAAAAAAAAQCDAfP/AAAAAAAAAQCHASUAAAAAAAAAAQClAQcAAAAAAAAAAQDHAdj/AAAAAAAAAQDVAQgAAAAAAAAAAQD+ABUAAAAAAAAAAQAMAe//AAAAAAAAAQAoAcn/AAAAAAAAAQAxATIAAAAAAAAAAQBXASgAAAAAAAAAAQCxASoAAAAAAAAAAQCgAcv/AAAAAAAAAQDIASwAAAAAAAAAAQDjAQwAAAAAAAAAAQA=")
+tile_set = SubResource("TileSet_vyx2l")
+
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=2056100805]
 texture_repeat = 3
 scale = Vector2(0.134, 0.134)
@@ -506,8 +518,28 @@ repeat_times = 21
 ignore_camera_scroll = true
 
 [node name="Grass" type="Sprite2D" parent="Parallax2D" unique_id=1969665325]
+visible = false
 position = Vector2(7425.91, 0)
 texture = ExtResource("15_sp04v")
 
 [connection signal="body_entered" from="Cloud4/Mushroom" to="." method="_on_body_entered"]
 [connection signal="body_entered" from="Mushroom2" to="." method="_on_mushroom_2_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/Grass_dynamic" to="TileMapLayer/Grass_dynamic" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@36946" to="TileMapLayer/@Area2D@36946" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@36947" to="TileMapLayer/@Area2D@36947" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@36948" to="TileMapLayer/@Area2D@36948" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@36949" to="TileMapLayer/@Area2D@36949" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@36950" to="TileMapLayer/@Area2D@36950" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@36951" to="TileMapLayer/@Area2D@36951" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@36952" to="TileMapLayer/@Area2D@36952" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@36953" to="TileMapLayer/@Area2D@36953" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@36954" to="TileMapLayer/@Area2D@36954" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@36955" to="TileMapLayer/@Area2D@36955" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@36956" to="TileMapLayer/@Area2D@36956" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@36957" to="TileMapLayer/@Area2D@36957" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@36958" to="TileMapLayer/@Area2D@36958" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@36959" to="TileMapLayer/@Area2D@36959" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@36960" to="TileMapLayer/@Area2D@36960" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@36961" to="TileMapLayer/@Area2D@36961" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@36962" to="TileMapLayer/@Area2D@36962" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@36963" to="TileMapLayer/@Area2D@36963" method="_on_Grass_body_entered"]

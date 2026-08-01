@@ -39,6 +39,7 @@ void vertex() {
 }"
 
 [resource]
+resource_local_to_scene = true
 shader = SubResource("7")
 shader_parameter/speed = 1.0
 shader_parameter/minStrength = 0.05
