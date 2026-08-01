@@ -5,19 +5,23 @@
 [ext_resource type="Material" uid="uid://cbdmw7gignire" path="res://assets/grass/grass_sway_ShaderMaterial.tres" id="2_qgtj7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kdjmg"]
-size = Vector2(620, 772.5)
+size = Vector2(12.2952, 163.83229)
 
 [node name="Grass_dynamic" type="Area2D" unique_id=1522117246]
+monitorable = false
 script = ExtResource("1_e5how")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1894751307]
+position = Vector2(-4.644207, -440.0903)
+scale = Vector2(5.2631583, 5.248168)
+shape = SubResource("RectangleShape2D_kdjmg")
+
 [node name="GrassBlade1" type="Sprite2D" parent="." unique_id=224369485]
+modulate = Color(0.56851363, 0.56851363, 0.56851363, 1)
 material = ExtResource("2_qgtj7")
-position = Vector2(-7, 5)
+position = Vector2(7.079999, 1.7787625)
+scale = Vector2(0.5, 1.253)
 texture = ExtResource("2_e5how")
 offset = Vector2(-264, -353)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1894751307]
-position = Vector2(-320, -330.75)
-shape = SubResource("RectangleShape2D_kdjmg")
 
 [connection signal="body_entered" from="." to="." method="_on_Grass_body_entered"]
