@@ -49,13 +49,14 @@ fill = 1
 fill_from = Vector2(0.46581197, 0.508547)
 
 [sub_resource type="Gradient" id="Gradient_5cypo"]
-offsets = PackedFloat32Array(0.0062695923, 0.9937304)
-colors = PackedColorArray(0.4745098, 0.6784314, 0.85490197, 1, 0.8927876, 0.9368605, 0.9761545, 1)
+offsets = PackedFloat32Array(0, 0.23197491, 0.4357367, 0.64106584, 0.82758623, 1)
+colors = PackedColorArray(0.6862745, 0.85490197, 1, 1, 0.49019608, 0.7176471, 0.9843137, 1, 0.29803923, 0.7529412, 0.9764706, 1, 0.5376, 0.86144006, 0.96, 1, 0.74509805, 0.9372549, 0.9882353, 1, 0.8980392, 0.99607843, 0.99215686, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_tnskl"]
 gradient = SubResource("Gradient_5cypo")
-fill_from = Vector2(0.54273504, 0.59615386)
-fill_to = Vector2(0.45726496, 0)
+use_hdr = true
+fill_from = Vector2(0.47863248, 0.15598291)
+fill_to = Vector2(0.491453, 0.991453)
 
 [sub_resource type="Gradient" id="Gradient_8xp80"]
 
@@ -167,7 +168,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 2.2666667, 10.133333, 16.066668),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(2, 2), Vector2(1.3, 1.3), Vector2(1.3, 1.3), Vector2(2, 2)]
+"values": [Vector2(2, 2), Vector2(1, 1), Vector2(1, 1), Vector2(2, 2)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -301,13 +302,13 @@ position = Vector2(-495, -1515)
 layer = -1
 
 [node name="Sun" type="PointLight2D" parent="BehindCouds(Layer-1)" unique_id=1546372585]
-position = Vector2(-1394, -3470)
-color = Color(0.9366474, 0.76388973, 0.171601, 1)
-energy = 0.2
+position = Vector2(-3501, -3629)
+color = Color(1.7129971, 1.4055498, 0.35044625, 1)
+energy = 0.39
 range_layer_min = -1
 range_item_cull_mask = 3
 texture = SubResource("GradientTexture2D_uxmck")
-texture_scale = 50.0
+texture_scale = 23.37
 
 [node name="BGCanvasModulate" type="CanvasModulate" parent="BehindCouds(Layer-1)" unique_id=1452396847]
 z_index = -1
@@ -318,16 +319,16 @@ z_index = -1
 repeat_size = Vector2(3508, 0)
 repeat_times = 2
 follow_viewport = false
-ignore_camera_scroll = true
 
 [node name="Blue_BG_Gradient_1" type="Sprite2D" parent="BehindCouds(Layer-1)/Cloud_Parallax_2" unique_id=439173513]
+visible = false
 position = Vector2(781.5, 1046)
 scale = Vector2(1.4455531, 1.8435484)
 texture = ExtResource("5_ygxny")
 
 [node name="Blue_BG_Extend" type="Sprite2D" parent="BehindCouds(Layer-1)/Cloud_Parallax_2" unique_id=1756781010]
-position = Vector2(816.9999, -1924)
-scale = Vector2(80.78126, 61.125)
+position = Vector2(816.9999, -1686)
+scale = Vector2(80.78126, 68.5625)
 texture = SubResource("GradientTexture2D_tnskl")
 
 [node name="FrontClouds(Layer1)" type="ParallaxBackground" parent="." unique_id=2039391621]
@@ -358,12 +359,13 @@ color = Color(2.454227, 2.454227, 2.454227, 0.14901961)
 modulate = Color(1, 1, 1, 0)
 light_mask = 2
 visibility_layer = 2
-position = Vector2(361, -1725)
-scale = Vector2(0.61462, 0.61462)
+position = Vector2(373, -1818)
+scale = Vector2(0.5, 0.5)
 
 [node name="EverythingElseLight2" type="PointLight2D" parent="SpiritHorseGod" unique_id=1021732211]
-position = Vector2(532.036, -730.53296)
+position = Vector2(517.5, -915.0001)
 scale = Vector2(26.515371, 21.786839)
+color = Color(0.7524303, 0.7524303, 0.7524303, 1)
 energy = 0.52
 range_z_max = 0
 range_layer_min = -1
@@ -383,7 +385,7 @@ volume_db = 6.0
 
 [node name="Horse" parent="." unique_id=1812889003 instance=ExtResource("1_s3esy")]
 z_index = 1
-position = Vector2(277, -107)
+position = Vector2(276, -130)
 maxSpeed = 200.0
 timeToReachMaxSpeed = 0.2
 jumpHeight = 4.0
