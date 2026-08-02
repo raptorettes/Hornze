@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dxm1vn1flkk7s"]
 
 [ext_resource type="Script" uid="uid://ccl7k6d7g7ksk" path="res://UltimatePlatformerController.gd" id="1_7j5lf"]
-[ext_resource type="Shader" uid="uid://de3lcs4m4rk1h" path="res://scenes/Horse_Shader.gdshader" id="2_pkxfc"]
+[ext_resource type="Material" uid="uid://c0hgx26ysny3a" path="res://assets/Honse_1/HonseMateriall.tres" id="2_e0gb1"]
 [ext_resource type="Texture2D" uid="uid://cjruusekvc03" path="res://assets/Honse_1/Honse_Spritesheet_idle.png" id="3_42vyf"]
 [ext_resource type="Texture2D" uid="uid://rs58t6jjuf2s" path="res://assets/Honse_1/jump spritesheet.png" id="4_5mwg8"]
 [ext_resource type="Texture2D" uid="uid://cytlgukyt3whd" path="res://assets/Honse_1/Honse_Spritesheet_1.png" id="4_owkpo"]
@@ -9,13 +9,6 @@
 [ext_resource type="AudioStream" uid="uid://bs5dbivsu0gm0" path="res://assets/Audio/SFX/K_SFX/Honse_Walk_1.ogg" id="7_e0gb1"]
 [ext_resource type="AudioStream" uid="uid://div0oe42cfawk" path="res://assets/Audio/SFX/V_SFX/LAZER_SHOT.ogg" id="8_e0gb1"]
 [ext_resource type="Script" uid="uid://co4hxl1qs74sp" path="res://scenes/Lazer_Script.gd" id="8_gl1uc"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ihbck"]
-shader = ExtResource("2_pkxfc")
-shader_parameter/glow_color = Color(1.3528494, 1.2994711, 1.3101469, 0.09803922)
-shader_parameter/glow_power = 2.500000037253
-shader_parameter/glow_shift = 3.6000000536443197
-shader_parameter/glow_radius = 4.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ibmbh"]
 atlas = ExtResource("4_owkpo")
@@ -392,12 +385,12 @@ metadata/_custom_type_script = "uid://ccl7k6d7g7ksk"
 light_mask = 2
 visibility_layer = 2
 texture_filter = 4
-material = SubResource("ShaderMaterial_ihbck")
+material = ExtResource("2_e0gb1")
 position = Vector2(1, -22)
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_vyx2l")
 animation = &"idle"
-frame = 1
+frame_progress = 0.9922556
 
 [node name="Lazer" type="Line2D" parent="AnimatedSprite2D" unique_id=1069958912 groups=["Lazer"]]
 modulate = Color(3.241104, 2.6437838, 2.5382175, 1)

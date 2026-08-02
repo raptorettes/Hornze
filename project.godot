@@ -153,6 +153,7 @@ copy_path="res://examples/"
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method.mobile="forward_plus"
 viewport/hdr_2d=true
+anti_aliasing/quality/use_debanding=true
 
 [shader_globals]
 

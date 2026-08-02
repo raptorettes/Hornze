@@ -17,7 +17,7 @@ scale = Vector2(5.2631583, 5.248168)
 shape = SubResource("RectangleShape2D_kdjmg")
 
 [node name="GrassBlade1" type="Sprite2D" parent="." unique_id=224369485]
-modulate = Color(0.56851363, 0.56851363, 0.56851363, 1)
+modulate = Color(0.7919991, 0.79199916, 0.7919991, 1)
 material = ExtResource("2_qgtj7")
 position = Vector2(7.079999, 1.7787625)
 scale = Vector2(0.5, 1.253)

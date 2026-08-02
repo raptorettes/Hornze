@@ -1,6 +1,7 @@
 [gd_resource type="ShaderMaterial" format=3 uid="uid://c0hgx26ysny3a"]
 
-[ext_resource type="Shader" uid="uid://bbqkt4dkh6yuo" path="res://scenes/HorseShader2.tres" id="1_vbmnn"]
+[ext_resource type="Shader" uid="uid://ci4ou7xqqi184" path="res://scenes/Horse_VShader.tres" id="1_vbmnn"]
 
 [resource]
 shader = ExtResource("1_vbmnn")
+shader_parameter/Bloom_Intensity = 0.50400002394
