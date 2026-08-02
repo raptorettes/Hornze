@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://k6jdy8upptgn"]
+
+[ext_resource type="Shader" uid="uid://dwhigr0885lk5" path="res://assets/Clouds_1/Clouds_Sway.gdshader" id="1_ewcs3"]
+
+[resource]
+resource_local_to_scene = true
+shader = ExtResource("1_ewcs3")
