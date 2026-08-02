@@ -3,7 +3,8 @@
 [resource]
 seed = 2
 frequency = 0.0029
-offset = Vector3(-651.85, -74.07, -132.35)
+offset = Vector3(-48.4, -74.07, -132.35)
 fractal_lacunarity = 2.49
 fractal_gain = 0.39
 fractal_weighted_strength = 0.15
+metadata/_preview_in_3d_space_ = true

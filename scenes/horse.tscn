@@ -12,7 +12,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ihbck"]
 shader = ExtResource("2_pkxfc")
-shader_parameter/glow_color = Color(1.8247963, 1.7619094, 1.7758842, 0.05882353)
+shader_parameter/glow_color = Color(1.3528494, 1.2994711, 1.3101469, 0.09803922)
 shader_parameter/glow_power = 2.500000037253
 shader_parameter/glow_shift = 3.6000000536443197
 shader_parameter/glow_radius = 4.0
@@ -389,6 +389,8 @@ falling = true
 metadata/_custom_type_script = "uid://ccl7k6d7g7ksk"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=337392154]
+light_mask = 2
+visibility_layer = 2
 texture_filter = 4
 material = SubResource("ShaderMaterial_ihbck")
 position = Vector2(1, -22)
