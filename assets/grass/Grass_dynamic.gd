@@ -18,13 +18,13 @@ func _ready() -> void:
 func _on_Grass_body_entered(body: Node) -> void:
 	if body.is_in_group("Horse"):
 		var direction = global_position.direction_to(body.global_position)
-
-		var skew_sprite = clamp(remap(body.velocity.length() * sign(-direction.x), -body.maxSpeed, body.maxSpeed, min_skew, max_skew), min_skew, max_skew)
+	
+		var skew = clamp(remap(body.velocity.length() * sign(-direction.x), -body.maxSpeed, body.maxSpeed, min_skew, max_skew), min_skew, max_skew)
 		#print (skew)
 		var tween = create_tween()
 		tween.set_ease(Tween.EASE_OUT)
 		tween.set_trans(Tween.TRANS_ELASTIC)
-		tween.tween_property(grass_blade_1.material, "shader_parameter/skew_sprite", skew_sprite, 1)
+		tween.tween_property(grass_blade_1.material, "shader_parameter/skew", skew, 1)
 		tween.set_ease(Tween.EASE_OUT)
 		tween.set_trans(Tween.TRANS_SPRING)
-		tween.tween_property(grass_blade_1.material, "shader_parameter/skew_sprite", 0.0, 3.0)
+		tween.tween_property(grass_blade_1.material, "shader_parameter/skew", 0.0, 3.0)
