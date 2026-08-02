@@ -2,6 +2,5 @@
 .godot/
 /android/
 /.direnv
-/exports/web
-/exports/linux
-/exports/windows
+/exports
+/manifests

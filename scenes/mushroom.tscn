@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://btcomq13xp5w3"]
+
+[ext_resource type="Script" uid="uid://7agnc7xvraas" path="res://scripts/mushroom.gd" id="1_0bdi0"]
+[ext_resource type="Texture2D" uid="uid://gxu7afyjrfq0" path="res://assets/Pickups/GlitterShroom.png" id="1_b0s10"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vok5w"]
+
+[node name="Mushroom" type="Area2D" unique_id=1142190676]
+light_mask = 3
+visibility_layer = 3
+z_index = 1
+script = ExtResource("1_0bdi0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=800618163]
+position = Vector2(0, -8.000001)
+scale = Vector2(1.5870421, 1.5870421)
+shape = SubResource("CircleShape2D_vok5w")
+
+[node name="MushroomSprite" type="Sprite2D" parent="." unique_id=1072607785]
+unique_name_in_owner = true
+modulate = Color(1.4369954, 1.4369954, 1.4369954, 1)
+position = Vector2(0.99999994, -8.999999)
+scale = Vector2(0.0396814, 0.0396814)
+texture = ExtResource("1_b0s10")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

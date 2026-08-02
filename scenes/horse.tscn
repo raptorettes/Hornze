@@ -68,7 +68,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ibmbh")
 }],
-"loop": 1,
+"loop": true,
 "name": &"falling",
 "speed": 5.0
 }, {
@@ -79,7 +79,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5mwg8")
 }],
-"loop": 1,
+"loop": true,
 "name": &"idle",
 "speed": 5.0
 }, {
@@ -96,7 +96,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_iiq8v")
 }],
-"loop": 1,
+"loop": true,
 "name": &"jump",
 "speed": 5.0
 }, {
@@ -122,7 +122,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fesdn")
 }],
-"loop": 1,
+"loop": true,
 "name": &"run",
 "speed": 10.0
 }, {
@@ -148,7 +148,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fesdn")
 }],
-"loop": 1,
+"loop": true,
 "name": &"walk",
 "speed": 5.0
 }]
@@ -223,7 +223,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_0oyf6"]
 resource_name = "falling_eyetrack"
-length = 0.20002000298053027
+length = 0.20002
 step = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -364,7 +364,7 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tnskl"]
 size = Vector2(78, 43)
 
-[node name="Horse" type="CharacterBody2D" unique_id=357995421 node_paths=PackedStringArray("PlayerSprite", "PlayerCollider") groups=["Horse"]]
+[node name="Horse" type="CharacterBody2D" unique_id=357995421 node_paths=PackedStringArray("PlayerSprite", "PlayerCollider", "leftRaycast", "middleRaycast", "rightRaycast") groups=["Horse"]]
 script = ExtResource("1_7j5lf")
 PlayerSprite = NodePath("AnimatedSprite2D")
 PlayerCollider = NodePath("CollisionShape2D")
@@ -374,12 +374,30 @@ jumpHeight = 3.0
 jumps = 3
 wallJump = true
 dashType = 1
+cornerCutting = true
+leftRaycast = NodePath("Rays/Left")
+middleRaycast = NodePath("Rays/Mid")
+rightRaycast = NodePath("Rays/Right")
 run = true
 jump = true
 idle = true
 walk = true
 falling = true
 metadata/_custom_type_script = "uid://ccl7k6d7g7ksk"
+
+[node name="Rays" type="Node2D" parent="." unique_id=1395449674]
+
+[node name="Left" type="RayCast2D" parent="Rays" unique_id=1645675043]
+position = Vector2(-50, -68)
+target_position = Vector2(0, -50)
+
+[node name="Mid" type="RayCast2D" parent="Rays" unique_id=1120380913]
+position = Vector2(-1, -68)
+target_position = Vector2(0, -50)
+
+[node name="Right" type="RayCast2D" parent="Rays" unique_id=1059278767]
+position = Vector2(41, -67)
+target_position = Vector2(0, -50)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=337392154]
 light_mask = 2
