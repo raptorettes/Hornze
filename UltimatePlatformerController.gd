@@ -268,34 +268,41 @@ func _process(_delta):
 	if run and idle and !dashing and !crouching:
 		if abs(velocity.x) > 0.1 and is_on_floor() and !is_on_wall():
 			anim.speed_scale = abs(velocity.x / 150)
-			anim.play("run")
-			SAnimPlayer.play('run')
+			#anim.play("run")
+			#SAnimPlayer.play('run')
+			$AnimatedSprite2D/Eye/Eye_Animations.play("Run_eyetrack")
 		elif abs(velocity.x) < 0.1 and is_on_floor():
 			anim.speed_scale = 1
-			anim.play("idle")
+			#anim.play("idle")
+			#SAnimPlayer.play("idle")
+			$AnimatedSprite2D/Eye/Eye_Animations.play("idle")
 	elif run and idle and walk and !dashing and !crouching:
 		if abs(velocity.x) > 0.1 and is_on_floor() and !is_on_wall():
 			anim.speed_scale = abs(velocity.x / 150)
 			if abs(velocity.x) < (maxSpeedLock):
-				anim.play("walk")
+				#anim.play("walk")
 				SAnimPlayer.play("walk")
+				$AnimatedSprite2D/Eye/Eye_Animations.play("Walk_Eyetrack")
 			else:
-				anim.play("run")
+				#anim.play("run")
 				SAnimPlayer.play('run')
+				$AnimatedSprite2D/Eye/Eye_Animations.play("Run_eyetrack")
 		elif abs(velocity.x) < 0.1 and is_on_floor():
 			anim.speed_scale = 1
-			anim.play("idle")
+			#anim.play("idle")
+			#SAnimPlayer.play("idle")
+			$AnimatedSprite2D/Eye/Eye_Animations.play("idle")
 
 	#jump
 	if velocity.y < 0 and jump and !dashing:
 		anim.speed_scale = 1
-		anim.play("jump")
+		#anim.play("jump")
 		#SAnimPlayer.play ('jump_eyetrack')
 		$AnimatedSprite2D/Eye/Eye_Animations.play('Jumping_Eyetrack')
-		SAnimPlayer.play ("jump")
+		#SAnimPlayer.play ("jump")
 	if velocity.y > 40 and falling and !dashing and !crouching:
 		anim.speed_scale = 1
-		anim.play("falling")
+		#anim.play("falling")
 		SAnimPlayer.play("falling_eyetrack")
 	if latch and slide:
 		#wall slide and latch
