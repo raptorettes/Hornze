@@ -18,7 +18,11 @@
 [ext_resource type="Texture2D" uid="uid://gxu7afyjrfq0" path="res://assets/Pickups/GlitterShroom.png" id="14_8xp80"]
 [ext_resource type="PackedScene" uid="uid://b3ptidiwjsdgb" path="res://scenes/grass_dynamic.tscn" id="15_ihbck"]
 [ext_resource type="Texture2D" uid="uid://dbqiuv0p8pyfw" path="res://assets/Grass.png" id="15_sp04v"]
+<<<<<<< HEAD
 [ext_resource type="Environment" uid="uid://cg03ien0lqh0t" path="res://assets/PostProcessing/EnvironmentNode_Preset1.tres" id="17_5luka"]
+=======
+[ext_resource type="CompressedTexture3D" uid="uid://b4g1w8u7xc86p" path="res://assets/Referent4Godot.png" id="17_5luka"]
+>>>>>>> ceb9650 (What a mess.)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5luka"]
 resource_local_to_scene = true
@@ -97,6 +101,13 @@ _data = {
 }
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5wboo"]
+<<<<<<< HEAD
+=======
+resource_local_to_scene = true
+shader = ExtResource("5_ihbck")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6de02"]
+>>>>>>> ceb9650 (What a mess.)
 resource_local_to_scene = true
 shader = ExtResource("5_ihbck")
 
@@ -134,8 +145,13 @@ fill_from = Vector2(0.44230768, 0.48931623)
 
 [sub_resource type="Gradient" id="Gradient_ygxny"]
 interpolation_color_space = 1
+<<<<<<< HEAD
 offsets = PackedFloat32Array(0, 0.15203762, 0.3369906)
 colors = PackedColorArray(1, 1, 1, 1, 0.68, 0.68, 0.68, 1, 0, 0, 0, 0)
+=======
+offsets = PackedFloat32Array(0, 0.1627907, 0.5069767)
+colors = PackedColorArray(1, 1, 1, 1, 0.85, 0.85, 0.85, 1, 0, 0, 0, 0)
+>>>>>>> ceb9650 (What a mess.)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_onn7j"]
 gradient = SubResource("Gradient_ygxny")
@@ -152,8 +168,13 @@ width = 125
 height = 125
 use_hdr = true
 fill = 1
+<<<<<<< HEAD
 fill_from = Vector2(0.48504272, 0.51282054)
 fill_to = Vector2(0.8354701, 0.21794872)
+=======
+fill_from = Vector2(0.46581197, 0.53846157)
+fill_to = Vector2(0.7393162, 0.2863248)
+>>>>>>> ceb9650 (What a mess.)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_vok5w"]
 
@@ -308,8 +329,22 @@ _data = {
 &"ascension": SubResource("Animation_o6v7o")
 }
 
+<<<<<<< HEAD
 [sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_ff7da"]
 auto_exposure_enabled = true
+=======
+[sub_resource type="Environment" id="Environment_e0gb1"]
+background_mode = 3
+glow_enabled = true
+glow_intensity = 3.0
+glow_bloom = 0.04
+glow_hdr_threshold = 2.0
+adjustment_enabled = true
+adjustment_brightness = 0.95
+adjustment_contrast = 1.14
+adjustment_saturation = 1.27
+adjustment_color_correction = ExtResource("17_5luka")
+>>>>>>> ceb9650 (What a mess.)
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_sp04v"]
 resource_name = "Grass_1"
@@ -394,6 +429,7 @@ position = Vector2(-495, -1515)
 layer = -1
 
 [node name="Sun" type="PointLight2D" parent="BehindCouds(Layer-1)" unique_id=1546372585]
+visible = false
 position = Vector2(-3501, -3629)
 color = Color(1.7129971, 1.4055498, 0.35044625, 1)
 energy = 0.3
@@ -403,6 +439,7 @@ texture = SubResource("GradientTexture2D_uxmck")
 texture_scale = 50.0
 
 [node name="BGCanvasModulate" type="CanvasModulate" parent="BehindCouds(Layer-1)" unique_id=1452396847]
+visible = false
 z_index = -1
 color = Color(0.88816124, 0.88816124, 0.88816124, 1)
 
@@ -487,6 +524,7 @@ jumps = 1
 gravityScale = 18.0
 dashLength = 4.0
 
+<<<<<<< HEAD
 [node name="EverythingElseLight" type="PointLight2D" parent="Horse" unique_id=1800271869]
 visible = false
 position = Vector2(-1.0000025, -31)
@@ -503,10 +541,15 @@ texture_scale = 11.0
 [node name="HorseLight" type="PointLight2D" parent="Horse" unique_id=1872890909]
 position = Vector2(-8.999996, -19)
 scale = Vector2(16.296875, 13.390625)
+=======
+[node name="HorseLight" type="PointLight2D" parent="Horse" unique_id=1872890909]
+position = Vector2(-8.999996, -19)
+scale = Vector2(16.296875, 13.390625)
+color = Color(1, 0.6859165, 0.7133442, 1)
+>>>>>>> ceb9650 (What a mess.)
 energy = 0.3
 texture = SubResource("GradientTexture2D_5cypo")
 offset = Vector2(2.99, -0.4)
-texture_scale = 1.13
 
 [node name="Camera2D" type="Camera2D" parent="Horse" unique_id=2079273632]
 position = Vector2(39, -104)
@@ -559,8 +602,12 @@ scale = Vector2(0.0396814, 0.0396814)
 texture = ExtResource("14_8xp80")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1997221062]
+<<<<<<< HEAD
 environment = ExtResource("17_5luka")
 camera_attributes = SubResource("CameraAttributesPhysical_ff7da")
+=======
+environment = SubResource("Environment_e0gb1")
+>>>>>>> ceb9650 (What a mess.)
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=2056100805]
 texture_repeat = 3
@@ -660,6 +707,7 @@ tile_set = SubResource("TileSet_ikqpi")
 [connection signal="body_entered" from="Clouds_Lvl1/Cloud4/Star" to="." method="_on_body_entered"]
 [connection signal="body_entered" from="Mushroom2" to="." method="_on_mushroom_2_body_entered"]
 [connection signal="body_entered" from="Grass/Grass_Clump_var1_1/Grass_dynamic" to="Grass/Grass_Clump_var1_1/Grass_dynamic" method="_on_Grass_body_entered"]
+<<<<<<< HEAD
 [connection signal="body_entered" from="Grass/Grass_Clump_var1_1/@Area2D@82282" to="Grass/Grass_Clump_var1_1/@Area2D@82282" method="_on_Grass_body_entered"]
 [connection signal="body_entered" from="Grass/Grass_Clump_var1_1/@Area2D@82283" to="Grass/Grass_Clump_var1_1/@Area2D@82283" method="_on_Grass_body_entered"]
 [connection signal="body_entered" from="Grass/Grass_Clump_var1_1/@Area2D@82284" to="Grass/Grass_Clump_var1_1/@Area2D@82284" method="_on_Grass_body_entered"]
@@ -899,3 +947,244 @@ tile_set = SubResource("TileSet_ikqpi")
 [connection signal="body_entered" from="Grass/Grass_Clump_var2_8/@Area2D@82505" to="Grass/Grass_Clump_var2_8/@Area2D@82505" method="_on_Grass_body_entered"]
 [connection signal="body_entered" from="Grass/Grass_Clump_var2_8/@Area2D@82506" to="Grass/Grass_Clump_var2_8/@Area2D@82506" method="_on_Grass_body_entered"]
 [connection signal="body_entered" from="Grass/Grass_Clump_var2_8/@Area2D@82507" to="Grass/Grass_Clump_var2_8/@Area2D@82507" method="_on_Grass_body_entered"]
+=======
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_1/@Area2D@33484" to="Grass/Grass_Clump_var1_1/@Area2D@33484" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_1/@Area2D@33485" to="Grass/Grass_Clump_var1_1/@Area2D@33485" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_1/@Area2D@33486" to="Grass/Grass_Clump_var1_1/@Area2D@33486" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_1/@Area2D@33487" to="Grass/Grass_Clump_var1_1/@Area2D@33487" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_1/@Area2D@33488" to="Grass/Grass_Clump_var1_1/@Area2D@33488" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_1/@Area2D@33489" to="Grass/Grass_Clump_var1_1/@Area2D@33489" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_1/@Area2D@33490" to="Grass/Grass_Clump_var1_1/@Area2D@33490" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_1/@Area2D@33491" to="Grass/Grass_Clump_var1_1/@Area2D@33491" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_1/@Area2D@33492" to="Grass/Grass_Clump_var1_1/@Area2D@33492" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_1/@Area2D@33493" to="Grass/Grass_Clump_var1_1/@Area2D@33493" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_1/@Area2D@33494" to="Grass/Grass_Clump_var1_1/@Area2D@33494" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_1/@Area2D@33495" to="Grass/Grass_Clump_var1_1/@Area2D@33495" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_1/@Area2D@33496" to="Grass/Grass_Clump_var1_1/@Area2D@33496" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_1/@Area2D@33497" to="Grass/Grass_Clump_var1_1/@Area2D@33497" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_1/@Area2D@33498" to="Grass/Grass_Clump_var1_1/@Area2D@33498" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_1/@Area2D@33499" to="Grass/Grass_Clump_var1_1/@Area2D@33499" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_1/@Area2D@33500" to="Grass/Grass_Clump_var1_1/@Area2D@33500" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_1/@Area2D@33501" to="Grass/Grass_Clump_var1_1/@Area2D@33501" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_1/@Area2D@33502" to="Grass/Grass_Clump_var1_1/@Area2D@33502" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_1/@Area2D@33503" to="Grass/Grass_Clump_var1_1/@Area2D@33503" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_1/@Area2D@33504" to="Grass/Grass_Clump_var1_1/@Area2D@33504" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_1/@Area2D@33505" to="Grass/Grass_Clump_var1_1/@Area2D@33505" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_1/@Area2D@33506" to="Grass/Grass_Clump_var1_1/@Area2D@33506" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_2/Grass_dynamic" to="Grass/Grass_Clump_var1_2/Grass_dynamic" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_2/@Area2D@33507" to="Grass/Grass_Clump_var1_2/@Area2D@33507" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_2/@Area2D@33508" to="Grass/Grass_Clump_var1_2/@Area2D@33508" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_2/@Area2D@33509" to="Grass/Grass_Clump_var1_2/@Area2D@33509" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_2/@Area2D@33510" to="Grass/Grass_Clump_var1_2/@Area2D@33510" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_2/@Area2D@33511" to="Grass/Grass_Clump_var1_2/@Area2D@33511" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_2/@Area2D@33512" to="Grass/Grass_Clump_var1_2/@Area2D@33512" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_2/@Area2D@33513" to="Grass/Grass_Clump_var1_2/@Area2D@33513" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_2/@Area2D@33514" to="Grass/Grass_Clump_var1_2/@Area2D@33514" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_2/@Area2D@33515" to="Grass/Grass_Clump_var1_2/@Area2D@33515" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_2/@Area2D@33516" to="Grass/Grass_Clump_var1_2/@Area2D@33516" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_2/@Area2D@33517" to="Grass/Grass_Clump_var1_2/@Area2D@33517" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_2/@Area2D@33518" to="Grass/Grass_Clump_var1_2/@Area2D@33518" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_2/@Area2D@33519" to="Grass/Grass_Clump_var1_2/@Area2D@33519" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_2/@Area2D@33520" to="Grass/Grass_Clump_var1_2/@Area2D@33520" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_2/@Area2D@33521" to="Grass/Grass_Clump_var1_2/@Area2D@33521" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_2/@Area2D@33522" to="Grass/Grass_Clump_var1_2/@Area2D@33522" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_2/@Area2D@33523" to="Grass/Grass_Clump_var1_2/@Area2D@33523" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_2/@Area2D@33524" to="Grass/Grass_Clump_var1_2/@Area2D@33524" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_2/@Area2D@33525" to="Grass/Grass_Clump_var1_2/@Area2D@33525" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_2/@Area2D@33526" to="Grass/Grass_Clump_var1_2/@Area2D@33526" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_2/@Area2D@33527" to="Grass/Grass_Clump_var1_2/@Area2D@33527" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_2/@Area2D@33528" to="Grass/Grass_Clump_var1_2/@Area2D@33528" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_2/@Area2D@33529" to="Grass/Grass_Clump_var1_2/@Area2D@33529" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_3/Grass_dynamic" to="Grass/Grass_Clump_var1_3/Grass_dynamic" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_3/@Area2D@33530" to="Grass/Grass_Clump_var1_3/@Area2D@33530" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_3/@Area2D@33531" to="Grass/Grass_Clump_var1_3/@Area2D@33531" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_3/@Area2D@33532" to="Grass/Grass_Clump_var1_3/@Area2D@33532" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_3/@Area2D@33533" to="Grass/Grass_Clump_var1_3/@Area2D@33533" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_3/@Area2D@33534" to="Grass/Grass_Clump_var1_3/@Area2D@33534" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_3/@Area2D@33535" to="Grass/Grass_Clump_var1_3/@Area2D@33535" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_3/@Area2D@33536" to="Grass/Grass_Clump_var1_3/@Area2D@33536" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_3/@Area2D@33537" to="Grass/Grass_Clump_var1_3/@Area2D@33537" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_3/@Area2D@33538" to="Grass/Grass_Clump_var1_3/@Area2D@33538" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_3/@Area2D@33539" to="Grass/Grass_Clump_var1_3/@Area2D@33539" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_3/@Area2D@33540" to="Grass/Grass_Clump_var1_3/@Area2D@33540" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_3/@Area2D@33541" to="Grass/Grass_Clump_var1_3/@Area2D@33541" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_3/@Area2D@33542" to="Grass/Grass_Clump_var1_3/@Area2D@33542" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_3/@Area2D@33543" to="Grass/Grass_Clump_var1_3/@Area2D@33543" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_3/@Area2D@33544" to="Grass/Grass_Clump_var1_3/@Area2D@33544" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_3/@Area2D@33545" to="Grass/Grass_Clump_var1_3/@Area2D@33545" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_3/@Area2D@33546" to="Grass/Grass_Clump_var1_3/@Area2D@33546" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_3/@Area2D@33547" to="Grass/Grass_Clump_var1_3/@Area2D@33547" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_3/@Area2D@33548" to="Grass/Grass_Clump_var1_3/@Area2D@33548" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_3/@Area2D@33549" to="Grass/Grass_Clump_var1_3/@Area2D@33549" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_3/@Area2D@33550" to="Grass/Grass_Clump_var1_3/@Area2D@33550" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_3/@Area2D@33551" to="Grass/Grass_Clump_var1_3/@Area2D@33551" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_3/@Area2D@33552" to="Grass/Grass_Clump_var1_3/@Area2D@33552" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_4/Grass_dynamic" to="Grass/Grass_Clump_var1_4/Grass_dynamic" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_4/@Area2D@33553" to="Grass/Grass_Clump_var1_4/@Area2D@33553" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_4/@Area2D@33554" to="Grass/Grass_Clump_var1_4/@Area2D@33554" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_4/@Area2D@33555" to="Grass/Grass_Clump_var1_4/@Area2D@33555" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_4/@Area2D@33556" to="Grass/Grass_Clump_var1_4/@Area2D@33556" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_4/@Area2D@33557" to="Grass/Grass_Clump_var1_4/@Area2D@33557" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_4/@Area2D@33558" to="Grass/Grass_Clump_var1_4/@Area2D@33558" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_4/@Area2D@33559" to="Grass/Grass_Clump_var1_4/@Area2D@33559" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_4/@Area2D@33560" to="Grass/Grass_Clump_var1_4/@Area2D@33560" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_4/@Area2D@33561" to="Grass/Grass_Clump_var1_4/@Area2D@33561" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_4/@Area2D@33562" to="Grass/Grass_Clump_var1_4/@Area2D@33562" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_4/@Area2D@33563" to="Grass/Grass_Clump_var1_4/@Area2D@33563" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_4/@Area2D@33564" to="Grass/Grass_Clump_var1_4/@Area2D@33564" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_4/@Area2D@33565" to="Grass/Grass_Clump_var1_4/@Area2D@33565" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_4/@Area2D@33566" to="Grass/Grass_Clump_var1_4/@Area2D@33566" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_4/@Area2D@33567" to="Grass/Grass_Clump_var1_4/@Area2D@33567" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_4/@Area2D@33568" to="Grass/Grass_Clump_var1_4/@Area2D@33568" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_4/@Area2D@33569" to="Grass/Grass_Clump_var1_4/@Area2D@33569" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_4/@Area2D@33570" to="Grass/Grass_Clump_var1_4/@Area2D@33570" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_4/@Area2D@33571" to="Grass/Grass_Clump_var1_4/@Area2D@33571" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_4/@Area2D@33572" to="Grass/Grass_Clump_var1_4/@Area2D@33572" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_4/@Area2D@33573" to="Grass/Grass_Clump_var1_4/@Area2D@33573" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_4/@Area2D@33574" to="Grass/Grass_Clump_var1_4/@Area2D@33574" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_4/@Area2D@33575" to="Grass/Grass_Clump_var1_4/@Area2D@33575" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_5/Grass_dynamic" to="Grass/Grass_Clump_var1_5/Grass_dynamic" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_5/@Area2D@33576" to="Grass/Grass_Clump_var1_5/@Area2D@33576" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_5/@Area2D@33577" to="Grass/Grass_Clump_var1_5/@Area2D@33577" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_5/@Area2D@33578" to="Grass/Grass_Clump_var1_5/@Area2D@33578" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_5/@Area2D@33579" to="Grass/Grass_Clump_var1_5/@Area2D@33579" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_5/@Area2D@33580" to="Grass/Grass_Clump_var1_5/@Area2D@33580" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_5/@Area2D@33581" to="Grass/Grass_Clump_var1_5/@Area2D@33581" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_5/@Area2D@33582" to="Grass/Grass_Clump_var1_5/@Area2D@33582" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_5/@Area2D@33583" to="Grass/Grass_Clump_var1_5/@Area2D@33583" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_5/@Area2D@33584" to="Grass/Grass_Clump_var1_5/@Area2D@33584" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_5/@Area2D@33585" to="Grass/Grass_Clump_var1_5/@Area2D@33585" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_5/@Area2D@33586" to="Grass/Grass_Clump_var1_5/@Area2D@33586" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_5/@Area2D@33587" to="Grass/Grass_Clump_var1_5/@Area2D@33587" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_5/@Area2D@33588" to="Grass/Grass_Clump_var1_5/@Area2D@33588" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_5/@Area2D@33589" to="Grass/Grass_Clump_var1_5/@Area2D@33589" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_5/@Area2D@33590" to="Grass/Grass_Clump_var1_5/@Area2D@33590" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_5/@Area2D@33591" to="Grass/Grass_Clump_var1_5/@Area2D@33591" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_5/@Area2D@33592" to="Grass/Grass_Clump_var1_5/@Area2D@33592" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_5/@Area2D@33593" to="Grass/Grass_Clump_var1_5/@Area2D@33593" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_5/@Area2D@33594" to="Grass/Grass_Clump_var1_5/@Area2D@33594" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_5/@Area2D@33595" to="Grass/Grass_Clump_var1_5/@Area2D@33595" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_5/@Area2D@33596" to="Grass/Grass_Clump_var1_5/@Area2D@33596" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_5/@Area2D@33597" to="Grass/Grass_Clump_var1_5/@Area2D@33597" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_5/@Area2D@33598" to="Grass/Grass_Clump_var1_5/@Area2D@33598" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_6/Grass_dynamic" to="Grass/Grass_Clump_var1_6/Grass_dynamic" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_6/@Area2D@33599" to="Grass/Grass_Clump_var1_6/@Area2D@33599" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_6/@Area2D@33600" to="Grass/Grass_Clump_var1_6/@Area2D@33600" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_6/@Area2D@33601" to="Grass/Grass_Clump_var1_6/@Area2D@33601" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_6/@Area2D@33602" to="Grass/Grass_Clump_var1_6/@Area2D@33602" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_6/@Area2D@33603" to="Grass/Grass_Clump_var1_6/@Area2D@33603" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_6/@Area2D@33604" to="Grass/Grass_Clump_var1_6/@Area2D@33604" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_6/@Area2D@33605" to="Grass/Grass_Clump_var1_6/@Area2D@33605" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_6/@Area2D@33606" to="Grass/Grass_Clump_var1_6/@Area2D@33606" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_6/@Area2D@33607" to="Grass/Grass_Clump_var1_6/@Area2D@33607" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_6/@Area2D@33608" to="Grass/Grass_Clump_var1_6/@Area2D@33608" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_6/@Area2D@33609" to="Grass/Grass_Clump_var1_6/@Area2D@33609" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_6/@Area2D@33610" to="Grass/Grass_Clump_var1_6/@Area2D@33610" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_6/@Area2D@33611" to="Grass/Grass_Clump_var1_6/@Area2D@33611" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_6/@Area2D@33612" to="Grass/Grass_Clump_var1_6/@Area2D@33612" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_6/@Area2D@33613" to="Grass/Grass_Clump_var1_6/@Area2D@33613" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_6/@Area2D@33614" to="Grass/Grass_Clump_var1_6/@Area2D@33614" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_6/@Area2D@33615" to="Grass/Grass_Clump_var1_6/@Area2D@33615" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_6/@Area2D@33616" to="Grass/Grass_Clump_var1_6/@Area2D@33616" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_6/@Area2D@33617" to="Grass/Grass_Clump_var1_6/@Area2D@33617" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_6/@Area2D@33618" to="Grass/Grass_Clump_var1_6/@Area2D@33618" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_6/@Area2D@33619" to="Grass/Grass_Clump_var1_6/@Area2D@33619" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_6/@Area2D@33620" to="Grass/Grass_Clump_var1_6/@Area2D@33620" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var1_6/@Area2D@33621" to="Grass/Grass_Clump_var1_6/@Area2D@33621" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_1/Grass_dynamic" to="Grass/Grass_Clump_var2_1/Grass_dynamic" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_1/@Area2D@33622" to="Grass/Grass_Clump_var2_1/@Area2D@33622" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_1/@Area2D@33623" to="Grass/Grass_Clump_var2_1/@Area2D@33623" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_1/@Area2D@33624" to="Grass/Grass_Clump_var2_1/@Area2D@33624" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_1/@Area2D@33625" to="Grass/Grass_Clump_var2_1/@Area2D@33625" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_1/@Area2D@33626" to="Grass/Grass_Clump_var2_1/@Area2D@33626" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_1/@Area2D@33627" to="Grass/Grass_Clump_var2_1/@Area2D@33627" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_1/@Area2D@33628" to="Grass/Grass_Clump_var2_1/@Area2D@33628" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_1/@Area2D@33629" to="Grass/Grass_Clump_var2_1/@Area2D@33629" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_1/@Area2D@33630" to="Grass/Grass_Clump_var2_1/@Area2D@33630" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_1/@Area2D@33631" to="Grass/Grass_Clump_var2_1/@Area2D@33631" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_1/@Area2D@33632" to="Grass/Grass_Clump_var2_1/@Area2D@33632" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_2/Grass_dynamic" to="Grass/Grass_Clump_var2_2/Grass_dynamic" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_2/@Area2D@33633" to="Grass/Grass_Clump_var2_2/@Area2D@33633" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_2/@Area2D@33634" to="Grass/Grass_Clump_var2_2/@Area2D@33634" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_2/@Area2D@33635" to="Grass/Grass_Clump_var2_2/@Area2D@33635" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_2/@Area2D@33636" to="Grass/Grass_Clump_var2_2/@Area2D@33636" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_2/@Area2D@33637" to="Grass/Grass_Clump_var2_2/@Area2D@33637" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_2/@Area2D@33638" to="Grass/Grass_Clump_var2_2/@Area2D@33638" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_2/@Area2D@33639" to="Grass/Grass_Clump_var2_2/@Area2D@33639" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_2/@Area2D@33640" to="Grass/Grass_Clump_var2_2/@Area2D@33640" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_2/@Area2D@33641" to="Grass/Grass_Clump_var2_2/@Area2D@33641" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_2/@Area2D@33642" to="Grass/Grass_Clump_var2_2/@Area2D@33642" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_2/@Area2D@33643" to="Grass/Grass_Clump_var2_2/@Area2D@33643" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_3/Grass_dynamic" to="Grass/Grass_Clump_var2_3/Grass_dynamic" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_3/@Area2D@33644" to="Grass/Grass_Clump_var2_3/@Area2D@33644" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_3/@Area2D@33645" to="Grass/Grass_Clump_var2_3/@Area2D@33645" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_3/@Area2D@33646" to="Grass/Grass_Clump_var2_3/@Area2D@33646" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_3/@Area2D@33647" to="Grass/Grass_Clump_var2_3/@Area2D@33647" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_3/@Area2D@33648" to="Grass/Grass_Clump_var2_3/@Area2D@33648" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_3/@Area2D@33649" to="Grass/Grass_Clump_var2_3/@Area2D@33649" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_3/@Area2D@33650" to="Grass/Grass_Clump_var2_3/@Area2D@33650" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_3/@Area2D@33651" to="Grass/Grass_Clump_var2_3/@Area2D@33651" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_3/@Area2D@33652" to="Grass/Grass_Clump_var2_3/@Area2D@33652" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_3/@Area2D@33653" to="Grass/Grass_Clump_var2_3/@Area2D@33653" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_3/@Area2D@33654" to="Grass/Grass_Clump_var2_3/@Area2D@33654" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_4/Grass_dynamic" to="Grass/Grass_Clump_var2_4/Grass_dynamic" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_4/@Area2D@33655" to="Grass/Grass_Clump_var2_4/@Area2D@33655" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_4/@Area2D@33656" to="Grass/Grass_Clump_var2_4/@Area2D@33656" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_4/@Area2D@33657" to="Grass/Grass_Clump_var2_4/@Area2D@33657" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_4/@Area2D@33658" to="Grass/Grass_Clump_var2_4/@Area2D@33658" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_4/@Area2D@33659" to="Grass/Grass_Clump_var2_4/@Area2D@33659" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_4/@Area2D@33660" to="Grass/Grass_Clump_var2_4/@Area2D@33660" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_4/@Area2D@33661" to="Grass/Grass_Clump_var2_4/@Area2D@33661" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_4/@Area2D@33662" to="Grass/Grass_Clump_var2_4/@Area2D@33662" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_4/@Area2D@33663" to="Grass/Grass_Clump_var2_4/@Area2D@33663" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_4/@Area2D@33664" to="Grass/Grass_Clump_var2_4/@Area2D@33664" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_4/@Area2D@33665" to="Grass/Grass_Clump_var2_4/@Area2D@33665" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_5/Grass_dynamic" to="Grass/Grass_Clump_var2_5/Grass_dynamic" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_5/@Area2D@33666" to="Grass/Grass_Clump_var2_5/@Area2D@33666" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_5/@Area2D@33667" to="Grass/Grass_Clump_var2_5/@Area2D@33667" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_5/@Area2D@33668" to="Grass/Grass_Clump_var2_5/@Area2D@33668" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_5/@Area2D@33669" to="Grass/Grass_Clump_var2_5/@Area2D@33669" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_5/@Area2D@33670" to="Grass/Grass_Clump_var2_5/@Area2D@33670" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_5/@Area2D@33671" to="Grass/Grass_Clump_var2_5/@Area2D@33671" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_5/@Area2D@33672" to="Grass/Grass_Clump_var2_5/@Area2D@33672" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_5/@Area2D@33673" to="Grass/Grass_Clump_var2_5/@Area2D@33673" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_5/@Area2D@33674" to="Grass/Grass_Clump_var2_5/@Area2D@33674" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_5/@Area2D@33675" to="Grass/Grass_Clump_var2_5/@Area2D@33675" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_5/@Area2D@33676" to="Grass/Grass_Clump_var2_5/@Area2D@33676" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_6/Grass_dynamic" to="Grass/Grass_Clump_var2_6/Grass_dynamic" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_6/@Area2D@33677" to="Grass/Grass_Clump_var2_6/@Area2D@33677" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_6/@Area2D@33678" to="Grass/Grass_Clump_var2_6/@Area2D@33678" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_6/@Area2D@33679" to="Grass/Grass_Clump_var2_6/@Area2D@33679" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_6/@Area2D@33680" to="Grass/Grass_Clump_var2_6/@Area2D@33680" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_6/@Area2D@33681" to="Grass/Grass_Clump_var2_6/@Area2D@33681" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_6/@Area2D@33682" to="Grass/Grass_Clump_var2_6/@Area2D@33682" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_6/@Area2D@33683" to="Grass/Grass_Clump_var2_6/@Area2D@33683" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_6/@Area2D@33684" to="Grass/Grass_Clump_var2_6/@Area2D@33684" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_6/@Area2D@33685" to="Grass/Grass_Clump_var2_6/@Area2D@33685" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_6/@Area2D@33686" to="Grass/Grass_Clump_var2_6/@Area2D@33686" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_6/@Area2D@33687" to="Grass/Grass_Clump_var2_6/@Area2D@33687" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_7/Grass_dynamic" to="Grass/Grass_Clump_var2_7/Grass_dynamic" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_7/@Area2D@33688" to="Grass/Grass_Clump_var2_7/@Area2D@33688" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_7/@Area2D@33689" to="Grass/Grass_Clump_var2_7/@Area2D@33689" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_7/@Area2D@33690" to="Grass/Grass_Clump_var2_7/@Area2D@33690" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_7/@Area2D@33691" to="Grass/Grass_Clump_var2_7/@Area2D@33691" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_7/@Area2D@33692" to="Grass/Grass_Clump_var2_7/@Area2D@33692" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_7/@Area2D@33693" to="Grass/Grass_Clump_var2_7/@Area2D@33693" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_7/@Area2D@33694" to="Grass/Grass_Clump_var2_7/@Area2D@33694" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_7/@Area2D@33695" to="Grass/Grass_Clump_var2_7/@Area2D@33695" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_7/@Area2D@33696" to="Grass/Grass_Clump_var2_7/@Area2D@33696" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_7/@Area2D@33697" to="Grass/Grass_Clump_var2_7/@Area2D@33697" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_7/@Area2D@33698" to="Grass/Grass_Clump_var2_7/@Area2D@33698" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_8/Grass_dynamic" to="Grass/Grass_Clump_var2_8/Grass_dynamic" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_8/@Area2D@33699" to="Grass/Grass_Clump_var2_8/@Area2D@33699" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_8/@Area2D@33700" to="Grass/Grass_Clump_var2_8/@Area2D@33700" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_8/@Area2D@33701" to="Grass/Grass_Clump_var2_8/@Area2D@33701" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_8/@Area2D@33702" to="Grass/Grass_Clump_var2_8/@Area2D@33702" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_8/@Area2D@33703" to="Grass/Grass_Clump_var2_8/@Area2D@33703" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_8/@Area2D@33704" to="Grass/Grass_Clump_var2_8/@Area2D@33704" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_8/@Area2D@33705" to="Grass/Grass_Clump_var2_8/@Area2D@33705" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_8/@Area2D@33706" to="Grass/Grass_Clump_var2_8/@Area2D@33706" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_8/@Area2D@33707" to="Grass/Grass_Clump_var2_8/@Area2D@33707" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_8/@Area2D@33708" to="Grass/Grass_Clump_var2_8/@Area2D@33708" method="_on_Grass_body_entered"]
+[connection signal="body_entered" from="Grass/Grass_Clump_var2_8/@Area2D@33709" to="Grass/Grass_Clump_var2_8/@Area2D@33709" method="_on_Grass_body_entered"]
+>>>>>>> ceb9650 (What a mess.)

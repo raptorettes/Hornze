@@ -14,4 +14,4 @@ shader_parameter/detail = 2.0
 shader_parameter/distortion = 0.0
 shader_parameter/heightOffset = 0.0
 shader_parameter/offset = 0.0
-shader_parameter/skew = 0.0
+shader_parameter/skew_sprite = 0.0
