@@ -22,7 +22,7 @@
         default = pkgs.mkShell {
 
           buildInputs = with pkgs; [
-            godotPackages_4_6.godot
+            godotPackages_4_7.godot
             bun
             just
             python3
