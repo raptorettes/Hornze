@@ -1,0 +1,91 @@
+[gd_scene load_steps=2 format=3 uid="uid://ex_menu_row"]
+
+[ext_resource type="Script" path="res://addons/magic_sparkles/scripts/magic_sparkle_light.gd" id="1_light"]
+
+[node name="MenuRow" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Hint" type="Label" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 420.0
+offset_bottom = 40.0
+text = "Open this scene and press F6 — hover each menu button"
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBox" type="HBoxContainer" parent="Center"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="BtnGold" type="Button" parent="Center/HBox"]
+custom_minimum_size = Vector2(140, 48)
+layout_mode = 2
+text = "Gold"
+
+[node name="MagicSparkleLight" type="Control" parent="Center/HBox/BtnGold"]
+z_index = 100
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_light")
+colors = Array[Color]([Color(0.91, 0.77, 0.28, 1), Color(1, 1, 1, 1)])
+
+[node name="BtnTeal" type="Button" parent="Center/HBox"]
+custom_minimum_size = Vector2(140, 48)
+layout_mode = 2
+text = "Teal"
+
+[node name="MagicSparkleLight" type="Control" parent="Center/HBox/BtnTeal"]
+z_index = 100
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_light")
+colors = Array[Color]([Color(0.49, 0.78, 0.89, 1), Color(1, 1, 1, 1)])
+
+[node name="BtnRainbow" type="Button" parent="Center/HBox"]
+custom_minimum_size = Vector2(160, 48)
+layout_mode = 2
+text = "Rainbow"
+
+[node name="MagicSparkleLight" type="Control" parent="Center/HBox/BtnRainbow"]
+z_index = 100
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -6.0
+offset_top = -6.0
+offset_right = 6.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_light")
+particle_count = 60
+rainbow = true
+overlap = 8.0

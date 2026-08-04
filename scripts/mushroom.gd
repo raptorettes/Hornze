@@ -15,8 +15,8 @@ func _on_body_entered(body: Node2D) -> void:
 		var horse = body as Hornse
 		 
 		horse.jumps += 1
-		horse.dashType = 3
-		horse.dashes += 1
+		#horse.dashType = 3
+		#horse.dashes += 1
 		var eat_tween = get_tree().create_tween()
 	#	eat_tween.set_trans(Tween.TRANS_CUBIC)
 		eat_tween.tween_property(%MushroomSprite,"global_scale",Vector2(0,0),0.2)

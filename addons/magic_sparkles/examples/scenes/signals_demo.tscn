@@ -1,0 +1,80 @@
+[gd_scene load_steps=4 format=3 uid="uid://ex_signals_demo"]
+
+[ext_resource type="Script" path="res://addons/magic_sparkles/scripts/magic_sparkle_light.gd" id="1_light"]
+[ext_resource type="Script" path="res://addons/magic_sparkles/examples/scenes/signals_demo.gd" id="2_demo"]
+[ext_resource type="Script" path="res://addons/magic_sparkles/scripts/magic_sparkle_cursor.gd" id="3_cursor"]
+
+[node name="SignalsDemo" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_demo")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.05, 0.06, 0.1, 1)
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="Center"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Title" type="Label" parent="Center/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Signal API demo"
+horizontal_alignment = 1
+
+[node name="Status" type="Label" parent="Center/VBox"]
+layout_mode = 2
+text = "Hover the button or click elsewhere"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="Center/VBox"]
+custom_minimum_size = Vector2(200, 52)
+layout_mode = 2
+text = "Hover me"
+
+[node name="MagicSparkleLight" type="Control" parent="Center/VBox/Button"]
+z_index = 100
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_light")
+particle_count = 40
+rainbow = true
+
+[node name="MagicSparkleCursor" type="Control" parent="."]
+z_index = 200
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("3_cursor")
+click_burst_enabled = false
+magical_hues = true
+draw_z_index = 200

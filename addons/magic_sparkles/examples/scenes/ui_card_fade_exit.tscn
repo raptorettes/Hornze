@@ -1,0 +1,89 @@
+[gd_scene load_steps=3 format=3 uid="uid://ex_ui_card"]
+
+[ext_resource type="Script" path="res://addons/magic_sparkles/scripts/magic_sparkle_light.gd" id="1_light"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_card"]
+bg_color = Color(0.1, 0.12, 0.18, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.35, 0.4, 0.55, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+content_margin_left = 20.0
+content_margin_top = 16.0
+content_margin_right = 20.0
+content_margin_bottom = 16.0
+
+[node name="UiCardFadeExit" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Hint" type="Label" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 480.0
+offset_bottom = 40.0
+text = "Open this scene and press F6 — Fade Exit boundary on card"
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Card" type="PanelContainer" parent="Center"]
+custom_minimum_size = Vector2(280, 160)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_card")
+
+[node name="Overlay" type="Control" parent="Center/Card"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Center/Card/Overlay"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 28.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 20
+text = "Dream Card"
+horizontal_alignment = 1
+
+[node name="Body" type="Label" parent="Center/Card/Overlay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Sparkles fade softly at the card edge."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="MagicSparkleLight" type="Control" parent="Center/Card/Overlay"]
+z_index = 100
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_light")
+particle_count = 50
+colors = Array[Color]([Color(0.72, 0.55, 1, 1), Color(1, 1, 1, 1)])
+boundary_mode = 1
+activation_mode = 1

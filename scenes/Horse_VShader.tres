@@ -11,6 +11,13 @@ script = ExtResource("1_5aepo")
 expanded_output_ports = [0]
 input_name = "vertex"
 
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_5aepo"]
+operator = 2
+
+[sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_b75l7"]
+parameter_name = "Horse_Alpha"
+hint = 1
+
 [sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_68jdf"]
 expanded_output_ports = [0]
 source = 2
@@ -35,7 +42,7 @@ constant = 1.366
 mode = 1
 flags/light_only = false
 nodes/vertex/0/position = Vector2(1800, 360)
-nodes/fragment/0/position = Vector2(2480, 1480)
+nodes/fragment/0/position = Vector2(2450, 1440)
 nodes/fragment/2/node = SubResource("VisualShaderNodeCustom_b75l7")
 nodes/fragment/2/position = Vector2(1740, 1340)
 nodes/fragment/3/node = SubResource("VisualShaderNodeTexture_68jdf")
@@ -50,4 +57,8 @@ nodes/fragment/7/node = SubResource("VisualShaderNodeFloatConstant_yy483")
 nodes/fragment/7/position = Vector2(1120, 1160)
 nodes/fragment/20/node = SubResource("VisualShaderNodeInput_b75l7")
 nodes/fragment/20/position = Vector2(620, 1560)
-nodes/fragment/connections = PackedInt32Array(3, 4, 2, 1, 4, 0, 2, 2, 3, 0, 5, 1, 6, 0, 5, 0, 7, 0, 5, 2, 5, 0, 2, 0, 2, 0, 0, 0, 2, 1, 0, 1)
+nodes/fragment/23/node = SubResource("VisualShaderNodeFloatOp_5aepo")
+nodes/fragment/23/position = Vector2(2180, 1490)
+nodes/fragment/24/node = SubResource("VisualShaderNodeFloatParameter_b75l7")
+nodes/fragment/24/position = Vector2(1830, 1620)
+nodes/fragment/connections = PackedInt32Array(3, 4, 2, 1, 4, 0, 2, 2, 3, 0, 5, 1, 6, 0, 5, 0, 7, 0, 5, 2, 5, 0, 2, 0, 2, 0, 0, 0, 2, 1, 23, 0, 23, 0, 0, 1, 24, 0, 23, 1)
