@@ -26,6 +26,7 @@ driver/mix_rate=48000
 PhantomCameraManager="uid://duq6jhf6unyis"
 LitManager="*uid://brf2hvdtyyw3q"
 JsBridge="*uid://d4lsgp2xomm3d"
+RememberWindowPlacement="*uid://bte0pfn4xa1v7"
 
 [display]
 
@@ -35,7 +36,7 @@ window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/godot_state_charts/plugin.cfg", "res://addons/maaacks_game_template/plugin.cfg", "res://addons/magic_sparkles/plugin.cfg", "res://addons/phantom_camera/plugin.cfg")
+enabled=PackedStringArray("res://addons/godot_state_charts/plugin.cfg", "res://addons/maaacks_game_template/plugin.cfg", "res://addons/magic_sparkles/plugin.cfg", "res://addons/remember_window_placement/plugin.cfg")
 
 [global_group]
 

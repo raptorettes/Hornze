@@ -292,7 +292,7 @@ func _process(_delta):
 			#anim.play("idle")
 			#SAnimPlayer.play("idle")
 			$AnimatedSprite2D/Eye/Eye_Animations.play("idle")
-			
+
 
 	#jump
 	if velocity.y < 0 and jump and !dashing:
@@ -301,7 +301,7 @@ func _process(_delta):
 		#SAnimPlayer.play ('jump_eyetrack')
 		$AnimatedSprite2D/Eye/Eye_Animations.play('Jumping_Eyetrack')
 		#SAnimPlayer.play ("jump")
-		
+
 	if velocity.y > 40 and falling and !dashing and !crouching:
 		anim.speed_scale = 1
 		#anim.play("falling")
@@ -319,8 +319,8 @@ func _process(_delta):
 		if dashing:
 			anim.speed_scale = 1
 			anim.play("dash")
-			
-			
+
+
 		#crouch
 		if crouching and !rolling:
 			if abs(velocity.x) > 10:

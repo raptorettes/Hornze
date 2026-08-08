@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://blu5o5sbvpn3v"]
+
+[ext_resource type="Texture2D" uid="uid://b5kf8ntlhn8hp" path="res://assets/HorseGods/DragonHorse_Portrait.png" id="1_n0dfh"]
+
+[node name="DragonHorseGod" type="Node2D" unique_id=304131339]
+
+[node name="DragonHorseGodPortrait" type="Sprite2D" parent="." unique_id=584754669]
+texture = ExtResource("1_n0dfh")

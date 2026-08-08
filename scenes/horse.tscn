@@ -538,6 +538,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_6rl12"]
 resource_name = "lazer-sfx"
+length = 1.8
 tracks/0/type = "audio"
 tracks/0/imported = false
 tracks/0/enabled = true

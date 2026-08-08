@@ -4,12 +4,13 @@
 
 [sub_resource type="Gradient" id="Gradient_te4u1"]
 interpolation_color_space = 1
-offsets = PackedFloat32Array(0.4341693, 0.9984326)
-colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.2901961)
+offsets = PackedFloat32Array(0.36710963, 0.48006645, 0.6960133, 0.948505, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 0.9979124, 0.9977287, 0.04690275, 1, 0.9914974, 0.99074596, 0.19021675, 1, 0.97215724, 0.96966076, 0.61488676, 1, 0.95416665, 0.95, 1)
 
 [resource]
 generate_mipmaps = false
 noise = ExtResource("1_0pkb5")
 color_ramp = SubResource("Gradient_te4u1")
 seamless = true
-seamless_blend_skirt = 1.0
+in_3d_space = true
+seamless_blend_skirt = 0.188

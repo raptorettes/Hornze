@@ -2491,11 +2491,11 @@ mode = 1
 flags/light_only = false
 nodes/fragment/0/position = Vector2(620, 0)
 nodes/fragment/3/node = SubResource("412")
-nodes/fragment/3/position = Vector2(100, -140)
+nodes/fragment/3/position = Vector2(102.85714, -365.7143)
 nodes/fragment/8/node = SubResource("423")
 nodes/fragment/8/position = Vector2(400, 0)
 nodes/fragment/9/node = SubResource("424")
-nodes/fragment/9/position = Vector2(100, 60)
+nodes/fragment/9/position = Vector2(114.28571, 125.71429)
 nodes/fragment/connections = PackedInt32Array(3, 0, 8, 0, 8, 1, 0, 1, 8, 0, 0, 0, 9, 4, 8, 2, 3, 4, 8, 1)
 
 [sub_resource type="ShaderMaterial" id="426"]
