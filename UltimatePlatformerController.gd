@@ -30,6 +30,7 @@ class_name Hornse
 @export_category("Jumping and Gravity")
 ##The peak height of your player's jump
 @export_range(0, 20) var jumpHeight: float = 2.0
+@export_range (0,20) var charged_jump_height: float = 2.0
 ##How many jumps your character can do before needing to touch the ground again. Giving more than 1 jump disables jump buffering and coyote time.
 @export_range(0, 4) var jumps: int = 1
 ##The strength at which your character will be pulled to the ground.
@@ -97,6 +98,7 @@ class_name Hornse
 @export var run: bool
 ##Animations must be named "jump" all lowercase as the check box says
 @export var jump: bool
+@export var charged_jump: bool
 ##Animations must be named "idle" all lowercase as the check box says
 @export var idle: bool
 ##Animations must be named "walk" all lowercase as the check box says
@@ -601,6 +603,30 @@ func _physics_process(delta):
 
 	if upToCancel and upHold and groundPound:
 		_endGroundPound()
+
+	#INFO Charged Jump
+#	print("charged jump: " ,charged_jump, "jump count: " ,jumps)
+	if charged_jump == true:
+	#	_jump()
+		jumps = 0
+
+
+		if jumpTap:
+			#print(jumpMagnitude)
+			#jumpMagnitude = 500
+			#jumpMagnitude = 500
+			jumps = 0
+			crouching = true
+		#	_jump()
+		elif jumpRelease and is_on_floor():
+
+			crouching = false
+			jumps += 1
+			jumpMagnitude = 2000
+			_jump()
+		#	jumpMagnitude = 500
+
+
 
 func _bufferJump():
 	await get_tree().create_timer(jumpBuffering).timeout

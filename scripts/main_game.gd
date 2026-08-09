@@ -22,7 +22,8 @@ var has_entered : bool = false
 func _ready() -> void:
 #	$Automator.play("RESET")
 	horse_particle.visible = false
-	$Horse.dashes = 0
+	horse.charged_jump = false
+	horse.dashes = 0
 	star_anim.play("Star_Pulse")
 	moon_star_anim.play("Moon_star_Pulse")
 	sun_star_anim.play("Sun_star_Pulse")
@@ -91,7 +92,9 @@ func _on_moon_star_body_entered(body: Node2D) -> void:
 func _on_sun_star_body_entered(body: Node2D)-> void:
 	print ("camera: zoom: ", camera.zoom)
 	if body.is_in_group("Horse"):
-		$Horse.jumps += 1
+		horse.charged_jump = true
+		horse.jumpCount = 0
+
 		animation_player.play("DragonHorseGod")
 		var eat_tween = get_tree().create_tween()
 		eat_tween.set_trans(Tween.TRANS_CUBIC)
