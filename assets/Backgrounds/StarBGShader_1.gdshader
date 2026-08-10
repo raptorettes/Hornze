@@ -7,11 +7,11 @@ shader_type canvas_item;
 uniform vec2 dimensions = vec2(1024.0, 600.0); // Resolution of ColorRect in pixels
 
 uniform float small_stars = 50.0; // Number of small stars. Rows for horizontally scrolling stars or columns for vertically scrolling stars.
-uniform float small_stars_far_size : hint_range(0.1, 1.0, 0.1) = 0.5;
-uniform float small_stars_near_size : hint_range(0.1, 1.0, 0.1) = 1.0;
+uniform float small_stars_far_size : hint_range(0.01, 1.0, 0.01) = 0.05;
+uniform float small_stars_near_size : hint_range(0.01, 1.0, 0.01) = 1.0;
 uniform float large_stars = 8.0; // Number of large stars. Rows for horizontally scrolling stars or columns for vertically scrolling stars.
-uniform float large_stars_far_size : hint_range(0.1, 1.0, 0.1) = 0.5;
-uniform float large_stars_near_size : hint_range(0.1, 1.0, 0.1) = 1.0;
+uniform float large_stars_far_size : hint_range(0.01, 1.0, 0.01) = 0.5;
+uniform float large_stars_near_size : hint_range(0.01, 1.0, 0.01) = 1.0;
 
 // Replace the below references to 'source_color' with 'hint_color' if you are using a version of Godot before 4.
 uniform vec4 far_stars_color : source_color = vec4(0.50, 0.0, 1.0, 1.0);

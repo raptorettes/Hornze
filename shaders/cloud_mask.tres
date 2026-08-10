@@ -1,0 +1,68 @@
+[gd_resource type="VisualShader" format=3 uid="uid://b0vg3p1v0vhs5"]
+
+[ext_resource type="Script" uid="uid://dipmmant3tv34" path="res://addons/shaderV2/rgba/tintRGBA.gd" id="1_sybs1"]
+[ext_resource type="Script" uid="uid://bsko0bhpapkae" path="res://addons/shaderV2/rgba/grayscale.gd" id="2_h8y03"]
+
+[sub_resource type="VisualShaderNodeCustom" id="VisualShaderNodeCustom_um0oa"]
+default_input_values = [1, 1.0, 2, Vector3(1, 1, 1), 3, 1.0]
+initialized = true
+script = ExtResource("1_sybs1")
+
+[sub_resource type="Gradient" id="Gradient_o0wpv"]
+offsets = PackedFloat32Array(0.0013736264, 1)
+colors = PackedColorArray(1.482468, 1.5097874, 1.5117388, 0.49019608, 1.3685378, 2.7123942, 5.6122923, 0.56078434)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ro7ba"]
+gradient = SubResource("Gradient_o0wpv")
+fill_from = Vector2(0.56837606, 0.9893162)
+fill_to = Vector2(0.50213677, 0.0021367522)
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_h8y03"]
+expanded_output_ports = [0]
+texture = SubResource("GradientTexture2D_ro7ba")
+
+[sub_resource type="Gradient" id="Gradient_mlx2q"]
+offsets = PackedFloat32Array(0, 0.31593406, 0.65247256, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_v7khu"]
+gradient = SubResource("Gradient_mlx2q")
+fill_from = Vector2(0.01923077, 0.104700856)
+fill_to = Vector2(0.9508547, 0.091880344)
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_3sprl"]
+expanded_output_ports = [0]
+texture = SubResource("GradientTexture2D_v7khu")
+texture_type = 1
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_dmthc"]
+expanded_output_ports = [0]
+source = 2
+texture = SubResource("GradientTexture2D_v7khu")
+texture_type = 1
+
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_115ru"]
+operator = 2
+
+[sub_resource type="VisualShaderNodeCustom" id="VisualShaderNodeCustom_c4hrj"]
+default_input_values = [1, 1.0]
+initialized = true
+script = ExtResource("2_h8y03")
+
+[resource]
+mode = 1
+flags/light_only = false
+nodes/fragment/0/position = Vector2(570, 170)
+nodes/fragment/2/node = SubResource("VisualShaderNodeTexture_3sprl")
+nodes/fragment/2/position = Vector2(-630, 450)
+nodes/fragment/3/node = SubResource("VisualShaderNodeTexture_dmthc")
+nodes/fragment/3/position = Vector2(-360, 0)
+nodes/fragment/4/node = SubResource("VisualShaderNodeFloatOp_115ru")
+nodes/fragment/4/position = Vector2(330, 300)
+nodes/fragment/5/node = SubResource("VisualShaderNodeCustom_c4hrj")
+nodes/fragment/5/position = Vector2(-90, 50)
+nodes/fragment/10/node = SubResource("VisualShaderNodeCustom_um0oa")
+nodes/fragment/10/position = Vector2(110, 180)
+nodes/fragment/12/node = SubResource("VisualShaderNodeTexture_h8y03")
+nodes/fragment/12/position = Vector2(-360, 280)
+nodes/fragment/connections = PackedInt32Array(2, 4, 4, 1, 3, 0, 5, 0, 10, 0, 0, 0, 3, 4, 10, 1, 10, 1, 4, 0, 4, 0, 0, 1, 12, 0, 10, 2, 12, 4, 10, 3, 5, 0, 10, 0)

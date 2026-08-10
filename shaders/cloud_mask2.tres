@@ -1,0 +1,65 @@
+[gd_resource type="VisualShader" format=3 uid="uid://dcjv14ehlqnjs"]
+
+[ext_resource type="Script" uid="uid://dipmmant3tv34" path="res://addons/shaderV2/rgba/tintRGBA.gd" id="1_x2687"]
+
+[sub_resource type="Gradient" id="Gradient_sybs1"]
+offsets = PackedFloat32Array(0, 0.018361581, 0.13841808, 0.66101694, 1)
+colors = PackedColorArray(0.7396356, 0.6805738, 0.62143236, 0.056113508, 0.74, 0.6808, 0.62160003, 0, 1.3230801, 0.8354182, 0.40871415, 0.49019608, 1.6521378, 0.8514442, 0.7048918, 0.7254902, 0.777167, 0.72483784, 0.76141405, 0.2509804)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_l5eku"]
+gradient = SubResource("Gradient_sybs1")
+fill_from = Vector2(0.5662393, 1)
+fill_to = Vector2(0.50213677, 0.0021367522)
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_f0enr"]
+expanded_output_ports = [0]
+texture = SubResource("GradientTexture2D_l5eku")
+
+[sub_resource type="VisualShaderNodeCustom" id="VisualShaderNodeCustom_2h0mo"]
+default_input_values = [1, 1.0, 2, Vector3(1, 1, 1), 3, 1.0]
+initialized = true
+script = ExtResource("1_x2687")
+
+[sub_resource type="Gradient" id="Gradient_mlx2q"]
+offsets = PackedFloat32Array(0, 0.31593406, 0.65247256, 1)
+colors = PackedColorArray(1, 1, 1, 0, 4.967804, 4.967804, 4.967804, 0.69411767, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_886ds"]
+gradient = SubResource("Gradient_mlx2q")
+fill_from = Vector2(0.01923077, 0.104700856)
+fill_to = Vector2(0.9508547, 0.091880344)
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_6rtp3"]
+expanded_output_ports = [0]
+texture = SubResource("GradientTexture2D_886ds")
+texture_type = 1
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_v7khu"]
+gradient = SubResource("Gradient_mlx2q")
+fill_from = Vector2(0.01923077, 0.104700856)
+fill_to = Vector2(0.9508547, 0.091880344)
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_www2p"]
+expanded_output_ports = [0]
+source = 2
+texture = SubResource("GradientTexture2D_v7khu")
+texture_type = 1
+
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_vuyo7"]
+operator = 2
+
+[resource]
+mode = 1
+flags/light_only = false
+nodes/fragment/0/position = Vector2(570, 170)
+nodes/fragment/2/node = SubResource("VisualShaderNodeTexture_6rtp3")
+nodes/fragment/2/position = Vector2(-630, 450)
+nodes/fragment/3/node = SubResource("VisualShaderNodeTexture_www2p")
+nodes/fragment/3/position = Vector2(-360, 0)
+nodes/fragment/4/node = SubResource("VisualShaderNodeFloatOp_vuyo7")
+nodes/fragment/4/position = Vector2(310, 340)
+nodes/fragment/12/node = SubResource("VisualShaderNodeTexture_f0enr")
+nodes/fragment/12/position = Vector2(-360, 280)
+nodes/fragment/13/node = SubResource("VisualShaderNodeCustom_2h0mo")
+nodes/fragment/13/position = Vector2(80, 20)
+nodes/fragment/connections = PackedInt32Array(4, 0, 0, 1, 3, 0, 13, 0, 3, 4, 13, 1, 12, 0, 13, 2, 13, 1, 4, 0, 13, 0, 0, 0, 12, 4, 13, 3, 2, 4, 4, 1)
