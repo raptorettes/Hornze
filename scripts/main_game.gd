@@ -14,10 +14,17 @@ var has_entered : bool = false
 
 
 ####HORSE PARTICLES
+@onready var horse_particle: GPUParticles2D = $Horse/horse_particle
 @onready var particle_gravity=$Horse/horse_particle.process_material.gravity
 @onready var particle_end = $Horse/horse_particle.emitting
+
+@onready var windFX: GPUParticles2D = $Horse/Horse_windFX
+@onready var windFX_end = $Horse/Horse_windFX.emitting
+
+
 @onready var horse_vel = $Horse.velocity
-@onready var horse_particle: GPUParticles2D = $Horse/horse_particle
+
+
 
 func _ready() -> void:
 #	$Automator.play("RESET")
@@ -58,14 +65,26 @@ func _process(delta: float) -> void:
 	#### HORSE PARTICLES!!
 
 	var direction = Input.get_vector("Left","Right","Jump","Down")
+	var isChargedJump = horse.velocity.y
 	#print("horse velocity: ",horse_vel)
 	#particle_gravity=horse_vel*100
+	#INFO Jump particles
 	if direction.length() > 0:
 		#horse_particle.restart()
 		horse_particle.set_emitting(true)
 	else:
 		#horse_particle.restart()
 		horse_particle.set_emitting(false)
+
+	#INFO Charge Jump wind FX
+	if isChargedJump < 0:
+		windFX.set_emitting(true)
+		#print("wind gravity: ",windFX.process_material.gravity)
+		windFX.process_material.gravity.x += horse_vel.x
+		windFX.process_material.gravity.y += horse_vel.y
+	else:
+		windFX.set_emitting(false)
+
 	#print(particle_end)
 	#print("direction: " ,direction)
 	#print ("gravity: ", particle_gravity)

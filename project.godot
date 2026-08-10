@@ -38,6 +38,17 @@ window/stretch/mode="canvas_items"
 
 enabled=PackedStringArray("res://addons/godot_state_charts/plugin.cfg", "res://addons/maaacks_game_template/plugin.cfg", "res://addons/magic_sparkles/plugin.cfg", "res://addons/remember_window_placement/plugin.cfg")
 
+[file_customization]
+
+folder_colors={
+"res://00.unsorted/": "gray",
+"res://addons/": "pink",
+"res://assets/": "green",
+"res://scenes/": "orange",
+"res://scripts/": "blue",
+"res://shaders/": "purple"
+}
+
 [global_group]
 
 Horse=""

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dxm1vn1flkk7s"]
 
-[ext_resource type="Script" uid="uid://ccl7k6d7g7ksk" path="res://UltimatePlatformerController.gd" id="1_7j5lf"]
+[ext_resource type="Script" uid="uid://ccl7k6d7g7ksk" path="res://scripts/UltimatePlatformerController.gd" id="1_7j5lf"]
 [ext_resource type="Material" uid="uid://c0hgx26ysny3a" path="res://assets/Honse_1/HonseMateriall.tres" id="2_e0gb1"]
 [ext_resource type="Texture2D" uid="uid://cjruusekvc03" path="res://assets/Honse_1/Honse_Spritesheet_idle.png" id="3_42vyf"]
 [ext_resource type="Texture2D" uid="uid://rs58t6jjuf2s" path="res://assets/Honse_1/jump spritesheet.png" id="4_5mwg8"]

@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://ex_button_hover"]
+[gd_scene format=3]
 
-[ext_resource type="Script" path="res://addons/magic_sparkles/scripts/magic_sparkle_light.gd" id="1_light"]
+[ext_resource type="Script" uid="uid://bxp60jr7ajtit" path="res://addons/magic_sparkles/scripts/magic_sparkle_light.gd" id="1_light"]
 
 [node name="ButtonHover" type="Control"]
 layout_mode = 3

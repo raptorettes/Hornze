@@ -1,0 +1,62 @@
+[gd_resource type="ParticleProcessMaterial" format=3 uid="uid://dhwj137wbcdxr"]
+
+[sub_resource type="Curve" id="Curve_rr87q"]
+_data = [Vector2(0, 0.44425958), 0.0, -0.00710949, 0, 0, Vector2(0.44224924, 0.20965058), -0.11524651, -0.11524651, 0, 0, Vector2(0.97112465, 0.21464223), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.2160969, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_wybw5"]
+width = 128
+curve = SubResource("Curve_rr87q")
+
+[sub_resource type="Curve" id="Curve_4e2rb"]
+_data = [Vector2(0.80851066, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_urnot"]
+width = 128
+curve = SubResource("Curve_4e2rb")
+
+[sub_resource type="Curve" id="Curve_urnot"]
+_data = [Vector2(0, 0), 0.0, 1.5881966, 0, 0, Vector2(0.19604865, 0.049916744), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_rr87q"]
+curve = SubResource("Curve_urnot")
+
+[sub_resource type="Curve" id="Curve_364ed"]
+_limits = [0.0, 3.0, 0.0, 1.0]
+_data = [Vector2(0, 0.019966602), 0.0, 0.0, 0, 0, Vector2(0.95440733, 2.8302832), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_364ed"]
+curve = SubResource("Curve_364ed")
+
+[sub_resource type="Curve" id="Curve_clsbp"]
+_data = [Vector2(0.61876833, 0), 0.0, 0.0, 0, 0, Vector2(0.9222874, 0.9935795), 0.0, 0.0, 0, 0, Vector2(0.989736, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_6vdpn"]
+curve = SubResource("Curve_clsbp")
+
+[resource]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(5, 0, 0)
+emission_shape = 3
+emission_box_extents = Vector3(11, 0, 0)
+inherit_velocity_ratio = 0.275
+spread = 95.902
+flatness = 0.079
+initial_velocity_max = 66.0
+angular_velocity_min = -1.6093254e-05
+angular_velocity_max = 0.9999839
+gravity = Vector3(0, -22, 0)
+scale_min = 0.0
+scale_curve = SubResource("CurveTexture_rr87q")
+scale_over_velocity_max = 11.0
+scale_over_velocity_curve = SubResource("CurveTexture_364ed")
+alpha_curve = SubResource("CurveTexture_wybw5")
+emission_curve = SubResource("CurveTexture_urnot")
+turbulence_noise_speed = Vector3(1, 0, 0)
+turbulence_influence_min = 0.0
+turbulence_influence_max = 0.083000004
+turbulence_influence_over_life = SubResource("CurveTexture_6vdpn")
