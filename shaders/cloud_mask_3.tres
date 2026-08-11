@@ -3,13 +3,13 @@
 [ext_resource type="Script" uid="uid://dipmmant3tv34" path="res://addons/shaderV2/rgba/tintRGBA.gd" id="1_1eokm"]
 
 [sub_resource type="Gradient" id="Gradient_b8554"]
-offsets = PackedFloat32Array(0, 0.55494505, 1)
+offsets = PackedFloat32Array(0, 0.10310735, 1)
 colors = PackedColorArray(1, 1, 1, 0.5176471, 1, 1, 1, 0.8500853, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_nbi47"]
 gradient = SubResource("Gradient_b8554")
-fill_from = Vector2(0.42948717, 0)
-fill_to = Vector2(0.50213677, 0.8418803)
+fill_from = Vector2(0.5, 0)
+fill_to = Vector2(0.48290598, 1)
 
 [sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_s75h7"]
 expanded_output_ports = [0]

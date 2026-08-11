@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://fdj436tkcoia"]
+
+[ext_resource type="Texture2D" uid="uid://bden8so1h8v5" path="res://assets/Pickups/rainbow_pickup.png" id="1_aqnik"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tnskl"]
+radius = 20.0
+height = 86.0
+
+[sub_resource type="Animation" id="Animation_pjtuq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RainbowPickupSprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1.1822468, 1.2030135, 1.4540865, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_3f3c0"]
+resource_name = "Rainbow_pickup_anim"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RainbowPickupSprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(-2, 1, -0.5),
+"update": 0,
+"values": [Vector2(0.1, 0.1), Vector2(0.15, 0.15), Vector2(0.1, 0.1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RainbowPickupSprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1.0656427, 1.0656427, 1.0656427, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7q0na"]
+_data = {
+&"RESET": SubResource("Animation_pjtuq"),
+&"Rainbow_pickup_anim": SubResource("Animation_3f3c0")
+}
+
+[node name="Rainbow_Pickup" type="Area2D" unique_id=1435338415]
+
+[node name="RainbowPickupSprite" type="Sprite2D" parent="." unique_id=788059066]
+position = Vector2(1, -2)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_aqnik")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1946488317]
+visible = false
+position = Vector2(5, 0)
+rotation = 0.5653148
+shape = SubResource("CapsuleShape2D_tnskl")
+
+[node name="Rainbow_Pickup_anim" type="AnimationPlayer" parent="." unique_id=1939741342]
+libraries/ = SubResource("AnimationLibrary_7q0na")

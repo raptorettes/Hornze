@@ -19,15 +19,24 @@
 [ext_resource type="Gradient" uid="uid://c2ga7vfb4mvhv" path="res://assets/Backgrounds/SkyGradient2.tres" id="11_6de02"]
 [ext_resource type="AudioStream" uid="uid://7joxx7i50wy8" path="res://assets/Audio/MUSIC/hornse_WIP_canonecho.ogg" id="11_8xp80"]
 [ext_resource type="AudioStream" uid="uid://wlrvkmx2h6ew" path="res://assets/Audio/VO/SpiritHorseGod_VO.ogg" id="11_o6v7o"]
+[ext_resource type="Shader" uid="uid://bx0o3k78iho2l" path="res://assets/Clouds_1/customclouds_shader.tres" id="11_wpxwh"]
 [ext_resource type="PackedScene" uid="uid://c7s1ge2m6qkk3" path="res://scenes/NightHorseGod.tscn" id="12_ibnub"]
+[ext_resource type="Texture2D" uid="uid://dik33nwmr5tpp" path="res://assets/Clouds_1/CustomCloud2.png" id="12_jk70c"]
+[ext_resource type="Texture2D" uid="uid://bden8so1h8v5" path="res://assets/Pickups/rainbow_pickup.png" id="13_34vfp"]
+[ext_resource type="Texture2D" uid="uid://da6nft0xrhm3k" path="res://assets/Clouds_1/CustomCloud3.png" id="13_t42xu"]
+[ext_resource type="Texture2D" uid="uid://c3k60vwbb222y" path="res://assets/Clouds_1/CustomCloud_1.png" id="14_34vfp"]
 [ext_resource type="Shader" uid="uid://csrjq15al73b7" path="res://shaders/starsBGShader_2.gdshader" id="14_q875d"]
 [ext_resource type="Texture2D" uid="uid://dqw2jsa4etqp2" path="res://assets/PostProcessing/illia-horokhovsky-TQF5tth3tWo-unsplash.jpg" id="15_307no"]
 [ext_resource type="Script" uid="uid://w6rf633uiqd3" path="res://scenes/cloud_parallax_3.gd" id="15_dvo3n"]
+[ext_resource type="Script" uid="uid://dipmmant3tv34" path="res://addons/shaderV2/rgba/tintRGBA.gd" id="15_g2o8j"]
 [ext_resource type="PackedScene" uid="uid://b3ptidiwjsdgb" path="res://scenes/grass_dynamic.tscn" id="15_ihbck"]
 [ext_resource type="Texture2D" uid="uid://dbqiuv0p8pyfw" path="res://assets/Grass.png" id="15_sp04v"]
+[ext_resource type="Texture2D" uid="uid://c2olowv76xqy2" path="res://assets/Clouds_1/temp/Pegasus_Castle.png" id="16_1vioj"]
 [ext_resource type="PackedScene" uid="uid://btcomq13xp5w3" path="res://scenes/mushroom.tscn" id="16_5luka"]
+[ext_resource type="Script" uid="uid://lknyke7iwap3" path="res://addons/shaderV2/rgba/colorCorrectionAdjustment.gd" id="16_oojmo"]
 [ext_resource type="Texture2D" uid="uid://lvfv3qywt6tt" path="res://assets/Clouds_1/clouds4_gs.png" id="16_q875d"]
 [ext_resource type="Environment" uid="uid://cg03ien0lqh0t" path="res://assets/PostProcessing/EnvironmentNode_Preset1.tres" id="17_5luka"]
+[ext_resource type="Texture2D" uid="uid://b5nru83h1yj3" path="res://assets/Clouds_1/temp/Pegasus_Castle_Clouds.png" id="17_g2o8j"]
 [ext_resource type="Shader" uid="uid://b554igu0rgpfb" path="res://shaders/cloud_mask1.tres" id="17_q875d"]
 [ext_resource type="Texture2D" uid="uid://b74ukrey7hbi5" path="res://assets/Clouds_1/clouds2_gs.png" id="18_1vioj"]
 [ext_resource type="AudioStream" uid="uid://c5a4jb8llhmdb" path="res://assets/Audio/VO/NightHorseGod.ogg" id="18_cybgu"]
@@ -38,16 +47,17 @@
 [ext_resource type="PackedScene" uid="uid://blu5o5sbvpn3v" path="res://scenes/DragonHorseGod.tscn" id="27_x3ega"]
 [ext_resource type="Texture2D" uid="uid://d0t844ilan3q4" path="res://assets/Particles/trace_07_a.png" id="31_dp0eu"]
 [ext_resource type="Material" uid="uid://dhwj137wbcdxr" path="res://assets/Particles/WindFX1.tres" id="32_urnot"]
+[ext_resource type="PackedScene" uid="uid://tlv5qogudq75" path="res://scenes/PegasusHorseGod.tscn" id="33_cp8wt"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_q875d"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t42xu"]
 resource_local_to_scene = true
 shader = ExtResource("5_ihbck")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_dvo3n"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_34vfp"]
 resource_local_to_scene = true
 shader = ExtResource("5_ihbck")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_1vioj"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1w5q7"]
 resource_local_to_scene = true
 shader = ExtResource("5_ihbck")
 
@@ -87,15 +97,15 @@ _data = {
 &"Star_Pulse": SubResource("Animation_yu8cv")
 }
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_g2o8j"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ssxou"]
 resource_local_to_scene = true
 shader = ExtResource("5_ihbck")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_oojmo"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cg2cl"]
 resource_local_to_scene = true
 shader = ExtResource("5_ihbck")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_5noht"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_meg3e"]
 resource_local_to_scene = true
 shader = ExtResource("5_ihbck")
 
@@ -138,23 +148,23 @@ _data = {
 &"Moon_star_Pulse": SubResource("Animation_ikqpi")
 }
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_4v0b0"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aor82"]
 resource_local_to_scene = true
 shader = ExtResource("5_ihbck")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_wpxwh"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_krfhu"]
 resource_local_to_scene = true
 shader = ExtResource("5_ihbck")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_jk70c"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x3a3x"]
 resource_local_to_scene = true
 shader = ExtResource("5_ihbck")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_t42xu"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sgocm"]
 resource_local_to_scene = true
 shader = ExtResource("5_ihbck")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_1w5q7"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pk1le"]
 resource_local_to_scene = true
 shader = ExtResource("5_ihbck")
 
@@ -192,105 +202,94 @@ _data = {
 &"Sun_star_Pulse": SubResource("Animation_rr87q")
 }
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ssxou"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1al3e"]
 resource_local_to_scene = true
 shader = ExtResource("5_ihbck")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_jm67w"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sh8gf"]
 resource_local_to_scene = true
 shader = ExtResource("5_ihbck")
 
-[sub_resource type="Shader" id="Shader_q875d"]
-code = "shader_type canvas_item;
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_euqen"]
 
-uniform float blur_amount : hint_range(0.0, 8.0) = 2.0;
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_trxsc"]
+shader = ExtResource("11_wpxwh")
 
-uniform sampler2D screen_texture : hint_screen_texture, filter_linear_mipmap;
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wpxwh"]
+radius = 60.0
+height = 310.0
 
-void fragment() {
- vec4 color = textureLod(screen_texture, SCREEN_UV, blur_amount);
- COLOR = color;
-}"
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tnskl"]
+radius = 20.0
+height = 86.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_uxmck"]
-shader = SubResource("Shader_q875d")
-shader_parameter/blur_amount = 1.0000000475
+[sub_resource type="Animation" id="Animation_pjtuq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RainbowPickupSprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1.1822468, 1.2030135, 1.4540865, 1)]
+}
 
-[sub_resource type="Gradient" id="Gradient_wjob3"]
-offsets = PackedFloat32Array(0, 0.15203762, 0.492163, 0.69960475)
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 0.34901962, 1, 0.34, 0.34, 0.34, 1, 0, 0, 0, 1)
+[sub_resource type="Animation" id="Animation_3f3c0"]
+resource_name = "Rainbow_pickup_anim"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RainbowPickupSprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(-2, 1, -0.5),
+"update": 0,
+"values": [Vector2(0.1, 0.1), Vector2(0.15, 0.15), Vector2(0.1, 0.1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RainbowPickupSprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1.0656427, 1.0656427, 1.0656427, 1), Color(1, 1, 1, 1)]
+}
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_uxmck"]
-gradient = SubResource("Gradient_wjob3")
-width = 256
-height = 256
-use_hdr = true
-fill = 1
-fill_from = Vector2(0.46581197, 0.508547)
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7q0na"]
+_data = {
+&"RESET": SubResource("Animation_pjtuq"),
+&"Rainbow_pickup_anim": SubResource("Animation_3f3c0")
+}
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_tnskl"]
-gradient = ExtResource("10_5wboo")
-fill_from = Vector2(0.5, 0.1)
-fill_to = Vector2(0.5, 1)
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_pcoky"]
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_cybgu"]
-gradient = ExtResource("11_6de02")
-fill_from = Vector2(0.491453, 0.15598291)
-fill_to = Vector2(0.491453, 0.991453)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_stoog"]
+shader = ExtResource("11_wpxwh")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_hw1gj"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jk70c"]
+radius = 60.0
+height = 258.5
 
-[sub_resource type="Gradient" id="Gradient_1vioj"]
-interpolation_mode = 2
-interpolation_color_space = 2
-offsets = PackedFloat32Array(0.21760798, 0.5232558, 0.6594684, 0.84551495, 1)
-colors = PackedColorArray(0.6862745, 0.85490197, 1, 1, 0.8650997, 0.765624, 0.7527015, 1, 0.88703334, 0.75495446, 0.45252496, 1, 0.3767078, 0.25191033, 0.32891542, 1, 0.11411852, 0, 0.25587967, 1)
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_tnskl"]
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_g2o8j"]
-gradient = SubResource("Gradient_1vioj")
-height = 128
-fill_from = Vector2(0.491453, 0.15598291)
-fill_to = Vector2(0.491453, 0.991453)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kc53d"]
+shader = ExtResource("11_wpxwh")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_tnskl"]
-shader = ExtResource("14_q875d")
-shader_parameter/horizontalMovement = 0.1
-shader_parameter/verticalMovement = 0.1
-shader_parameter/frequencyStar = 0.1
-shader_parameter/sizeStar = 180.0
-shader_parameter/brightnessStar = 1.0
-shader_parameter/shineFrequencyStar = 8.0
-shader_parameter/transparencyStar = 0.0
-shader_parameter/starIterations = 4
-shader_parameter/frequencyBgStar = 0.9999999904540701
-shader_parameter/shineFrequencyBgStar = 1.0
-shader_parameter/transparencyBgStar = 0.0
-shader_parameter/colorBackground = Color(0.05, 0.04, 0.2, 1)
-shader_parameter/transparencyBackground = 0.999999977648
-shader_parameter/seed = 9.0
-
-[sub_resource type="Gradient" id="Gradient_307no"]
-interpolation_mode = 2
-interpolation_color_space = 2
-colors = PackedColorArray(0.886004, 0.9676589, 1, 1, 0.6862745, 0.85490197, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_rr87q"]
-gradient = SubResource("Gradient_307no")
-height = 200
-fill_from = Vector2(0.491453, 0.15598291)
-fill_to = Vector2(0.491453, 0.991453)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_mkn3m"]
-shader = ExtResource("17_q875d")
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wpxwh"]
-load_path = "res://.godot/imported/clouds3_gs.png-485963e618e6ec38394bd8bc50081ee3.ctex"
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_1eokm"]
-shader = ExtResource("19_q875d")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_cp8wt"]
-shader = ExtResource("19_q875d")
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qdken"]
+radius = 60.0
+height = 397.68
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_307no"]
 blend_mode = 1
@@ -349,6 +348,176 @@ seamless = true
 in_3d_space = true
 seamless_blend_skirt = 0.188
 
+[sub_resource type="Gradient" id="Gradient_g2o8j"]
+offsets = PackedFloat32Array(0.14548023, 0.40536723)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.31764707)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_oojmo"]
+gradient = SubResource("Gradient_g2o8j")
+fill_from = Vector2(0.5, 1)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_5noht"]
+expanded_output_ports = [0]
+texture = SubResource("GradientTexture2D_oojmo")
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_4v0b0"]
+expanded_output_ports = [0]
+source = 2
+
+[sub_resource type="Gradient" id="Gradient_oojmo"]
+offsets = PackedFloat32Array(0.004237288, 0.6200565)
+colors = PackedColorArray(1.353256, 0.8326685, 1.084286, 1, 0.76165503, 1.0194659, 1.1797268, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5noht"]
+gradient = SubResource("Gradient_oojmo")
+use_hdr = true
+fill_from = Vector2(0.5106838, 0.9423077)
+fill_to = Vector2(0.5534188, 0)
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_mkn3m"]
+expanded_output_ports = [0]
+texture = SubResource("GradientTexture2D_5noht")
+
+[sub_resource type="VisualShaderNodeCustom" id="VisualShaderNodeCustom_wpxwh"]
+default_input_values = [1, 1.0, 2, Vector3(1, 1, 1), 3, 1.0]
+initialized = true
+script = ExtResource("15_g2o8j")
+
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_jk70c"]
+operator = 2
+
+[sub_resource type="VisualShaderNodeCustom" id="VisualShaderNodeCustom_5noht"]
+initialized = true
+script = ExtResource("16_oojmo")
+
+[sub_resource type="VisualShaderNodeTexture2DParameter" id="VisualShaderNodeTexture2DParameter_4v0b0"]
+parameter_name = "Texture2DParameter"
+texture_type = 1
+
+[sub_resource type="VisualShader" id="VisualShader_t42xu"]
+mode = 1
+flags/light_only = false
+nodes/fragment/0/position = Vector2(650, 160)
+nodes/fragment/2/node = SubResource("VisualShaderNodeTexture_5noht")
+nodes/fragment/2/position = Vector2(-50, 480)
+nodes/fragment/3/node = SubResource("VisualShaderNodeTexture_4v0b0")
+nodes/fragment/3/position = Vector2(-200, -210)
+nodes/fragment/4/node = SubResource("VisualShaderNodeTexture_mkn3m")
+nodes/fragment/4/position = Vector2(-320, 110)
+nodes/fragment/5/node = SubResource("VisualShaderNodeCustom_wpxwh")
+nodes/fragment/5/position = Vector2(150, -80)
+nodes/fragment/6/node = SubResource("VisualShaderNodeFloatOp_jk70c")
+nodes/fragment/6/position = Vector2(350, 270)
+nodes/fragment/8/node = SubResource("VisualShaderNodeCustom_5noht")
+nodes/fragment/8/position = Vector2(530, -250)
+nodes/fragment/9/node = SubResource("VisualShaderNodeTexture2DParameter_4v0b0")
+nodes/fragment/9/position = Vector2(100, -570)
+nodes/fragment/connections = PackedInt32Array(2, 4, 6, 1, 6, 0, 0, 1, 3, 4, 5, 1, 5, 0, 0, 0, 5, 1, 6, 0, 4, 4, 5, 3, 4, 0, 5, 2, 9, 0, 8, 1, 8, 0, 5, 0, 3, 0, 8, 0)
+
+[sub_resource type="Curve" id="Curve_jm67w"]
+_data = [Vector2(0, 0.062600374), 0.0, 0.59373784, 0, 0, Vector2(0.1744868, 0.1749599), 1.1610496, 1.1610496, 0, 0, Vector2(0.3929619, 0.6083467), 1.0185182, 1.0185182, 0, 0, Vector2(0.9809384, 0.9333332), 1.2955555, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_ssxou"]
+curve = SubResource("Curve_jm67w")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1eokm"]
+shader = SubResource("VisualShader_t42xu")
+shader_parameter/Texture2DParameter = SubResource("CurveTexture_ssxou")
+
+[sub_resource type="Gradient" id="Gradient_wjob3"]
+offsets = PackedFloat32Array(0, 0.15203762, 0.492163, 0.69960475)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 0.34901962, 1, 0.34, 0.34, 0.34, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_uxmck"]
+gradient = SubResource("Gradient_wjob3")
+width = 256
+height = 256
+use_hdr = true
+fill = 1
+fill_from = Vector2(0.46581197, 0.508547)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_tnskl"]
+gradient = ExtResource("10_5wboo")
+fill_from = Vector2(0.5, 0.1)
+fill_to = Vector2(0.5, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_cybgu"]
+gradient = ExtResource("11_6de02")
+fill_from = Vector2(0.491453, 0.15598291)
+fill_to = Vector2(0.491453, 0.991453)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hw1gj"]
+
+[sub_resource type="Gradient" id="Gradient_1vioj"]
+interpolation_mode = 2
+interpolation_color_space = 2
+offsets = PackedFloat32Array(0.21760798, 0.5232558, 0.6594684, 0.84551495, 1)
+colors = PackedColorArray(0.6862745, 0.85490197, 1, 1, 0.8650997, 0.765624, 0.7527015, 1, 0.88703334, 0.75495446, 0.45252496, 1, 0.3767078, 0.25191033, 0.32891542, 1, 0.11411852, 0, 0.25587967, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_g2o8j"]
+gradient = SubResource("Gradient_1vioj")
+height = 128
+fill_from = Vector2(0.491453, 0.15598291)
+fill_to = Vector2(0.491453, 0.991453)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tnskl"]
+shader = ExtResource("14_q875d")
+shader_parameter/horizontalMovement = 0.1
+shader_parameter/verticalMovement = 0.1
+shader_parameter/frequencyStar = 0.1
+shader_parameter/sizeStar = 180.0
+shader_parameter/brightnessStar = 1.0
+shader_parameter/shineFrequencyStar = 8.0
+shader_parameter/transparencyStar = 0.0
+shader_parameter/starIterations = 4
+shader_parameter/frequencyBgStar = 0.99999999045407
+shader_parameter/shineFrequencyBgStar = 1.0
+shader_parameter/transparencyBgStar = 0.0
+shader_parameter/colorBackground = Color(0.05, 0.04, 0.2, 1)
+shader_parameter/transparencyBackground = 0.999999977648
+shader_parameter/seed = 9.0
+
+[sub_resource type="Gradient" id="Gradient_307no"]
+interpolation_mode = 2
+interpolation_color_space = 2
+colors = PackedColorArray(0.886004, 0.9676589, 1, 1, 0.6862745, 0.85490197, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_rr87q"]
+gradient = SubResource("Gradient_307no")
+height = 200
+fill_from = Vector2(0.491453, 0.15598291)
+fill_to = Vector2(0.491453, 0.991453)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mkn3m"]
+shader = ExtResource("17_q875d")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wpxwh"]
+load_path = "res://.godot/imported/clouds3_gs.png-485963e618e6ec38394bd8bc50081ee3.ctex"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jm67w"]
+shader = ExtResource("19_q875d")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cp8wt"]
+shader = ExtResource("19_q875d")
+
+[sub_resource type="Shader" id="Shader_q875d"]
+code = "shader_type canvas_item;
+
+uniform float blur_amount : hint_range(0.0, 8.0) = 2.0;
+
+uniform sampler2D screen_texture : hint_screen_texture, filter_linear_mipmap;
+
+void fragment() {
+ vec4 color = textureLod(screen_texture, SCREEN_UV, blur_amount);
+ COLOR = color;
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uxmck"]
+shader = SubResource("Shader_q875d")
+shader_parameter/blur_amount = 0.6190000294025
+
 [sub_resource type="Gradient" id="Gradient_ygxny"]
 interpolation_color_space = 1
 offsets = PackedFloat32Array(0, 0.9883721, 1)
@@ -390,7 +559,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 3.68, 13.133333, 16.033333),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(0.8322701, 0.8322701, 0.8322701, 1), Color(0.8633255, 0.8633255, 0.8633255, 1), Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -585,6 +754,34 @@ tracks/7/keys = {
 "values": [Color(1, 1, 1, 0.30980393), Color(1, 1, 1, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_t42xu"]
+resource_name = "PegasusHorseGod"
+length = 52.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Horse/Camera2D:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.2666667, 13.566667, 16.066668),
+"transitions": PackedFloat32Array(0.5, 2, 0.5, 2),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.7, 0.7), Vector2(0.7, 0.7), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PegasusHorseGod:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3.68, 13.133333, 16.033333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_8xp80"]
 length = 0.001
 tracks/0/type = "value"
@@ -694,6 +891,18 @@ tracks/8/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [1.0]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("PegasusHorseGod:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_wjob3"]
@@ -815,6 +1024,7 @@ _data = {
 &"Music1": SubResource("Animation_sp04v"),
 &"Music2": SubResource("Animation_ihbck"),
 &"NightHorseGod": SubResource("Animation_urnot"),
+&"PegasusHorseGod": SubResource("Animation_t42xu"),
 &"RESET": SubResource("Animation_8xp80"),
 &"SpiritHorseGod": SubResource("Animation_wjob3"),
 &"ascension": SubResource("Animation_o6v7o")
@@ -870,6 +1080,7 @@ scale_curve = SubResource("CurveTexture_0pkb5")
 
 [node name="MainGame" type="Node2D" unique_id=1666445386]
 script = ExtResource("1_ikqpi")
+metadata/_edit_vertical_guides_ = [-3933.0, 1031.0]
 
 [node name="Music Soft" type="AudioStreamPlayer2D" parent="." unique_id=1263514825]
 position = Vector2(178, -1109)
@@ -896,15 +1107,15 @@ position = Vector2(-316, -306)
 position = Vector2(713, -3266)
 
 [node name="Cloud2" parent="Clouds_Lvl1" unique_id=167543451 instance=ExtResource("8_2l77h")]
-material = SubResource("ShaderMaterial_q875d")
+material = SubResource("ShaderMaterial_t42xu")
 position = Vector2(-314, -900)
 
 [node name="Cloud3" parent="Clouds_Lvl1" unique_id=766989435 instance=ExtResource("9_nqdth")]
-material = SubResource("ShaderMaterial_dvo3n")
+material = SubResource("ShaderMaterial_34vfp")
 position = Vector2(-863, -1246)
 
 [node name="Cloud8" parent="Clouds_Lvl1" unique_id=1617538161 instance=ExtResource("9_nqdth")]
-material = SubResource("ShaderMaterial_1vioj")
+material = SubResource("ShaderMaterial_1w5q7")
 position = Vector2(-284, -1581)
 
 [node name="Cloud2_flipped" parent="Clouds_Lvl1" unique_id=479451739 instance=ExtResource("7_on6n6")]
@@ -929,7 +1140,7 @@ libraries/ = SubResource("AnimationLibrary_ibnub")
 speed_scale = 0.5
 
 [node name="Cloud5" parent="Clouds_Lvl1" unique_id=595922666 instance=ExtResource("10_nqdth")]
-material = SubResource("ShaderMaterial_g2o8j")
+material = SubResource("ShaderMaterial_ssxou")
 position = Vector2(221, -555)
 mass = 5.0
 
@@ -946,12 +1157,12 @@ position = Vector2(-557, -2415)
 position = Vector2(1088, -3661)
 
 [node name="Cloud2" parent="Clouds_Lvl2" unique_id=1361157387 instance=ExtResource("8_2l77h")]
-material = SubResource("ShaderMaterial_oojmo")
+material = SubResource("ShaderMaterial_cg2cl")
 position = Vector2(1395, -1256)
 rotation = -0.073303826
 
 [node name="Cloud3" parent="Clouds_Lvl2" unique_id=1242233082 instance=ExtResource("9_nqdth")]
-material = SubResource("ShaderMaterial_5noht")
+material = SubResource("ShaderMaterial_meg3e")
 position = Vector2(405, -1752)
 
 [node name="Cloud4" parent="Clouds_Lvl2" unique_id=1623496774 instance=ExtResource("7_on6n6")]
@@ -976,11 +1187,11 @@ libraries/ = SubResource("AnimationLibrary_307no")
 speed_scale = 0.5
 
 [node name="Cloud5" parent="Clouds_Lvl2" unique_id=1575319135 instance=ExtResource("10_nqdth")]
-material = SubResource("ShaderMaterial_4v0b0")
+material = SubResource("ShaderMaterial_aor82")
 position = Vector2(189, -3004)
 
 [node name="Cloud6" parent="Clouds_Lvl2" unique_id=1160468775 instance=ExtResource("10_nqdth")]
-material = SubResource("ShaderMaterial_wpxwh")
+material = SubResource("ShaderMaterial_krfhu")
 position = Vector2(584, -716)
 
 [node name="Clouds_Lvl3" type="Node2D" parent="." unique_id=795099654]
@@ -996,16 +1207,16 @@ position = Vector2(2383, -1942)
 position = Vector2(541, -2850)
 
 [node name="Cloud2" parent="Clouds_Lvl3" unique_id=822984785 instance=ExtResource("8_2l77h")]
-material = SubResource("ShaderMaterial_jk70c")
+material = SubResource("ShaderMaterial_x3a3x")
 position = Vector2(3250.9998, -1462)
 rotation = -0.073303826
 
 [node name="Cloud3" parent="Clouds_Lvl3" unique_id=350033782 instance=ExtResource("9_nqdth")]
-material = SubResource("ShaderMaterial_t42xu")
+material = SubResource("ShaderMaterial_sgocm")
 position = Vector2(1444, -2177)
 
 [node name="Cloud9" parent="Clouds_Lvl3" unique_id=258687433 instance=ExtResource("9_nqdth")]
-material = SubResource("ShaderMaterial_1w5q7")
+material = SubResource("ShaderMaterial_pk1le")
 position = Vector2(2652, -846)
 
 [node name="Cloud4" parent="Clouds_Lvl3" unique_id=1238474609 instance=ExtResource("7_on6n6")]
@@ -1032,27 +1243,156 @@ libraries/ = SubResource("AnimationLibrary_dp0eu")
 speed_scale = 0.5
 
 [node name="Cloud5" parent="Clouds_Lvl3" unique_id=487668187 instance=ExtResource("10_nqdth")]
-material = SubResource("ShaderMaterial_ssxou")
+material = SubResource("ShaderMaterial_1al3e")
 position = Vector2(1409, -3137)
 
 [node name="Cloud6" parent="Clouds_Lvl3" unique_id=1489591027 instance=ExtResource("10_nqdth")]
-material = SubResource("ShaderMaterial_jm67w")
+material = SubResource("ShaderMaterial_sh8gf")
 position = Vector2(3548, -249)
+
+[node name="Clouds_Lvl4" type="Node2D" parent="." unique_id=1644946270]
+position = Vector2(1657, -13528)
+
+[node name="cloudRigitBody_1" type="RigidBody2D" parent="Clouds_Lvl4" unique_id=1322605830]
+position = Vector2(436, -600)
+physics_material_override = SubResource("PhysicsMaterial_euqen")
+gravity_scale = 0.0
+
+[node name="CustomCloud1" type="Sprite2D" parent="Clouds_Lvl4/cloudRigitBody_1" unique_id=265471743]
+material = SubResource("ShaderMaterial_trxsc")
+position = Vector2(1.1563835, -5.7336044)
+rotation = 0.05054679
+scale = Vector2(0.76927876, 0.76927876)
+texture = ExtResource("14_34vfp")
+offset = Vector2(-45.78003, 128.22266)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Clouds_Lvl4/cloudRigitBody_1" unique_id=1475739999]
+position = Vector2(43, 40)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_wpxwh")
+
+[node name="Rainbow_Pickup" type="Area2D" parent="Clouds_Lvl4/cloudRigitBody_1" unique_id=1325711683]
+position = Vector2(55, -54)
+
+[node name="RainbowPickupSprite" type="Sprite2D" parent="Clouds_Lvl4/cloudRigitBody_1/Rainbow_Pickup" unique_id=1342140158]
+modulate = Color(1.1822468, 1.2030135, 1.4540865, 1)
+position = Vector2(1, -2)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("13_34vfp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Clouds_Lvl4/cloudRigitBody_1/Rainbow_Pickup" unique_id=239055422]
+visible = false
+position = Vector2(5, 0)
+rotation = 0.5653148
+shape = SubResource("CapsuleShape2D_tnskl")
+
+[node name="Rainbow_Pickup_anim" type="AnimationPlayer" parent="Clouds_Lvl4/cloudRigitBody_1/Rainbow_Pickup" unique_id=371137425]
+libraries/ = SubResource("AnimationLibrary_7q0na")
+
+[node name="cloudRigidBody_3" type="RigidBody2D" parent="Clouds_Lvl4" unique_id=1069343402]
+position = Vector2(-1465, -1190)
+physics_material_override = SubResource("PhysicsMaterial_pcoky")
+gravity_scale = 0.0
+
+[node name="CustomCloud3" type="Sprite2D" parent="Clouds_Lvl4/cloudRigidBody_3" unique_id=188599670]
+material = SubResource("ShaderMaterial_stoog")
+position = Vector2(-36.419678, -87.268814)
+rotation = -1.679465
+scale = Vector2(0.29428962, 0.33632615)
+texture = ExtResource("13_t42xu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Clouds_Lvl4/cloudRigidBody_3" unique_id=1883115779]
+position = Vector2(0.58032227, -7.267578)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_jk70c")
+
+[node name="cloudRigidBody_2" type="RigidBody2D" parent="Clouds_Lvl4" unique_id=1581459075]
+position = Vector2(-1220, 128)
+physics_material_override = SubResource("PhysicsMaterial_tnskl")
+gravity_scale = 0.0
+
+[node name="CustomCloud2" type="Sprite2D" parent="Clouds_Lvl4/cloudRigidBody_2" unique_id=53322740]
+material = SubResource("ShaderMaterial_kc53d")
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("12_jk70c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Clouds_Lvl4/cloudRigidBody_2" unique_id=323913702]
+position = Vector2(9, 25)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_qdken")
+
+[node name="FrontClouds(Layer1)" type="ParallaxBackground" parent="." unique_id=2039391621]
+layer = 1
+
+[node name="FilmGrain" type="Parallax2D" parent="FrontClouds(Layer1)" unique_id=891504112]
+modulate = Color(2.454227, 2.454227, 2.454227, 0.025)
+texture_repeat = 2
+scale = Vector2(1.325, 1.325)
+repeat_size = Vector2(3130, 2075)
+repeat_times = 15
+
+[node name="IlliaHorokhovskyTqf5Tth3tWoUnsplash" type="Sprite2D" parent="FrontClouds(Layer1)/FilmGrain" unique_id=1243876601]
+modulate = Color(0.4, 0.4, 0.4, 0.2901961)
+texture_repeat = 2
+material = SubResource("CanvasItemMaterial_307no")
+position = Vector2(-725.9099, -987.93317)
+texture = ExtResource("15_307no")
+
+[node name="noise_cloud_mask?" type="Sprite2D" parent="FrontClouds(Layer1)" unique_id=1673701610]
+visible = false
+scale = Vector2(3.46875, 2.6894531)
+texture = SubResource("GradientTexture2D_qdken")
+
+[node name="Cloud_Parallax_1" type="Parallax2D" parent="FrontClouds(Layer1)" unique_id=1619401893]
+scale = Vector2(3.46875, 2.6894531)
+scroll_scale = Vector2(2, 2)
+repeat_size = Vector2(2560, 2560)
+autoscroll = Vector2(1, 0)
+repeat_times = 10
+follow_viewport = false
+
+[node name="Cloud_Layer_1" type="Sprite2D" parent="FrontClouds(Layer1)/Cloud_Parallax_1" unique_id=1798875846]
+modulate = Color(1, 1, 1, 0)
+texture_repeat = 2
+position = Vector2(231.78378, -1570.2076)
+scale = Vector2(5, 5)
+texture = ExtResource("6_wi4c7")
+
+[node name="Cloud_Layer_2" type="Sprite2D" parent="FrontClouds(Layer1)/Cloud_Parallax_1" unique_id=140577069]
+modulate = Color(0.5395, 0.60211664, 0.65, 0)
+texture_repeat = 2
+position = Vector2(231.78378, -1570.2076)
+scale = Vector2(5, 5)
+texture = SubResource("NoiseTexture2D_rr87q")
+
+[node name="Cloud_Layer_3" type="Sprite2D" parent="FrontClouds(Layer1)/Cloud_Parallax_1" unique_id=1359458449]
+modulate = Color(1, 1, 1, 0)
+texture_repeat = 2
+position = Vector2(231.78378, -1570.2076)
+scale = Vector2(5, 5)
+texture = SubResource("NoiseTexture2D_4e2rb")
+
+[node name="FrontCloud_Modulate" type="CanvasModulate" parent="FrontClouds(Layer1)" unique_id=112197101]
+
+[node name="PegasusCastle" type="Sprite2D" parent="." unique_id=1805314336]
+z_index = -1
+material = SubResource("ShaderMaterial_1eokm")
+position = Vector2(1070.4951, -14541.993)
+scale = Vector2(2.032518, 2.032518)
+texture = ExtResource("16_1vioj")
+
+[node name="PegasusCastleClouds" type="Sprite2D" parent="." unique_id=1305026882]
+z_index = -1
+material = SubResource("ShaderMaterial_1eokm")
+position = Vector2(1072, -14529)
+scale = Vector2(2.032518, 2.032518)
+texture = ExtResource("17_g2o8j")
 
 [node name="BehindCouds(Layer-1)" type="ParallaxBackground" parent="." unique_id=1493366085]
 layer = -1
 
-[node name="DOF_lvl1" type="ColorRect" parent="BehindCouds(Layer-1)" unique_id=163095754]
-z_index = -1
-material = SubResource("ShaderMaterial_uxmck")
-offset_left = -15702.0
-offset_top = -23465.002
-offset_right = -11862.0
-offset_bottom = -21305.002
-scale = Vector2(11, 11)
-color = Color(1, 1, 1, 0)
-
 [node name="Sun" type="PointLight2D" parent="BehindCouds(Layer-1)" unique_id=1546372585]
+visible = false
 position = Vector2(-1618, -3548)
 color = Color(1.7129971, 1.4055498, 0.35044625, 1)
 energy = 0.3
@@ -1063,7 +1403,7 @@ texture_scale = 50.0
 
 [node name="BGCanvasModulate" type="CanvasModulate" parent="BehindCouds(Layer-1)" unique_id=1452396847]
 z_index = -1
-color = Color(0.88816124, 0.88816124, 0.88816124, 1)
+color = Color(0.9362647, 0.9362648, 0.93626446, 1)
 
 [node name="Cloud_Parallax_2" type="Parallax2D" parent="BehindCouds(Layer-1)" unique_id=1750145326]
 z_index = -1
@@ -1133,74 +1473,34 @@ texture = SubResource("CompressedTexture2D_wpxwh")
 flip_h = true
 
 [node name="Clouds2Gs" type="Sprite2D" parent="BehindCouds(Layer-1)/Cloud_Parallax_3" unique_id=470649345]
-material = SubResource("ShaderMaterial_1eokm")
-position = Vector2(-9426, -9591)
-scale = Vector2(0.51482755, 0.51482755)
+material = SubResource("ShaderMaterial_jm67w")
+position = Vector2(-1510.2664, -7145.8125)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("18_1vioj")
 
 [node name="Clouds1Gs" type="Sprite2D" parent="BehindCouds(Layer-1)/Cloud_Parallax_3" unique_id=2069451883]
 material = SubResource("ShaderMaterial_cp8wt")
-position = Vector2(2853, -9635)
-scale = Vector2(0.51482755, 0.51482755)
+position = Vector2(2616, -7262)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("19_g2o8j")
 
-[node name="FrontClouds(Layer1)" type="ParallaxBackground" parent="." unique_id=2039391621]
-layer = 1
-
-[node name="FilmGrain" type="Parallax2D" parent="FrontClouds(Layer1)" unique_id=891504112]
-modulate = Color(2.454227, 2.454227, 2.454227, 0.025)
-texture_repeat = 2
-scale = Vector2(1.325, 1.325)
-repeat_size = Vector2(3130, 2075)
-repeat_times = 15
-
-[node name="IlliaHorokhovskyTqf5Tth3tWoUnsplash" type="Sprite2D" parent="FrontClouds(Layer1)/FilmGrain" unique_id=1243876601]
-modulate = Color(0.4, 0.4, 0.4, 0.2901961)
-texture_repeat = 2
-material = SubResource("CanvasItemMaterial_307no")
-position = Vector2(-725.9099, -987.93317)
-texture = ExtResource("15_307no")
-
-[node name="noise_cloud_mask?" type="Sprite2D" parent="FrontClouds(Layer1)" unique_id=1673701610]
-visible = false
-scale = Vector2(3.46875, 2.6894531)
-texture = SubResource("GradientTexture2D_qdken")
-
-[node name="Cloud_Parallax_1" type="Parallax2D" parent="FrontClouds(Layer1)" unique_id=1619401893]
-scale = Vector2(3.46875, 2.6894531)
-scroll_scale = Vector2(2, 2)
-repeat_size = Vector2(2560, 2560)
-autoscroll = Vector2(1, 0)
-repeat_times = 10
-follow_viewport = false
-
-[node name="Cloud_Layer_1" type="Sprite2D" parent="FrontClouds(Layer1)/Cloud_Parallax_1" unique_id=1798875846]
-modulate = Color(1, 1, 1, 0)
-texture_repeat = 2
-position = Vector2(231.78378, -1570.2076)
-scale = Vector2(5, 5)
-texture = ExtResource("6_wi4c7")
-
-[node name="Cloud_Layer_2" type="Sprite2D" parent="FrontClouds(Layer1)/Cloud_Parallax_1" unique_id=140577069]
-modulate = Color(0.5395, 0.60211664, 0.65, 0)
-texture_repeat = 2
-position = Vector2(231.78378, -1570.2076)
-scale = Vector2(5, 5)
-texture = SubResource("NoiseTexture2D_rr87q")
-
-[node name="Cloud_Layer_3" type="Sprite2D" parent="FrontClouds(Layer1)/Cloud_Parallax_1" unique_id=1359458449]
-modulate = Color(1, 1, 1, 0)
-texture_repeat = 2
-position = Vector2(231.78378, -1570.2076)
-scale = Vector2(5, 5)
-texture = SubResource("NoiseTexture2D_4e2rb")
-
-[node name="FrontCloud_Modulate" type="CanvasModulate" parent="FrontClouds(Layer1)" unique_id=112197101]
+[node name="DOF_lvl1" type="ColorRect" parent="BehindCouds(Layer-1)" unique_id=163095754]
+z_index = -1
+material = SubResource("ShaderMaterial_uxmck")
+offset_left = -16427.002
+offset_top = -28992.0
+offset_right = -12587.002
+offset_bottom = -26832.0
+scale = Vector2(15, 15)
 
 [node name="DragonHorseGod" parent="." unique_id=304131339 instance=ExtResource("27_x3ega")]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(1033, -11254)
 scale = Vector2(0.5, 0.5)
+
+[node name="PegasusHorseGod" parent="." unique_id=744751562 instance=ExtResource("33_cp8wt")]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(2130, -14814)
 
 [node name="NightHorseGod" parent="." unique_id=635604340 instance=ExtResource("12_ibnub")]
 modulate = Color(1.6396567, 1.6396567, 1.6396567, 0)
@@ -1221,7 +1521,7 @@ position = Vector2(550, -2399)
 scale = Vector2(0.5, 0.5)
 
 [node name="EverythingElseLight2" type="PointLight2D" parent="SpiritHorseGod" unique_id=1021732211]
-position = Vector2(-658, -18636)
+position = Vector2(-838, -18688.002)
 scale = Vector2(26.515371, 21.786839)
 energy = 0.3
 range_z_max = 0
@@ -1254,7 +1554,7 @@ shape = SubResource("WorldBoundaryShape2D_vok5w")
 one_way_collision = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="WorldBoundaries" unique_id=303724647]
-position = Vector2(-2266, 682)
+position = Vector2(-3848.0002, 562.00006)
 rotation = 1.5601245
 shape = SubResource("WorldBoundaryShape2D_vok5w")
 one_way_collision = true
@@ -1368,7 +1668,7 @@ tile_set = SubResource("TileSet_ikqpi")
 light_mask = 2
 visibility_layer = 2
 z_index = 1
-position = Vector2(276, -130)
+position = Vector2(767, -161)
 maxSpeed = 200.0
 timeToReachMaxSpeed = 0.2
 directionalSnap = true
@@ -1444,6 +1744,7 @@ process_material = SubResource("ParticleProcessMaterial_rr87q")
 [connection signal="body_entered" from="Clouds_Lvl1/Cloud2_flipped/Star" to="." method="_on_body_entered"]
 [connection signal="body_entered" from="Clouds_Lvl2/Cloud4/Moon_star" to="." method="_on_moon_star_body_entered"]
 [connection signal="body_entered" from="Clouds_Lvl3/Cloud4/Sun_star" to="." method="_on_sun_star_body_entered"]
+[connection signal="body_entered" from="Clouds_Lvl4/cloudRigitBody_1/Rainbow_Pickup" to="." method="_on_rainbow_pickup_body_entered"]
 [connection signal="body_entered" from="Mushroom2" to="." method="_on_mushroom_2_body_entered"]
 [connection signal="body_entered" from="Grass/Grass_Clump_var1_1/Grass_dynamic" to="Grass/Grass_Clump_var1_1/Grass_dynamic" method="_on_Grass_body_entered"]
 [connection signal="body_entered" from="Grass/Grass_Clump_var1_1/@Area2D@20067" to="Grass/Grass_Clump_var1_1/@Area2D@20067" method="_on_Grass_body_entered"]

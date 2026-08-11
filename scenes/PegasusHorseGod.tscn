@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://tlv5qogudq75"]
+
+[ext_resource type="Texture2D" uid="uid://cflkw68tguofa" path="res://assets/HorseGods/PegasusHorse_Portrait.png" id="1_tg5yl"]
+
+[node name="PegasusHorseGod" type="Node2D" unique_id=744751562]
+
+[node name="PegasusHorsePortrait" type="Sprite2D" parent="." unique_id=306560609]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_tg5yl")

@@ -11,6 +11,8 @@ var has_entered : bool = false
 @onready var star_anim: AnimationPlayer = $Clouds_Lvl1/Cloud2_flipped/Star/Star_anim
 @onready var moon_star_anim: AnimationPlayer = $Clouds_Lvl2/Cloud4/Moon_star/Moon_star_anim
 @onready var sun_star_anim: AnimationPlayer = $Clouds_Lvl3/Cloud4/Sun_star/Sun_star_anim
+@onready var rainbow_pickup: Area2D = $Clouds_Lvl4/cloudRigitBody_1/Rainbow_Pickup
+@onready var cloud_rigid_body_3: RigidBody2D = $Clouds_Lvl4/cloudRigidBody_3
 
 
 ####HORSE PARTICLES
@@ -120,3 +122,23 @@ func _on_sun_star_body_entered(body: Node2D)-> void:
 		eat_tween.tween_property($Clouds_Lvl3/Cloud4/Sun_star/Sun_Star_Pickup,"global_scale",Vector2(0,0),0.2)
 		await eat_tween.finished
 		sun_star.queue_free()
+
+
+func _on_rainbow_pickup_body_entered(body: Node2D) -> void:
+	#pass # Replace with function body.
+	if body.is_in_group("Horse"):
+		##INFO new ability goes here:
+		#horse needs to grow wings and learn to fly now, I guess.
+		#let's try this, for funsies:
+		#horse.motion_mode=CharacterBody2D.MOTION_MODE_FLOATING
+		horse.gravityActive=false
+		horse.charged_jump = false
+		
+		animation_player.play("PegasusHorseGod")
+		
+		var eat_tween = get_tree().create_tween()
+		eat_tween.set_trans(Tween.TRANS_CUBIC)
+		eat_tween.tween_property($Clouds_Lvl4/cloudRigitBody_1/Rainbow_Pickup/RainbowPickupSprite,"global_scale",Vector2(0,0),0.2)
+		rainbow_pickup.queue_free()
+		await eat_tween.finished
+		
