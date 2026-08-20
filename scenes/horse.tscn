@@ -570,7 +570,7 @@ tracks/0/keys = {
 "start_offset": 0.0,
 "stream": ExtResource("7_e0gb1")
 }],
-"times": PackedFloat32Array(0.03333333)
+"times": PackedFloat32Array(0)
 }
 tracks/0/use_blend = true
 
@@ -586,10 +586,10 @@ tracks/0/loop_wrap = true
 tracks/0/keys = {
 "clips": [{
 "end_offset": 0.0,
-"start_offset": 0.7671823,
+"start_offset": 0.76624477,
 "stream": ExtResource("7_e0gb1")
 }],
-"times": PackedFloat32Array(0)
+"times": PackedFloat32Array(-0.0009375006)
 }
 tracks/0/use_blend = true
 
@@ -653,6 +653,7 @@ position = Vector2(1, -22)
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_vyx2l")
 animation = &"idle"
+frame_progress = 1.0
 
 [node name="LazerEnd" type="Marker2D" parent="AnimatedSprite2D" unique_id=2074027983 groups=["Lazer"]]
 position = Vector2(-1676.6666, -450)
@@ -712,6 +713,7 @@ libraries/ = SubResource("AnimationLibrary_gl1uc")
 volume_db = -12.0
 
 [node name="HorseSFX" type="AudioStreamPlayer2D" parent="." unique_id=421012837]
+bus = &"SFX"
 
 [node name="Cloud_Detect" type="Area2D" parent="." unique_id=1209593977]
 
