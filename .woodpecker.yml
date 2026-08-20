@@ -1,11 +1,11 @@
 steps:
-  - name: export-web
-    image: "docker.io/barichello/godot-ci:${GODOT_VERSION}"
-    environment:
-      PROJECT: ${PROJECT}
-    commands:
-      - mkdir -p exports/web
-      - godot --headless --export-release "Web" exports/web/index.html
+  # - name: export-web
+  #   image: "docker.io/barichello/godot-ci:${GODOT_VERSION}"
+  #   environment:
+  #     PROJECT: ${PROJECT}
+  #   commands:
+  #     - mkdir -p exports/web
+  #     - godot --headless --export-release "Web" exports/web/index.html
 
   - name: export-linux
     image: "docker.io/barichello/godot-ci:${GODOT_VERSION}"
@@ -13,7 +13,8 @@ steps:
       PROJECT: ${PROJECT}
     commands:
       - mkdir -p exports/linux
-      - godot --headless --export-release "Linux" "./exports/linux/${PROJECT}_linux_x64"
+      - ls -al
+      - godot --headless --export-release "Linux" "./exports/linux/${PROJECT}_linux_x64" ./
 
   - name: export-windows
     image: "docker.io/barichello/godot-ci:${GODOT_VERSION}"
@@ -21,7 +22,7 @@ steps:
       PROJECT: ${PROJECT}
     commands:
       - mkdir -p exports/windows
-      - godot --headless --export-release "Windows Desktop" "./exports/windows/${PROJECT}_windows.exe"
+      - godot --headless --export-release "Windows Desktop" "./exports/windows/${PROJECT}_windows.exe" ./project.godot
 
   - name: generate-manifest
     image: alpine
