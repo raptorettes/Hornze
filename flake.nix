@@ -38,6 +38,7 @@
               python3Packages.pyyaml
               rclone
               git
+              gettext
               sops
               age
               yq
