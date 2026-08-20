@@ -1,31 +1,27 @@
 steps:
   - name: export-web
-    image: docker.io/barichello/godot-ci:4.6.3
+    image: "docker.io/barichello/godot-ci:${GODOT_VERSION}"
+    environment:
+      PROJECT: ${PROJECT}
     commands:
       - mkdir -p exports/web
       - godot --headless --export-release "Web" exports/web/index.html
 
   - name: export-linux
-    image: docker.io/barichello/godot-ci:4.6.3
+    image: "docker.io/barichello/godot-ci:${GODOT_VERSION}"
+    environment:
+      PROJECT: ${PROJECT}
     commands:
       - mkdir -p exports/linux
-      - godot --headless --export-release "Linux" ./exports/linux/hornse_linux_x64
+      - godot --headless --export-release "Linux" "./exports/linux/${PROJECT}_linux_x64"
 
   - name: export-windows
-    image: docker.io/barichello/godot-ci:4.6.3
+    image: "docker.io/barichello/godot-ci:${GODOT_VERSION}"
+    environment:
+      PROJECT: ${PROJECT}
     commands:
       - mkdir -p exports/windows
-      - godot --headless --export-release "Windows Desktop" ./exports/windows/hornse_windows.exe
-
-  # - name: verify-release
-  #   image: alpine
-  #   commands:
-  #     - |
-  #       if ls exports/web/*.wasm 2>/dev/null | grep -q "\.editor\."; then
-  #         echo "ERROR: Debug/editor wasm files found in release export."
-  #         exit 1
-  #       fi
-  #       echo "Release export verified."
+      - godot --headless --export-release "Windows Desktop" "./exports/windows/${PROJECT}_windows.exe"
 
   - name: generate-manifest
     image: alpine
@@ -36,7 +32,7 @@ steps:
   - name: upload-and-index
     image: rclone/rclone:latest
     environment:
-      PROJECT: hornse
+      PROJECT: ${PROJECT}
       # These define the [r2] remote automatically — no file needed
       RCLONE_CONFIG_R2_TYPE: s3
       RCLONE_CONFIG_R2_PROVIDER: Cloudflare

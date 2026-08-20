@@ -8,6 +8,7 @@
   outputs =
     { nixpkgs, ... }:
     let
+
       forAllSystems =
         function:
         nixpkgs.lib.genAttrs [
@@ -18,43 +19,51 @@
         ] (system: function nixpkgs.legacyPackages.${system});
     in
     {
-      devShells = forAllSystems (pkgs: {
-        default = pkgs.mkShell {
+      devShells = forAllSystems (
+        pkgs:
+        let
+          project = "Hornse";
+          godotVersion = "4.7.1";
+          godot = pkgs.godotPackages_4_7.godot;
 
-          buildInputs = with pkgs; [
-            godotPackages_4_7.godot
-            bun
-            just
-            python3
-            python3Packages.pyyaml
-            rclone
-            git
-            sops
-            age
-            yq
-            jq
-            woodpecker-cli
-          ];
+        in
+        {
+          default = pkgs.mkShell {
 
-          shellHook = ''
-            echo ""
-            #echo "/*"
-            echo " * /-----"
-            echo " * | Godot development environment"
-            echo " * | Godot version: $(godot --version)"
-            echo " * \-----"
+            buildInputs = with pkgs; [
+              godot
+              bun
+              just
+              python3
+              python3Packages.pyyaml
+              rclone
+              git
+              sops
+              age
+              yq
+              jq
+              woodpecker-cli
+            ];
 
+            shellHook = ''
+              export PROJECT=${project}
+              export GODOT_VERSION=${godotVersion}
 
-            echo " * "
-            echo " *  Start developing by running \`just dev\`"
-            echo " *  Start testing by running \`just play\`"
-            echo " *"
-            #echo " */"
-            echo ""
-            just -l
-            echo ""
-          '';
-        };
-      });
+              echo ""
+              echo " * /-----"
+              echo " * | Godot development environment"
+              echo " * | Project: $PROJECT"
+              echo " * | Godot version: $GODOT_VERSION ($(godot --version))"
+              echo " * \-----"
+              echo " * "
+              echo " *  Start the project menu with: just, up, or dev"
+              echo " *"
+              echo ""
+              just -l
+              echo ""
+            '';
+          };
+        }
+      );
     };
 }

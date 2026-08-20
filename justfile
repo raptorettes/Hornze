@@ -22,8 +22,15 @@ ci-local:
     #!/usr/bin/env fish
     set -l TMP (mktemp -d)
 
+    if not set -q PROJECT; or not set -q GODOT_VERSION
+        echo "PROJECT and GODOT_VERSION must be set"
+        exit 1
+    end
+
     # Decrypt secrets
     sops -d secrets/woodpecker.yaml > $TMP/secrets.yaml
+
+    envsubst '${PROJECT} ${GODOT_VERSION}' < .woodpecker.yml > $TMP/pipeline.yml
 
     # Ensure podman socket is available (rootless)
     #  if not test -S /run/user/(id -u)/podman/podman.sock
@@ -38,6 +45,6 @@ ci-local:
     woodpecker-cli exec \
         --backend-engine docker \
         --secrets-file $TMP/secrets.yaml \
-        .woodpecker.yml
+        $TMP/pipeline.yml
 
     rm -rf $TMP
