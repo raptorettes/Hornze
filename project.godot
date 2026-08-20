@@ -17,7 +17,7 @@ config/icon="uid://4q335xxs2p"
 
 [audio]
 
-buses/default_bus_layout="uid://dxf1ghha2g0pb"
+buses/default_bus_layout="uid://dp7xk1dung75n"
 driver/driver="JACK"
 driver/mix_rate=48000
 
