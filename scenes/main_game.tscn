@@ -467,14 +467,14 @@ shader = ExtResource("14_q875d")
 shader_parameter/horizontalMovement = 0.1
 shader_parameter/verticalMovement = 0.1
 shader_parameter/frequencyStar = 0.1
-shader_parameter/sizeStar = 180.0
+shader_parameter/sizeStar = 200.0
 shader_parameter/brightnessStar = 1.0
 shader_parameter/shineFrequencyStar = 8.0
 shader_parameter/transparencyStar = 0.0
 shader_parameter/starIterations = 4
 shader_parameter/frequencyBgStar = 0.99999999045407
 shader_parameter/shineFrequencyBgStar = 1.0
-shader_parameter/transparencyBgStar = 0.0
+shader_parameter/transparencyBgStar = 0.10999999754128
 shader_parameter/colorBackground = Color(0.05, 0.04, 0.2, 1)
 shader_parameter/transparencyBackground = 0.999999977648
 shader_parameter/seed = 9.0
@@ -1433,7 +1433,7 @@ position = Vector2(817, -11957)
 scale = Vector2(80.78126, 68.5625)
 texture = SubResource("GradientTexture2D_g2o8j")
 
-[node name="ColorRect" type="ColorRect" parent="BehindCouds(Layer-1)/Cloud_Parallax_2" unique_id=979132032]
+[node name="StarBG" type="ColorRect" parent="BehindCouds(Layer-1)/Cloud_Parallax_2" unique_id=979132032]
 material = SubResource("ShaderMaterial_tnskl")
 anchors_preset = 15
 anchor_right = 1.0
@@ -1493,14 +1493,14 @@ offset_right = -12587.002
 offset_bottom = -26832.0
 scale = Vector2(15, 15)
 
+[node name="PegasusHorseGod" parent="." unique_id=744751562 instance=ExtResource("33_cp8wt")]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(2130, -14631)
+
 [node name="DragonHorseGod" parent="." unique_id=304131339 instance=ExtResource("27_x3ega")]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(1033, -11254)
 scale = Vector2(0.5, 0.5)
-
-[node name="PegasusHorseGod" parent="." unique_id=744751562 instance=ExtResource("33_cp8wt")]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(2130, -14814)
 
 [node name="NightHorseGod" parent="." unique_id=635604340 instance=ExtResource("12_ibnub")]
 modulate = Color(1.6396567, 1.6396567, 1.6396567, 0)
@@ -1740,6 +1740,8 @@ amount_ratio = 0.1586
 texture = ExtResource("21_rr87q")
 visibility_rect = Rect2(-100, -100, 1000, 1000)
 process_material = SubResource("ParticleProcessMaterial_rr87q")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=92095952]
 
 [connection signal="body_entered" from="Clouds_Lvl1/Cloud2_flipped/Star" to="." method="_on_body_entered"]
 [connection signal="body_entered" from="Clouds_Lvl2/Cloud4/Moon_star" to="." method="_on_moon_star_body_entered"]
