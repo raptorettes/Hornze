@@ -4,5 +4,5 @@
 
 [resource]
 shader = ExtResource("1_vbmnn")
-shader_parameter/Bloom_Intensity = 0.50400002394
+shader_parameter/Bloom_Intensity = 0.6000000285
 shader_parameter/Horse_Alpha = 1.0

@@ -653,6 +653,7 @@ position = Vector2(1, -22)
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_vyx2l")
 animation = &"idle"
+frame_progress = 1.0
 
 [node name="LazerEnd" type="Marker2D" parent="AnimatedSprite2D" unique_id=2074027983 groups=["Lazer"]]
 position = Vector2(-1676.6666, -450)
