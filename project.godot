@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Hornse"
-run/main_scene="uid://cck7h48uou84v"
+run/main_scene="uid://c6k5nnpbypshi"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="uid://4q335xxs2p"
 
